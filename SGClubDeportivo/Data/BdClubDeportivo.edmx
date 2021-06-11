@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BdClubDeportivoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BdClubDeportivoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administrador">
           <Key>
             <PropertyRef Name="ci_admin" />
@@ -36,15 +36,9 @@
           </Key>
           <Property Name="ci_jugador" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="nom_jugador" Type="varchar" MaxLength="250" />
-          <Property Name="fecha_nac" Type="datetime" />
+          <Property Name="fecha_nac" Type="date" />
+          <Property Name="fecha_registro" Type="date" />
           <Property Name="ci_secretaria" Type="varchar" MaxLength="20" />
-        </EntityType>
-        <EntityType Name="Jugador_cat">
-          <Key>
-            <PropertyRef Name="id_asignacion" />
-          </Key>
-          <Property Name="id_asignacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ci_jugador" Type="varchar" MaxLength="20" />
           <Property Name="id_categoria" Type="int" />
         </EntityType>
         <EntityType Name="Secretaria">
@@ -89,27 +83,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Jugador_cat_Categoria">
+        <Association Name="FK_Jugador_Categoria">
           <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
-          <End Role="Jugador_cat" Type="Self.Jugador_cat" Multiplicity="*" />
+          <End Role="Jugador" Type="Self.Jugador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categoria">
               <PropertyRef Name="id_categoria" />
             </Principal>
-            <Dependent Role="Jugador_cat">
+            <Dependent Role="Jugador">
               <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Jugador_cat_Jugador">
-          <End Role="Jugador" Type="Self.Jugador" Multiplicity="0..1" />
-          <End Role="Jugador_cat" Type="Self.Jugador_cat" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Jugador">
-              <PropertyRef Name="ci_jugador" />
-            </Principal>
-            <Dependent Role="Jugador_cat">
-              <PropertyRef Name="ci_jugador" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -130,7 +112,6 @@
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Horario" EntityType="Self.Horario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jugador" EntityType="Self.Jugador" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Jugador_cat" EntityType="Self.Jugador_cat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Secretaria" EntityType="Self.Secretaria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Horario_Administrador" Association="Self.FK_Horario_Administrador">
@@ -141,21 +122,16 @@
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Horario" EntitySet="Horario" />
           </AssociationSet>
-          <AssociationSet Name="FK_Jugador_cat_Categoria" Association="Self.FK_Jugador_cat_Categoria">
+          <AssociationSet Name="FK_Jugador_Categoria" Association="Self.FK_Jugador_Categoria">
             <End Role="Categoria" EntitySet="Categoria" />
-            <End Role="Jugador_cat" EntitySet="Jugador_cat" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Jugador_cat_Jugador" Association="Self.FK_Jugador_cat_Jugador">
             <End Role="Jugador" EntitySet="Jugador" />
-            <End Role="Jugador_cat" EntitySet="Jugador_cat" />
           </AssociationSet>
           <AssociationSet Name="FK_Jugador_Secretaria" Association="Self.FK_Jugador_Secretaria">
             <End Role="Secretaria" EntitySet="Secretaria" />
             <End Role="Jugador" EntitySet="Jugador" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BdClubDeportivoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -175,7 +151,7 @@
           <Property Name="id_categoria" Type="Int32" Nullable="false" />
           <Property Name="nom_categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Horario" Relationship="Self.FK_Horario_Categoria" FromRole="Categoria" ToRole="Horario" />
-          <NavigationProperty Name="Jugador_cat" Relationship="Self.FK_Jugador_cat_Categoria" FromRole="Categoria" ToRole="Jugador_cat" />
+          <NavigationProperty Name="Jugador" Relationship="BdClubDeportivoModel.FK_Jugador_Categoria" FromRole="Categoria" ToRole="Jugador" />
         </EntityType>
         <EntityType Name="Horario">
           <Key>
@@ -195,20 +171,12 @@
           </Key>
           <Property Name="ci_jugador" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nom_jugador" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="fecha_nac" Type="DateTime" Precision="3" />
+          <Property Name="fecha_nac" Type="DateTime" Precision="0" />
           <Property Name="ci_secretaria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Jugador_cat" Relationship="Self.FK_Jugador_cat_Jugador" FromRole="Jugador" ToRole="Jugador_cat" />
           <NavigationProperty Name="Secretaria" Relationship="Self.FK_Jugador_Secretaria" FromRole="Jugador" ToRole="Secretaria" />
-        </EntityType>
-        <EntityType Name="Jugador_cat">
-          <Key>
-            <PropertyRef Name="id_asignacion" />
-          </Key>
-          <Property Name="id_asignacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ci_jugador" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="id_categoria" Type="Int32" />
-          <NavigationProperty Name="Categoria" Relationship="Self.FK_Jugador_cat_Categoria" FromRole="Jugador_cat" ToRole="Categoria" />
-          <NavigationProperty Name="Jugador" Relationship="Self.FK_Jugador_cat_Jugador" FromRole="Jugador_cat" ToRole="Jugador" />
+          <NavigationProperty Name="Categoria" Relationship="BdClubDeportivoModel.FK_Jugador_Categoria" FromRole="Jugador" ToRole="Categoria" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Secretaria">
           <Key>
@@ -253,30 +221,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Jugador_cat_Categoria">
-          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
-          <End Role="Jugador_cat" Type="Self.Jugador_cat" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Categoria">
-              <PropertyRef Name="id_categoria" />
-            </Principal>
-            <Dependent Role="Jugador_cat">
-              <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Jugador_cat_Jugador">
-          <End Role="Jugador" Type="Self.Jugador" Multiplicity="0..1" />
-          <End Role="Jugador_cat" Type="Self.Jugador_cat" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Jugador">
-              <PropertyRef Name="ci_jugador" />
-            </Principal>
-            <Dependent Role="Jugador_cat">
-              <PropertyRef Name="ci_jugador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Jugador_Secretaria">
           <End Role="Secretaria" Type="Self.Secretaria" Multiplicity="0..1" />
           <End Role="Jugador" Type="Self.Jugador" Multiplicity="*" />
@@ -294,7 +238,6 @@
           <EntitySet Name="Categoria" EntityType="Self.Categoria" />
           <EntitySet Name="Horario" EntityType="Self.Horario" />
           <EntitySet Name="Jugador" EntityType="Self.Jugador" />
-          <EntitySet Name="Jugador_cat" EntityType="Self.Jugador_cat" />
           <EntitySet Name="Secretaria" EntityType="Self.Secretaria" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_Horario_Administrador" Association="Self.FK_Horario_Administrador">
@@ -305,19 +248,27 @@
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Horario" EntitySet="Horario" />
           </AssociationSet>
-          <AssociationSet Name="FK_Jugador_cat_Categoria" Association="Self.FK_Jugador_cat_Categoria">
-            <End Role="Categoria" EntitySet="Categoria" />
-            <End Role="Jugador_cat" EntitySet="Jugador_cat" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Jugador_cat_Jugador" Association="Self.FK_Jugador_cat_Jugador">
-            <End Role="Jugador" EntitySet="Jugador" />
-            <End Role="Jugador_cat" EntitySet="Jugador_cat" />
-          </AssociationSet>
           <AssociationSet Name="FK_Jugador_Secretaria" Association="Self.FK_Jugador_Secretaria">
             <End Role="Secretaria" EntitySet="Secretaria" />
             <End Role="Jugador" EntitySet="Jugador" />
           </AssociationSet>
+          <AssociationSet Name="FK_Jugador_Categoria" Association="BdClubDeportivoModel.FK_Jugador_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Jugador" EntitySet="Jugador" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Jugador_Categoria">
+          <End Type="BdClubDeportivoModel.Categoria" Role="Categoria" Multiplicity="0..1" />
+          <End Type="BdClubDeportivoModel.Jugador" Role="Jugador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="Jugador">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -355,19 +306,12 @@
           <EntitySetMapping Name="Jugador">
             <EntityTypeMapping TypeName="BdClubDeportivoModel.Jugador">
               <MappingFragment StoreEntitySet="Jugador">
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
                 <ScalarProperty Name="ci_jugador" ColumnName="ci_jugador" />
                 <ScalarProperty Name="nom_jugador" ColumnName="nom_jugador" />
                 <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
                 <ScalarProperty Name="ci_secretaria" ColumnName="ci_secretaria" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Jugador_cat">
-            <EntityTypeMapping TypeName="BdClubDeportivoModel.Jugador_cat">
-              <MappingFragment StoreEntitySet="Jugador_cat">
-                <ScalarProperty Name="id_asignacion" ColumnName="id_asignacion" />
-                <ScalarProperty Name="ci_jugador" ColumnName="ci_jugador" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

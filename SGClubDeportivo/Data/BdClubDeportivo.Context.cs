@@ -29,7 +29,6 @@ namespace SGClubDeportivo.Data
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Horario> Horario { get; set; }
         public virtual DbSet<Jugador> Jugador { get; set; }
-        public virtual DbSet<Jugador_cat> Jugador_cat { get; set; }
         public virtual DbSet<Secretaria> Secretaria { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }

@@ -57,7 +57,7 @@ namespace SGClubDeportivo.Controlador
             }
         }
         
-        public string nombrePlantel(string pCarnet)
+        public string nombreAdmin(string pCarnet)
         {
             string nom;
 

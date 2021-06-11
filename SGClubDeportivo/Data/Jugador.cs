@@ -14,19 +14,14 @@ namespace SGClubDeportivo.Data
     
     public partial class Jugador
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Jugador()
-        {
-            this.Jugador_cat = new HashSet<Jugador_cat>();
-        }
-    
         public string ci_jugador { get; set; }
         public string nom_jugador { get; set; }
         public Nullable<System.DateTime> fecha_nac { get; set; }
         public string ci_secretaria { get; set; }
+        public Nullable<int> id_categoria { get; set; }
+        public Nullable<System.DateTime> fecha_registro { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Jugador_cat> Jugador_cat { get; set; }
         public virtual Secretaria Secretaria { get; set; }
+        public virtual Categoria Categoria { get; set; }
     }
 }

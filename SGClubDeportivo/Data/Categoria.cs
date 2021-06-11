@@ -18,7 +18,7 @@ namespace SGClubDeportivo.Data
         public Categoria()
         {
             this.Horario = new HashSet<Horario>();
-            this.Jugador_cat = new HashSet<Jugador_cat>();
+            this.Jugador = new HashSet<Jugador>();
         }
     
         public int id_categoria { get; set; }
@@ -27,6 +27,6 @@ namespace SGClubDeportivo.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Horario> Horario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Jugador_cat> Jugador_cat { get; set; }
+        public virtual ICollection<Jugador> Jugador { get; set; }
     }
 }

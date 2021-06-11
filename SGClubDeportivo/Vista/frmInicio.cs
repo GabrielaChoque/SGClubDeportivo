@@ -27,12 +27,13 @@ namespace SGClubDeportivo.Vista
 
             NombreLabel();
         }
-
         public void NombreLabel()
         {
             if (_Cargo == "SECRETARIA")
                 lblNombre.Text = _objSecretaria.nombreSecretaria(_Carnet);
-            
+            if (_Cargo == "ADMIN")
+                lblNombre.Text = _objAdministrador.nombreAdmin(_Carnet);
+
         }
     }
 }

@@ -88,7 +88,7 @@ namespace SGClubDeportivo.Vista
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Minehead DEMO", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNombre.Location = new System.Drawing.Point(169, 318);
+            this.lblNombre.Location = new System.Drawing.Point(137, 328);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(132, 40);
             this.lblNombre.TabIndex = 4;
