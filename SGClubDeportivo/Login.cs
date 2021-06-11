@@ -28,7 +28,22 @@ namespace SGClubDeportivo
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-
+            string tipoUsuario= _objSecretaria.Autenticar(txtUsuario.Text, txtContrasenia.Text);
+            switch (tipoUsuario)
+            {
+                case "SECRETARIA":
+                    this.Hide();
+                    frmPrincipal frm = new Vista.frmPrincipal();
+                    frm.ShowDialog();
+                    break;
+                case "ADMINISTRADOR":
+                    this.Hide();
+                    
+                    break;
+                case "":
+                    MessageBox.Show("LA CUENTA O CONTRASEÑA SON INCORRECTOS", "NO SE PUDO INICIAR SESION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+            }
         }
     }
 }

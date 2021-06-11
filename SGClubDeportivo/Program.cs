@@ -16,7 +16,7 @@ namespace SGClubDeportivo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Vista.frmPrincipal());
+            Application.Run(new Login());
         }
     }
 }

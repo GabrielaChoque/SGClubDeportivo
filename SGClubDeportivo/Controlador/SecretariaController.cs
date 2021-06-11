@@ -43,7 +43,7 @@ namespace SGClubDeportivo.Controlador
             try
             {
                 //en una var "res" donde usamos de la base de datos usando la tabla PLantel Educativo donde x sea usado para uso de datos en tabla BD
-                var res = _db.Administrador.Where(x => x.ci_admin == pUser && x.contrasenia == pPass).SingleOrDefault(); //singleOrdefault mandará excepcion si existe mas de un Administrativo con lo mismos datos
+                var res = _db.Secretaria.Where(x => x.ci_secretaria == pUser && x.contrasenia == pPass).SingleOrDefault(); //singleOrdefault mandará excepcion si existe mas de un Administrativo con lo mismos datos
                 if (res != null) //si res es diferente de vacio
                 {
                     return "SECRETARIA";

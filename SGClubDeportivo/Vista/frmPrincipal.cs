@@ -32,7 +32,7 @@ namespace SGClubDeportivo.Vista
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
