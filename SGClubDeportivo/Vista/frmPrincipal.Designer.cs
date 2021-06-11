@@ -47,6 +47,7 @@ namespace SGClubDeportivo.Vista
             this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
             this.label2 = new System.Windows.Forms.Label();
             this.PanelContenido = new System.Windows.Forms.Panel();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.panelBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -140,6 +141,7 @@ namespace SGClubDeportivo.Vista
             this.Sidebar.BackColor = System.Drawing.Color.SteelBlue;
             this.Sidebar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Sidebar.BackgroundImage")));
             this.Sidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Sidebar.Controls.Add(this.iconButton3);
             this.Sidebar.Controls.Add(this.iconButton2);
             this.Sidebar.Controls.Add(this.btnMisEstudiantes);
             this.Sidebar.Controls.Add(this.btnEstudiantes);
@@ -168,7 +170,7 @@ namespace SGClubDeportivo.Vista
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 30;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(7, 240);
+            this.iconButton2.Location = new System.Drawing.Point(7, 284);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(191, 38);
             this.iconButton2.TabIndex = 22;
@@ -290,6 +292,26 @@ namespace SGClubDeportivo.Vista
             this.PanelContenido.Size = new System.Drawing.Size(605, 444);
             this.PanelContenido.TabIndex = 38;
             // 
+            // iconButton3
+            // 
+            this.iconButton3.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.ForeColor = System.Drawing.Color.Black;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 30;
+            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.Location = new System.Drawing.Point(7, 240);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(191, 38);
+            this.iconButton3.TabIndex = 23;
+            this.iconButton3.Text = "HORARIOS";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton3.UseVisualStyleBackColor = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,5 +354,6 @@ namespace SGClubDeportivo.Vista
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Panel PanelContenido;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SGClubDeportivo.Controlador;
+using SGClubDeportivo.Vista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +14,14 @@ namespace SGClubDeportivo.Vista
 {
     public partial class frmPrincipal : Form
     {
-        public frmPrincipal()
+        public string _Cargo;
+        public string _Carnet;
+        public frmPrincipal(string carnet, string cargo)
         {
             InitializeComponent();
-            AbrirFormInPanel(new Vista.frmInicio());
+            _Cargo = cargo;
+            _Carnet = carnet;
+            AbrirFormInPanel(new Vista.frmInicio(carnet,cargo));
         }
 
         private void AbrirFormInPanel(object Formhijo)

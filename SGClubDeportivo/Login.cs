@@ -33,7 +33,7 @@ namespace SGClubDeportivo
             {
                 case "SECRETARIA":
                     this.Hide();
-                    frmPrincipal frm = new Vista.frmPrincipal();
+                    frmPrincipal frm = new Vista.frmPrincipal(txtUsuario.Text,tipoUsuario);
                     frm.ShowDialog();
                     break;
                 case "ADMINISTRADOR":

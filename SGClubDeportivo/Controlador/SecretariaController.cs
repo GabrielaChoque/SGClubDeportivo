@@ -57,16 +57,16 @@ namespace SGClubDeportivo.Controlador
             }
         }
         
-        public string nombrePlantel(string pCarnet)
+        public string nombreSecretaria(string pCarnet)
         {
             string nom;
 
             using (var context = new BdClubDeportivoEntities())
             {
-                var lista = context.Administrador.Where(x => x.ci_admin == pCarnet).FirstOrDefault();
-                nom = Convert.ToString(lista.nom_admin);
+                var lista = context.Secretaria.Where(x => x.ci_secretaria == pCarnet).FirstOrDefault();
+                nom = Convert.ToString(lista.nom_secretaria);
 
-                return "Admin." + nom;
+                return "Secretaria " + nom;
             }
         }
         /*

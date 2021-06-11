@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SGClubDeportivo.Controlador;
+using SGClubDeportivo.Vista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,25 @@ namespace SGClubDeportivo.Vista
 {
     public partial class frmInicio : Form
     {
-        public frmInicio()
+        AdministradorController _objAdministrador = new AdministradorController();
+        SecretariaController _objSecretaria = new SecretariaController();
+
+        public string _Cargo;
+        public string _Carnet;
+        public frmInicio(string carnet, string cargo)
         {
             InitializeComponent();
+            _Cargo = cargo;
+            _Carnet = carnet;
+
+            NombreLabel();
+        }
+
+        public void NombreLabel()
+        {
+            if (_Cargo == "SECRETARIA")
+                lblNombre.Text = _objSecretaria.nombreSecretaria(_Carnet);
+            
         }
     }
 }
