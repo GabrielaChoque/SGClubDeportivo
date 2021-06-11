@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SGClubDeportivo.Controlador;
+using SGClubDeportivo.Vista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +14,21 @@ namespace SGClubDeportivo
 {
     public partial class Login : Form
     {
+        AdministradorController _objAdministrador = new AdministradorController();
+        SecretariaController _objSecretaria = new SecretariaController();
         public Login()
         {
             InitializeComponent();
-        }
-        private void Login_Load(object sender, EventArgs e)
-        {
-            
-
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

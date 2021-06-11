@@ -15,21 +15,19 @@ namespace SGClubDeportivo.Vista
         public frmPrincipal()
         {
             InitializeComponent();
+            AbrirFormInPanel(new Vista.frmInicio());
         }
 
-        private void btnPlantelDocente_Click(object sender, EventArgs e)
+        private void AbrirFormInPanel(object Formhijo)
         {
-
-        }
-
-        private void btnEstudiantes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Sidebar_Paint(object sender, PaintEventArgs e)
-        {
-
+            if (this.PanelContenido.Controls.Count > 0)
+                this.PanelContenido.Controls.RemoveAt(0);
+            Form fh = Formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PanelContenido.Controls.Add(fh);
+            this.PanelContenido.Tag = fh;
+            fh.Show();
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

@@ -31,38 +31,39 @@ namespace SGClubDeportivo
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnIngresar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panelBarraSuperior = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtUsuario = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtContrasenia = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panelBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAceptar
+            // btnIngresar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(221, 222);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(145, 43);
-            this.btnAceptar.TabIndex = 32;
-            this.btnAceptar.Text = "INGRESAR";
-            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnIngresar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
+            this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIngresar.Location = new System.Drawing.Point(221, 222);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(145, 43);
+            this.btnIngresar.TabIndex = 32;
+            this.btnIngresar.Text = "INGRESAR";
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnCancelar
             // 
@@ -137,24 +138,24 @@ namespace SGClubDeportivo
             this.iconPictureBox2.TabIndex = 38;
             this.iconPictureBox2.TabStop = false;
             // 
-            // bunifuMaterialTextbox1
+            // txtUsuario
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.HintText = "Usuario";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.SpringGreen;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.PowderBlue;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.SpringGreen;
-            this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(306, 87);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(214, 33);
-            this.bunifuMaterialTextbox1.TabIndex = 39;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtUsuario.ForeColor = System.Drawing.Color.White;
+            this.txtUsuario.HintForeColor = System.Drawing.Color.White;
+            this.txtUsuario.HintText = "Usuario";
+            this.txtUsuario.isPassword = false;
+            this.txtUsuario.LineFocusedColor = System.Drawing.Color.SpringGreen;
+            this.txtUsuario.LineIdleColor = System.Drawing.Color.PowderBlue;
+            this.txtUsuario.LineMouseHoverColor = System.Drawing.Color.SpringGreen;
+            this.txtUsuario.LineThickness = 3;
+            this.txtUsuario.Location = new System.Drawing.Point(306, 87);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(214, 33);
+            this.txtUsuario.TabIndex = 39;
+            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // iconButton1
             // 
@@ -181,24 +182,24 @@ namespace SGClubDeportivo
             this.MoverDashboard.TargetControl = this.panelBarraSuperior;
             this.MoverDashboard.Vertical = true;
             // 
-            // bunifuMaterialTextbox2
+            // txtContrasenia
             // 
-            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox2.HintText = "Contrasenia";
-            this.bunifuMaterialTextbox2.isPassword = true;
-            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.SpringGreen;
-            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.PowderBlue;
-            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.SpringGreen;
-            this.bunifuMaterialTextbox2.LineThickness = 3;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(306, 144);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(214, 33);
-            this.bunifuMaterialTextbox2.TabIndex = 40;
-            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtContrasenia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtContrasenia.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtContrasenia.ForeColor = System.Drawing.Color.White;
+            this.txtContrasenia.HintForeColor = System.Drawing.Color.White;
+            this.txtContrasenia.HintText = "Contrasenia";
+            this.txtContrasenia.isPassword = true;
+            this.txtContrasenia.LineFocusedColor = System.Drawing.Color.SpringGreen;
+            this.txtContrasenia.LineIdleColor = System.Drawing.Color.PowderBlue;
+            this.txtContrasenia.LineMouseHoverColor = System.Drawing.Color.SpringGreen;
+            this.txtContrasenia.LineThickness = 3;
+            this.txtContrasenia.Location = new System.Drawing.Point(306, 144);
+            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Size = new System.Drawing.Size(214, 33);
+            this.txtContrasenia.TabIndex = 40;
+            this.txtContrasenia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // Login
             // 
@@ -206,13 +207,13 @@ namespace SGClubDeportivo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(566, 289);
-            this.Controls.Add(this.bunifuMaterialTextbox2);
-            this.Controls.Add(this.bunifuMaterialTextbox1);
+            this.Controls.Add(this.txtContrasenia);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelBarraSuperior);
-            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.btnCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -220,7 +221,6 @@ namespace SGClubDeportivo
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO DE SESION";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.panelBarraSuperior.ResumeLayout(false);
             this.panelBarraSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -231,17 +231,17 @@ namespace SGClubDeportivo
         }
 
         #endregion
-        public System.Windows.Forms.Button btnAceptar;
+        public System.Windows.Forms.Button btnIngresar;
         public System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel panelBarraSuperior;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtUsuario;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Bunifu.Framework.UI.BunifuDragControl MoverDashboard;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtContrasenia;
     }
 }
 

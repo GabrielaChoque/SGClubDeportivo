@@ -63,10 +63,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\BdClubDeportivoDataSet.Designer.cs">
+    <Compile Include="Controlador\AdministradorController.cs" />
+    <Compile Include="Controlador\SecretariaController.cs" />
+    <Compile Include="Data\Administrador.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BdClubDeportivo.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BdClubDeportivoDataSet.xsd</DependentUpon>
+      <DependentUpon>BdClubDeportivo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BdClubDeportivo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BdClubDeportivo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Categoria.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Horario.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Jugador.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Jugador_cat.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Secretaria.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sysdiagrams.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -106,16 +139,12 @@
     <EmbeddedResource Include="Vista\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Data\BdClubDeportivoDataSet.xsc">
-      <DependentUpon>BdClubDeportivoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Data\BdClubDeportivoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BdClubDeportivoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Data\BdClubDeportivoDataSet.xss">
-      <DependentUpon>BdClubDeportivoDataSet.xsd</DependentUpon>
+    <EntityDeploy Include="Data\BdClubDeportivo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BdClubDeportivo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\BdClubDeportivo.edmx.diagram">
+      <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -132,11 +161,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controlador\" />
     <Folder Include="Vista\Jugadores\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\BdClubDeportivo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
+      <LastGenOutput>BdClubDeportivo.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\BdClubDeportivo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
+      <LastGenOutput>BdClubDeportivo.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
