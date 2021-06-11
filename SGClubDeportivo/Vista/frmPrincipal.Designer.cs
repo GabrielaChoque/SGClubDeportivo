@@ -46,6 +46,7 @@ namespace SGClubDeportivo.Vista
             this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
             this.label2 = new System.Windows.Forms.Label();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.PanelContenido = new System.Windows.Forms.Panel();
             this.panelBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -283,12 +284,22 @@ namespace SGClubDeportivo.Vista
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = false;
             // 
+            // PanelContenido
+            // 
+            this.PanelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
+            this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContenido.Location = new System.Drawing.Point(233, 53);
+            this.PanelContenido.Name = "PanelContenido";
+            this.PanelContenido.Size = new System.Drawing.Size(605, 444);
+            this.PanelContenido.TabIndex = 38;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(838, 497);
+            this.Controls.Add(this.PanelContenido);
             this.Controls.Add(this.PannelMenu);
             this.Controls.Add(this.panelBarraSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -322,5 +333,6 @@ namespace SGClubDeportivo.Vista
         private Bunifu.Framework.UI.BunifuSeparator LineaSidebar;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.Panel PanelContenido;
     }
 }
