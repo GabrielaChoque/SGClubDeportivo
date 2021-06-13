@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SGClubDeportivo
+namespace SGClubDeportivo.Views
 {
-    public partial class Form1 : Form
+    public partial class formPrincipal : Form
     {
-        public Form1()
+        public formPrincipal()
         {
             InitializeComponent();
         }
