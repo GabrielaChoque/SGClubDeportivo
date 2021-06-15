@@ -9,12 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SGClubDeportivo.Data;
 
 namespace SGClubDeportivo.Vista.Gestiones
 {
     public partial class frmGestionJugadores : Form
     {
         JugadorController _objJugador = new JugadorController();
+        CategoriaController _objCategoria = new CategoriaController();
+
+        public bool _esNuevo =true;
         public frmGestionJugadores()
         {
             InitializeComponent();
@@ -37,12 +41,9 @@ namespace SGClubDeportivo.Vista.Gestiones
 
         private void frmGestionJugadores_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'bdClubDeportivoDataSet.Categoria' Puede moverla o quitarla según sea necesario.
-            this.categoriaTableAdapter.Fill(this.bdClubDeportivoDataSet.Categoria);
-            // TODO: esta línea de código carga datos en la tabla 'bdClubDeportivoDataSet1.Jugador' Puede moverla o quitarla según sea necesario.
-            this.jugadorTableAdapter.Fill(this.bdClubDeportivoDataSet1.Jugador);
-            // TODO: esta línea de código carga datos en la tabla 'bdClubDeportivoDataSet.Jugador' Puede moverla o quitarla según sea necesario.
-            this.jugadorTableAdapter.Fill(this.bdClubDeportivoDataSet.Jugador);
+            jugadorBindingSource.DataSource = _objJugador.Listar("");
+
+            
             cmbCategoria.SelectedIndex=0;
         }
 
@@ -109,13 +110,17 @@ namespace SGClubDeportivo.Vista.Gestiones
                     jugadorBindingSource.DataSource = _objJugador.Listar("");
                     lblTituloCategoria.Text = "CATEGORIA (TODOS)";
                     break;
-
             }
         }
 
         private void txtBuscarJugador_OnTextChange(object sender, EventArgs e)
         {
             jugadorBindingSource.DataSource = _objJugador.ListarPorCategoria("", 6);
+        }
+
+        private void btnNuevoJugador_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
