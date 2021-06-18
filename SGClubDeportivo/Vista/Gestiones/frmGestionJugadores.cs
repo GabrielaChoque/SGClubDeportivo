@@ -18,7 +18,7 @@ namespace SGClubDeportivo.Vista.Gestiones
         JugadorController _objJugador = new JugadorController();
         CategoriaController _objCategoria = new CategoriaController();
 
-        public bool _esNuevo =true;
+        
         public frmGestionJugadores()
         {
             InitializeComponent();
@@ -27,10 +27,6 @@ namespace SGClubDeportivo.Vista.Gestiones
         private void linkLabelSalir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-        }
-        private void Listar(string pBuscar, string pNomCategoria)
-        {
-           // jugadorBindingSource.DataSource = _objJugadores.ListarCategoría(pNomCategoria);
         }
         private void jugadorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
