@@ -258,6 +258,7 @@ namespace SGClubDeportivo.Vista
             this.btnJugadores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnJugadores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnJugadores.UseVisualStyleBackColor = false;
+            this.btnJugadores.Click += new System.EventHandler(this.btnJugadores_Click);
             // 
             // btnInicio
             // 
@@ -278,6 +279,7 @@ namespace SGClubDeportivo.Vista
             this.btnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // LineaSidebar
             // 

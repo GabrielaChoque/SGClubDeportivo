@@ -17,7 +17,7 @@ namespace SGClubDeportivo.Controlador
         }
         public List<Jugador> ListarPorCategoria(string pBuscarNombre, int pIdCategoria)
         {
-            string c = "SELECT * FROM Jugador WHERE nom_jugador LIKE '% %' AND id_categoria="+Convert.ToString(pIdCategoria);
+            string c = "SELECT * FROM Jugador WHERE nom_jugador LIKE '%"+pBuscarNombre+"%' AND id_categoria="+Convert.ToString(pIdCategoria);
             return _db.Jugador.SqlQuery(c).ToList();
         }
         public bool Insertar(Data.Jugador reg)
@@ -33,7 +33,7 @@ namespace SGClubDeportivo.Controlador
         }
         public bool Eliminar(string pParametro)
         {
-            var reg = _db.Jugador.Where(x => x.ci_secretaria == pParametro).FirstOrDefault();
+            var reg = _db.Jugador.Where(x => x.ci_jugador == pParametro).FirstOrDefault();
             _db.Jugador.Remove(reg);
             return _db.SaveChanges() > 0;
         }

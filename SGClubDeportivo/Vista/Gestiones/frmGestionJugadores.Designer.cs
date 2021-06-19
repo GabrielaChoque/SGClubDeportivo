@@ -364,28 +364,28 @@ namespace SGClubDeportivo.Vista.Gestiones
             // cijugadorDataGridViewTextBoxColumn
             // 
             this.cijugadorDataGridViewTextBoxColumn.DataPropertyName = "ci_jugador";
-            this.cijugadorDataGridViewTextBoxColumn.FillWeight = 57.19584F;
+            this.cijugadorDataGridViewTextBoxColumn.FillWeight = 82.25953F;
             this.cijugadorDataGridViewTextBoxColumn.HeaderText = "CI";
             this.cijugadorDataGridViewTextBoxColumn.Name = "cijugadorDataGridViewTextBoxColumn";
             // 
             // nomjugadorDataGridViewTextBoxColumn
             // 
             this.nomjugadorDataGridViewTextBoxColumn.DataPropertyName = "nom_jugador";
-            this.nomjugadorDataGridViewTextBoxColumn.FillWeight = 409.5413F;
+            this.nomjugadorDataGridViewTextBoxColumn.FillWeight = 241.5161F;
             this.nomjugadorDataGridViewTextBoxColumn.HeaderText = "NOMBRE COMPLETO";
             this.nomjugadorDataGridViewTextBoxColumn.Name = "nomjugadorDataGridViewTextBoxColumn";
             // 
             // fechanacDataGridViewTextBoxColumn
             // 
             this.fechanacDataGridViewTextBoxColumn.DataPropertyName = "fecha_nac";
-            this.fechanacDataGridViewTextBoxColumn.FillWeight = 57.19584F;
+            this.fechanacDataGridViewTextBoxColumn.FillWeight = 82.25953F;
             this.fechanacDataGridViewTextBoxColumn.HeaderText = "FECHA NAC";
             this.fechanacDataGridViewTextBoxColumn.Name = "fechanacDataGridViewTextBoxColumn";
             // 
             // fechar_reg
             // 
             this.fechar_reg.DataPropertyName = "fecha_registro";
-            this.fechar_reg.FillWeight = 44.27796F;
+            this.fechar_reg.FillWeight = 63.68092F;
             this.fechar_reg.HeaderText = "FECHA REG";
             this.fechar_reg.Name = "fechar_reg";
             // 
@@ -405,13 +405,13 @@ namespace SGClubDeportivo.Vista.Gestiones
             // 
             // Modificar
             // 
-            this.Modificar.FillWeight = 107.6446F;
+            this.Modificar.FillWeight = 154.8154F;
             this.Modificar.HeaderText = "Editar";
             this.Modificar.Name = "Modificar";
             // 
             // Eliminar
             // 
-            this.Eliminar.FillWeight = 117.1224F;
+            this.Eliminar.FillWeight = 168.4465F;
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             // 

@@ -76,10 +76,15 @@ namespace SGClubDeportivo.Vista.Gestiones
 
         private void btnAceptarCategoria_Click(object sender, EventArgs e)
         {
-            switch (cmbCategoria.Text)
+            ListarPorCategoria(cmbCategoria.Text);
+        }
+
+        private void ListarPorCategoria(string pNomCategoria)
+        {
+            switch (pNomCategoria)
             {
-                case "SUB 7": 
-                    jugadorBindingSource.DataSource = _objJugador.ListarPorCategoria("",1);
+                case "SUB 7":
+                    jugadorBindingSource.DataSource = _objJugador.ListarPorCategoria("", 1);
                     lblTituloCategoria.Text = "CATEGORIA (SUB 7)";
                     break;
                 case "SUB 9":
@@ -108,7 +113,6 @@ namespace SGClubDeportivo.Vista.Gestiones
                     break;
             }
         }
-
         private void txtBuscarJugador_OnTextChange(object sender, EventArgs e)
         {
             jugadorBindingSource.DataSource = _objJugador.ListarPorCategoria("", 6);
@@ -120,6 +124,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             //Insertar AddJugador = new Insertar();
             AddJugador.ShowDialog();
             //Listar(txtBuscar.Text);
+            ListarPorCategoria(cmbCategoria.Text);
         }
 
         private void dgvJugadores_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -130,6 +135,16 @@ namespace SGClubDeportivo.Vista.Gestiones
                 AddJugador.ShowDialog();
                 _objJugador = new JugadorController();
             }
+            if (this.dgvJugadores.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTE JUGADOR?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    _objJugador.Eliminar(ci_jugadorLabel1.Text);
+                    _objJugador = new JugadorController();
+                }
+            }
+            ListarPorCategoria(cmbCategoria.Text);
         }
     }
 }

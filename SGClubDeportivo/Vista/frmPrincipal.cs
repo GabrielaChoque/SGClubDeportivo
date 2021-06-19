@@ -21,7 +21,7 @@ namespace SGClubDeportivo.Vista
             InitializeComponent();
             _Cargo = cargo;
             _Carnet = carnet;
-            AbrirFormInPanel(new Vista.frmInicio(carnet,cargo));
+            AbrirFormInPanel(new Vista.frmInicio(_Carnet, _Cargo));
         }
 
         private void AbrirFormInPanel(object Formhijo)
@@ -39,6 +39,16 @@ namespace SGClubDeportivo.Vista
         private void iconButton1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnJugadores_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionJugadores());
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.frmInicio(_Carnet, _Cargo));
         }
     }
 }

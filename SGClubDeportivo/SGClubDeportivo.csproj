@@ -131,12 +131,6 @@
     <Compile Include="Vista\Gestiones\frmGestionJugadores.Designer.cs">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Gestiones\Insertar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Gestiones\Insertar.Designer.cs">
-      <DependentUpon>Insertar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Ventanas\frmCrudJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,9 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionJugadores.resx">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Gestiones\Insertar.resx">
-      <DependentUpon>Insertar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmCrudJugadores.resx">
       <DependentUpon>frmCrudJugadores.cs</DependentUpon>
