@@ -131,6 +131,12 @@
     <Compile Include="Vista\Gestiones\frmGestionJugadores.Designer.cs">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Gestiones\Insertar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\Insertar.Designer.cs">
+      <DependentUpon>Insertar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas\frmCrudJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="Vista\Gestiones\frmGestionJugadores.resx">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\Insertar.resx">
+      <DependentUpon>Insertar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmCrudJugadores.resx">
       <DependentUpon>frmCrudJugadores.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +189,34 @@
       <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Administrador.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+AdministradorDataTable.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+AdministradorRow.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+AdministradorRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+AdministradorRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+CategoriaDataTable.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+CategoriaRow.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+CategoriaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+CategoriaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+HorarioDataTable.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+HorarioRow.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+HorarioRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+HorarioRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+JugadorDataTable.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+JugadorRow.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+JugadorRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+JugadorRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaDataTable.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRow.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoEntities.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Categoria.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Horario.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Jugador.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Secretaria.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.sysdiagrams.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

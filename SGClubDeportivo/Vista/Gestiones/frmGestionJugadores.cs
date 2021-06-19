@@ -1,5 +1,5 @@
 ﻿using SGClubDeportivo.Controlador;
-using SGClubDeportivo.Vista;
+using SGClubDeportivo.Vista.Ventanas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -116,7 +116,20 @@ namespace SGClubDeportivo.Vista.Gestiones
 
         private void btnNuevoJugador_Click(object sender, EventArgs e)
         {
+            frmCrudJugadores AddJugador = new frmCrudJugadores();
+            //Insertar AddJugador = new Insertar();
+            AddJugador.ShowDialog();
+            //Listar(txtBuscar.Text);
+        }
 
+        private void dgvJugadores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dgvJugadores.Columns[e.ColumnIndex].Name == "Modificar")
+            {
+                frmCrudJugadores AddJugador = new frmCrudJugadores(ci_jugadorLabel1.Text, Convert.ToInt32(id_categoriaLabel1.Text));
+                AddJugador.ShowDialog();
+                _objJugador = new JugadorController();
+            }
         }
     }
 }

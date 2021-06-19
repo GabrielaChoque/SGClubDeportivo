@@ -34,12 +34,12 @@ namespace SGClubDeportivo
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panelBarraSuperior = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.txtUsuario = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.txtContrasenia = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panelBarraSuperior.SuspendLayout();
@@ -86,20 +86,29 @@ namespace SGClubDeportivo
             this.panelBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.panelBarraSuperior.Controls.Add(this.iconButton1);
             this.panelBarraSuperior.Controls.Add(this.label1);
-            this.panelBarraSuperior.Location = new System.Drawing.Point(1, 2);
+            this.panelBarraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBarraSuperior.Location = new System.Drawing.Point(0, 0);
             this.panelBarraSuperior.Name = "panelBarraSuperior";
-            this.panelBarraSuperior.Size = new System.Drawing.Size(563, 51);
+            this.panelBarraSuperior.Size = new System.Drawing.Size(566, 51);
             this.panelBarraSuperior.TabIndex = 35;
             // 
-            // pictureBox1
+            // iconButton1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 195);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.iconButton1.IconColor = System.Drawing.Color.LightCoral;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(516, 3);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(37, 41);
+            this.iconButton1.TabIndex = 40;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // label1
             // 
@@ -111,6 +120,16 @@ namespace SGClubDeportivo
             this.label1.Size = new System.Drawing.Size(208, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "INICIO DE SESION";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(189, 195);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
             // 
             // iconPictureBox1
             // 
@@ -156,24 +175,6 @@ namespace SGClubDeportivo
             this.txtUsuario.Size = new System.Drawing.Size(214, 33);
             this.txtUsuario.TabIndex = 39;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
-            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.iconButton1.IconColor = System.Drawing.Color.LightCoral;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(516, 3);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(37, 41);
-            this.iconButton1.TabIndex = 40;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // MoverDashboard
             // 

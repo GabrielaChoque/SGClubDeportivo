@@ -44,13 +44,6 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.txtBuscarJugador = new Bunifu.Framework.UI.BunifuTextbox();
             this.btnNuevoJugador = new FontAwesome.Sharp.IconButton();
             this.dgvJugadores = new System.Windows.Forms.DataGridView();
-            this.cijugadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomjugadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechanacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cisecretariaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jugadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bdClubDeportivoDataSet = new SGClubDeportivo.Data.BdClubDeportivoDataSet();
             this.jugadorTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter();
@@ -64,6 +57,14 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.categoriaTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.CategoriaTableAdapter();
             this.categoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lblIdCatInsert = new System.Windows.Forms.Label();
+            this.cijugadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomjugadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechanacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechar_reg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cisecretariaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             id_categoriaLabel = new System.Windows.Forms.Label();
             ci_jugadorLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -261,6 +262,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.cijugadorDataGridViewTextBoxColumn,
             this.nomjugadorDataGridViewTextBoxColumn,
             this.fechanacDataGridViewTextBoxColumn,
+            this.fechar_reg,
             this.cisecretariaDataGridViewTextBoxColumn,
             this.idcategoriaDataGridViewTextBoxColumn,
             this.Modificar,
@@ -272,51 +274,8 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.dgvJugadores.RowHeadersVisible = false;
             this.dgvJugadores.Size = new System.Drawing.Size(547, 227);
             this.dgvJugadores.TabIndex = 14;
+            this.dgvJugadores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJugadores_CellClick);
             this.dgvJugadores.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.jugadorDataGridView_CellPainting);
-            // 
-            // cijugadorDataGridViewTextBoxColumn
-            // 
-            this.cijugadorDataGridViewTextBoxColumn.DataPropertyName = "ci_jugador";
-            this.cijugadorDataGridViewTextBoxColumn.HeaderText = "CI";
-            this.cijugadorDataGridViewTextBoxColumn.Name = "cijugadorDataGridViewTextBoxColumn";
-            // 
-            // nomjugadorDataGridViewTextBoxColumn
-            // 
-            this.nomjugadorDataGridViewTextBoxColumn.DataPropertyName = "nom_jugador";
-            this.nomjugadorDataGridViewTextBoxColumn.HeaderText = "NOMBRE COMPLETO";
-            this.nomjugadorDataGridViewTextBoxColumn.Name = "nomjugadorDataGridViewTextBoxColumn";
-            // 
-            // fechanacDataGridViewTextBoxColumn
-            // 
-            this.fechanacDataGridViewTextBoxColumn.DataPropertyName = "fecha_nac";
-            this.fechanacDataGridViewTextBoxColumn.HeaderText = "FECHA NAC";
-            this.fechanacDataGridViewTextBoxColumn.Name = "fechanacDataGridViewTextBoxColumn";
-            // 
-            // cisecretariaDataGridViewTextBoxColumn
-            // 
-            this.cisecretariaDataGridViewTextBoxColumn.DataPropertyName = "ci_secretaria";
-            this.cisecretariaDataGridViewTextBoxColumn.HeaderText = "ci_secretaria";
-            this.cisecretariaDataGridViewTextBoxColumn.Name = "cisecretariaDataGridViewTextBoxColumn";
-            this.cisecretariaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idcategoriaDataGridViewTextBoxColumn
-            // 
-            this.idcategoriaDataGridViewTextBoxColumn.DataPropertyName = "id_categoria";
-            this.idcategoriaDataGridViewTextBoxColumn.HeaderText = "id_categoria";
-            this.idcategoriaDataGridViewTextBoxColumn.Name = "idcategoriaDataGridViewTextBoxColumn";
-            this.idcategoriaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Modificar
-            // 
-            this.Modificar.FillWeight = 188.2036F;
-            this.Modificar.HeaderText = "Editar";
-            this.Modificar.Name = "Modificar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 204.7744F;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
             // 
             // jugadorBindingSource
             // 
@@ -402,6 +361,60 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.lblIdCatInsert.TabIndex = 18;
             this.lblIdCatInsert.Text = "label1";
             // 
+            // cijugadorDataGridViewTextBoxColumn
+            // 
+            this.cijugadorDataGridViewTextBoxColumn.DataPropertyName = "ci_jugador";
+            this.cijugadorDataGridViewTextBoxColumn.FillWeight = 57.19584F;
+            this.cijugadorDataGridViewTextBoxColumn.HeaderText = "CI";
+            this.cijugadorDataGridViewTextBoxColumn.Name = "cijugadorDataGridViewTextBoxColumn";
+            // 
+            // nomjugadorDataGridViewTextBoxColumn
+            // 
+            this.nomjugadorDataGridViewTextBoxColumn.DataPropertyName = "nom_jugador";
+            this.nomjugadorDataGridViewTextBoxColumn.FillWeight = 409.5413F;
+            this.nomjugadorDataGridViewTextBoxColumn.HeaderText = "NOMBRE COMPLETO";
+            this.nomjugadorDataGridViewTextBoxColumn.Name = "nomjugadorDataGridViewTextBoxColumn";
+            // 
+            // fechanacDataGridViewTextBoxColumn
+            // 
+            this.fechanacDataGridViewTextBoxColumn.DataPropertyName = "fecha_nac";
+            this.fechanacDataGridViewTextBoxColumn.FillWeight = 57.19584F;
+            this.fechanacDataGridViewTextBoxColumn.HeaderText = "FECHA NAC";
+            this.fechanacDataGridViewTextBoxColumn.Name = "fechanacDataGridViewTextBoxColumn";
+            // 
+            // fechar_reg
+            // 
+            this.fechar_reg.DataPropertyName = "fecha_registro";
+            this.fechar_reg.FillWeight = 44.27796F;
+            this.fechar_reg.HeaderText = "FECHA REG";
+            this.fechar_reg.Name = "fechar_reg";
+            // 
+            // cisecretariaDataGridViewTextBoxColumn
+            // 
+            this.cisecretariaDataGridViewTextBoxColumn.DataPropertyName = "ci_secretaria";
+            this.cisecretariaDataGridViewTextBoxColumn.HeaderText = "ci_secretaria";
+            this.cisecretariaDataGridViewTextBoxColumn.Name = "cisecretariaDataGridViewTextBoxColumn";
+            this.cisecretariaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idcategoriaDataGridViewTextBoxColumn
+            // 
+            this.idcategoriaDataGridViewTextBoxColumn.DataPropertyName = "id_categoria";
+            this.idcategoriaDataGridViewTextBoxColumn.HeaderText = "id_categoria";
+            this.idcategoriaDataGridViewTextBoxColumn.Name = "idcategoriaDataGridViewTextBoxColumn";
+            this.idcategoriaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Modificar
+            // 
+            this.Modificar.FillWeight = 107.6446F;
+            this.Modificar.HeaderText = "Editar";
+            this.Modificar.Name = "Modificar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 117.1224F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            // 
             // frmGestionJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,17 +475,18 @@ namespace SGClubDeportivo.Vista.Gestiones
         private System.Windows.Forms.Label ci_jugadorLabel1;
         private Data.BdClubDeportivoDataSet bdClubDeportivoDataSet1;
         private System.Windows.Forms.BindingSource jugadorBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cijugadorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomjugadorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechanacDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cisecretariaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcategoriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Modificar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
         private Bunifu.Framework.UI.BunifuDragControl MoverVentanaCrud;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
         private Data.BdClubDeportivoDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
         private System.Windows.Forms.BindingSource categoriaBindingSource1;
         private System.Windows.Forms.Label lblIdCatInsert;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cijugadorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomjugadorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechanacDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechar_reg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cisecretariaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idcategoriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Modificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
     }
 }

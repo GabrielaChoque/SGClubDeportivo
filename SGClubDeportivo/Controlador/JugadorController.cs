@@ -39,7 +39,7 @@ namespace SGClubDeportivo.Controlador
         }
         internal List<Jugador> BuscarPorPK(string pCuenta)
         {
-            return _db.Jugador.Where(x => x.ci_secretaria == pCuenta).ToList();
+            return _db.Jugador.Where(x => x.ci_jugador == pCuenta).ToList();
         }
     }
 }
