@@ -50,5 +50,10 @@ namespace SGClubDeportivo.Vista
         {
             AbrirFormInPanel(new Vista.frmInicio(_Carnet, _Cargo));
         }
+
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionHorario());
+        }
     }
 }

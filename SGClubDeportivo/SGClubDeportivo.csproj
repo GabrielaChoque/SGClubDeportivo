@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\CategoriaController.cs" />
+    <Compile Include="Controlador\HorarioController.cs" />
     <Compile Include="Controlador\JugadorController.cs" />
     <Compile Include="Data\BdClubDeportivoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -125,6 +126,12 @@
     <Compile Include="Vista\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionHorario.Designer.cs">
+      <DependentUpon>frmGestionHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Gestiones\frmGestionJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionHorario.resx">
+      <DependentUpon>frmGestionHorario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionJugadores.resx">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
