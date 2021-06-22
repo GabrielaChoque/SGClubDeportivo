@@ -38,6 +38,8 @@ namespace SGClubDeportivo.Controlador
     {
         public int id { get; set; }
         public int idcategoria { get; set; }
+        public string hora { get; set; }
+        public string dia { get; set; }
         BdClubDeportivoEntities db = new BdClubDeportivoEntities();
       public  List<int> dias= new List<int> ();
       public   List<int> horas= new List<int>();

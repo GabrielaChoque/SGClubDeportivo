@@ -7,6 +7,7 @@ namespace SGClubDeportivo.Controlador
 {
     class JugadorController
     {
+
         BdClubDeportivoEntities _db = new BdClubDeportivoEntities();
 
         public List<Jugador> Listar(string pBuscar)

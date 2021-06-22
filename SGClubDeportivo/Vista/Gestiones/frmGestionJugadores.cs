@@ -49,7 +49,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                DataGridViewButtonCell celBoton = this.dgvJugadores.Rows[e.RowIndex].Cells["Modificar"] as DataGridViewButtonCell;
+                //DataGridViewButtonCell celBoton = this.dgvJugadores.Rows[e.RowIndex].Cells["Modificar"] as DataGridViewButtonCell;
                 System.Drawing.Icon icoEditar = new System.Drawing.Icon(Environment.CurrentDirectory + @"\\editar.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
                 e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
 

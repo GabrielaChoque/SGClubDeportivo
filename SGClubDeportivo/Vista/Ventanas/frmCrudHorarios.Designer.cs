@@ -44,14 +44,14 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.PrimerDia = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.diaDos = new System.Windows.Forms.Label();
+            this.diaUno = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.diaUno = new System.Windows.Forms.Label();
             this.comboDia2 = new System.Windows.Forms.ComboBox();
             this.comboDia1 = new System.Windows.Forms.ComboBox();
             this.cmbHora = new System.Windows.Forms.ComboBox();
             this.cmbHora2 = new System.Windows.Forms.ComboBox();
-            this.diaDos = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             ci_jugadorLabel = new System.Windows.Forms.Label();
@@ -59,6 +59,16 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ci_jugadorLabel
+            // 
+            ci_jugadorLabel.AutoSize = true;
+            ci_jugadorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ci_jugadorLabel.Location = new System.Drawing.Point(304, 63);
+            ci_jugadorLabel.Name = "ci_jugadorLabel";
+            ci_jugadorLabel.Size = new System.Drawing.Size(114, 17);
+            ci_jugadorLabel.TabIndex = 51;
+            ci_jugadorLabel.Text = "NRO CARNET:";
             // 
             // btnAceptar
             // 
@@ -141,25 +151,15 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.lblTitulo.TabIndex = 5;
             this.lblTitulo.Text = "HORARIO ACTUAL";
             // 
-            // ci_jugadorLabel
-            // 
-            ci_jugadorLabel.AutoSize = true;
-            ci_jugadorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ci_jugadorLabel.Location = new System.Drawing.Point(304, 63);
-            ci_jugadorLabel.Name = "ci_jugadorLabel";
-            ci_jugadorLabel.Size = new System.Drawing.Size(114, 17);
-            ci_jugadorLabel.TabIndex = 51;
-            ci_jugadorLabel.Text = "NRO CARNET:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 63);
+            this.label1.Location = new System.Drawing.Point(94, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 17);
+            this.label1.Size = new System.Drawing.Size(117, 17);
             this.label1.TabIndex = 52;
-            this.label1.Text = "NUM ENTRENAMIENTO";
+            this.label1.Text = "ID CATEGORIA";
             // 
             // cmbCategoria
             // 
@@ -267,6 +267,28 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.panel3.Size = new System.Drawing.Size(501, 76);
             this.panel3.TabIndex = 59;
             // 
+            // diaDos
+            // 
+            this.diaDos.AutoSize = true;
+            this.diaDos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.diaDos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.diaDos.Location = new System.Drawing.Point(136, 41);
+            this.diaDos.Name = "diaDos";
+            this.diaDos.Size = new System.Drawing.Size(191, 24);
+            this.diaDos.TabIndex = 62;
+            this.diaDos.Text = "ENTRENAMIENTO 2";
+            // 
+            // diaUno
+            // 
+            this.diaUno.AutoSize = true;
+            this.diaUno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.diaUno.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.diaUno.Location = new System.Drawing.Point(136, 9);
+            this.diaUno.Name = "diaUno";
+            this.diaUno.Size = new System.Drawing.Size(191, 24);
+            this.diaUno.TabIndex = 61;
+            this.diaUno.Text = "ENTRENAMIENTO 1";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -286,17 +308,6 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.label4.Size = new System.Drawing.Size(57, 24);
             this.label4.TabIndex = 59;
             this.label4.Text = "Dia 1:";
-            // 
-            // diaUno
-            // 
-            this.diaUno.AutoSize = true;
-            this.diaUno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.diaUno.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.diaUno.Location = new System.Drawing.Point(136, 9);
-            this.diaUno.Name = "diaUno";
-            this.diaUno.Size = new System.Drawing.Size(191, 24);
-            this.diaUno.TabIndex = 61;
-            this.diaUno.Text = "ENTRENAMIENTO 1";
             // 
             // comboDia2
             // 
@@ -355,17 +366,6 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.cmbHora2.Name = "cmbHora2";
             this.cmbHora2.Size = new System.Drawing.Size(99, 23);
             this.cmbHora2.TabIndex = 63;
-            // 
-            // diaDos
-            // 
-            this.diaDos.AutoSize = true;
-            this.diaDos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.diaDos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.diaDos.Location = new System.Drawing.Point(136, 41);
-            this.diaDos.Name = "diaDos";
-            this.diaDos.Size = new System.Drawing.Size(191, 24);
-            this.diaDos.TabIndex = 62;
-            this.diaDos.Text = "ENTRENAMIENTO 2";
             // 
             // label6
             // 
