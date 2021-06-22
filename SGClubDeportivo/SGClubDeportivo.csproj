@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\CategoriaController.cs" />
+    <Compile Include="Controlador\EntrenamientoController.cs" />
     <Compile Include="Controlador\HorarioController.cs" />
     <Compile Include="Controlador\JugadorController.cs" />
     <Compile Include="Data\BdClubDeportivoDataSet.Designer.cs">
@@ -92,6 +93,9 @@
       <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data\Categoria.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Entrenamiento.cs">
       <DependentUpon>BdClubDeportivo.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Horario.cs">
@@ -138,11 +142,23 @@
     <Compile Include="Vista\Gestiones\frmGestionJugadores.Designer.cs">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudHorarios.Designer.cs">
+      <DependentUpon>frmCrudHorarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas\frmCrudJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Ventanas\frmCrudJugadores.Designer.cs">
       <DependentUpon>frmCrudJugadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\VerHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\VerHorario.Designer.cs">
+      <DependentUpon>VerHorario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -168,8 +184,14 @@
     <EmbeddedResource Include="Vista\Gestiones\frmGestionJugadores.resx">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmCrudHorarios.resx">
+      <DependentUpon>frmCrudHorarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmCrudJugadores.resx">
       <DependentUpon>frmCrudJugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\VerHorario.resx">
+      <DependentUpon>VerHorario.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Data\BdClubDeportivo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

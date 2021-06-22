@@ -1,9 +1,7 @@
-﻿using System;
+﻿using SGClubDeportivo.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SGClubDeportivo.Data;
 
 namespace SGClubDeportivo.Controlador
 {

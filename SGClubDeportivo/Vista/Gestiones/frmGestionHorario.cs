@@ -1,4 +1,6 @@
 ﻿using SGClubDeportivo.Controlador;
+using SGClubDeportivo.Data;
+using SGClubDeportivo.Vista.Ventanas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,48 +27,92 @@ namespace SGClubDeportivo.Vista.Gestiones
 
         private void btnAceptarCategoria_Click(object sender, EventArgs e)
         {
-            string res = ""; int fil, col;
-            switch (cmbCategoria.Text)
+            ListarPorCategoria(selHorario.Text);
+        }
+       public void refrescar()
+        {
+            using (BdClubDeportivoEntities db = new BdClubDeportivoEntities()) {
+                var lst = from d in db.Jugador select d;
+                //dataListJugador.DataSource = lst.ToList();
+            }
+        }
+        private void ListarPorCategoria(string pNomCategoria)
+        {
+            switch (pNomCategoria)
             {
                 case "SUB 7":
-                    //    BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
-                    seleccionCategoria(1);
-                    TituloCategoria.Text = "Categoria(SUB 7)";
-                    dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                    jugadorBindingSource.DataSource = _objJugador.ListarPorCategoria("", 1);
+                    TituloCategoria.Text = "CATEGORIA (SUB 7)";
                     break;
                 case "SUB 9":
-                    //    BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
-                    seleccionCategoria(2);
-                    TituloCategoria.Text = "Categoria(SUB 9)";
-                    dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                    jugadorBindingSource.DataSource = _objJugador.ListarPorCategoria("", 2);
+                    TituloCategoria.Text = "CATEGORIA (SUB 9)";
                     break;
                 case "SUB 11":
-                    //  BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
-                    seleccionCategoria(3);
-                    TituloCategoria.Text = "Categoria(SUB 11)";
-                    dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                    jugadorBindingSource.DataSource = _objJugador.ListarPorCategoria("", 3);
+                    TituloCategoria.Text = "CATEGORIA (SUB 11)";
                     break;
                 case "SUB 13":
-                    //    BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
-                    seleccionCategoria(4);
-                    TituloCategoria.Text = "Categoria(SUB 13)";
-                    dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                    jugadorBindingSource.DataSource = _objJugador.ListarPorCategoria("", 4);
+                    TituloCategoria.Text = "CATEGORIA (SUB 13)";
                     break;
                 case "SUB 15":
-                    //  BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
-                    seleccionCategoria(5);
-                    TituloCategoria.Text = "Categoria(SUB 15)";
-                    dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                    jugadorBindingSource.DataSource = _objJugador.ListarPorCategoria("", 5);
+                    TituloCategoria.Text = "CATEGORIA (SUB 15)";
                     break;
                 case "SUB 17":
-                    // BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
-                    seleccionCategoria(6);
-                    TituloCategoria.Text = "Categoria(SUB 17)";
-                    dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                    jugadorBindingSource.DataSource = _objJugador.ListarPorCategoria("", 6);
+                    TituloCategoria.Text = "CATEGORIA (SUB 17)";
+                    break;
+                case "TODOS":
+                    jugadorBindingSource.DataSource = _objJugador.Listar("");
+                    TituloCategoria.Text = "CATEGORIA (TODOS)";
                     break;
             }
         }
-        public void dibujarHorarios(TableLayoutPanel referencia, int x, int y, int x1, int y1, int x2, int y2, int x3, int y3)
+            /*  public void listaHorarios(string sel)
+              {
+                  BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                  switch (sel)
+                  {
+                      case "SUB 7":
+                          seleccionCategoria(1);
+                          TituloCategoria.Text = "Categoria(SUB 7)";
+                          dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                        //  BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                          break;
+                      case "SUB 9":
+                          seleccionCategoria(2);
+                          TituloCategoria.Text = "Categoria(SUB 9)";
+                          dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                         // BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                          break;
+                      case "SUB 11":
+                          seleccionCategoria(3);
+                          TituloCategoria.Text = "Categoria(SUB 11)";
+                          dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                         // BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                          break;
+                      case "SUB 13":
+                          seleccionCategoria(4);
+                          TituloCategoria.Text = "Categoria(SUB 13)";
+                          dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                       //   BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                          break;
+                      case "SUB 15":
+                          seleccionCategoria(5);
+                          TituloCategoria.Text = "Categoria(SUB 15)";
+                          dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                         // BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                          break;
+                      case "SUB 17":
+                          seleccionCategoria(6);
+                          TituloCategoria.Text = "Categoria(SUB 17)";
+                          dibujarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+                          break;
+                  }
+              }*/
+            public void dibujarHorarios(TableLayoutPanel referencia, int x, int y, int x1, int y1, int x2, int y2, int x3, int y3)
         {
             Button dib = new Button();
             Button dib1 = new Button();
@@ -123,6 +169,34 @@ namespace SGClubDeportivo.Vista.Gestiones
         {
             MessageBox.Show("ESTA SEGURO SALIR OPERACION?","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             this.Close();       
+        }
+
+        private void PanelHorario_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+           // BorrarHorarios(PanelHorario, colDia[0], rowHora[0], colDia[1], rowHora[1], colDia[2], rowHora[2], colDia[3], rowHora[3]);
+        }
+
+        private void dgvJugadores_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.dgvJugadores.Columns[e.ColumnIndex].Name == "Modificar" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvJugadores.Rows[e.RowIndex].Cells["Modificar"] as DataGridViewButtonCell;
+                System.Drawing.Icon icoEditar = new System.Drawing.Icon(Environment.CurrentDirectory + @"\\editar.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
+                e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvJugadores.Rows[e.RowIndex].Height = icoEditar.Height + 8;
+                this.dgvJugadores.Columns[e.ColumnIndex].Width = icoEditar.Width + 8;
+
+                e.Handled = true;
+            }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            frmCrudHorarios frhora = new frmCrudHorarios();
+            frhora.Show();
         }
     }
 }

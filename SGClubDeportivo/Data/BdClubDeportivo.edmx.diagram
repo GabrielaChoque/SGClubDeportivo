@@ -15,6 +15,9 @@
         <AssociationConnector Association="BdClubDeportivoModel.FK_Horario_Categoria" ManuallyRouted="false" />
         <AssociationConnector Association="BdClubDeportivoModel.FK_Jugador_Secretaria" ManuallyRouted="false" />
         <AssociationConnector Association="BdClubDeportivoModel.FK_Jugador_Categoria" />
+        <EntityTypeShape EntityType="BdClubDeportivoModel.Entrenamiento" Width="1.5" PointX="6" PointY="7.25" />
+        <AssociationConnector Association="BdClubDeportivoModel.FK_Entrenamiento_Categoria" />
+        <AssociationConnector Association="BdClubDeportivoModel.FK_Entrenamiento_Jugador" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

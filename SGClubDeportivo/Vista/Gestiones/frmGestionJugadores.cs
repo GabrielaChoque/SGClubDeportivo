@@ -131,8 +131,8 @@ namespace SGClubDeportivo.Vista.Gestiones
         {
             if (this.dgvJugadores.Columns[e.ColumnIndex].Name == "Modificar")
             {
-                frmCrudJugadores AddJugador = new frmCrudJugadores(ci_jugadorLabel1.Text, Convert.ToInt32(id_categoriaLabel1.Text));
-                AddJugador.ShowDialog();
+                frmCrudJugadores AddHorario= new frmCrudJugadores(ci_jugadorLabel1.Text, Convert.ToInt32(id_categoriaLabel1.Text));
+                AddHorario.Show();
                 _objJugador = new JugadorController();
             }
             if (this.dgvJugadores.Columns[e.ColumnIndex].Name == "Eliminar")

@@ -34,7 +34,10 @@ namespace SGClubDeportivo.Controlador
     [4,5]=[Viernes,16-18]
     */
     class HorarioController
+
     {
+        public int id { get; set; }
+        public int idcategoria { get; set; }
         BdClubDeportivoEntities db = new BdClubDeportivoEntities();
       public  List<int> dias= new List<int> ();
       public   List<int> horas= new List<int>();

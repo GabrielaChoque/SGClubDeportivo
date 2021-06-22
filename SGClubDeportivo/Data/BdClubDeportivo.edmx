@@ -20,6 +20,18 @@
           <Property Name="id_categoria" Type="int" Nullable="false" />
           <Property Name="nom_categoria" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Entrenamiento">
+          <Key>
+            <PropertyRef Name="id_entrenamiento" />
+          </Key>
+          <Property Name="id_entrenamiento" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="primerdia" Type="varchar" MaxLength="10" />
+          <Property Name="segundodia" Type="varchar" MaxLength="10" />
+          <Property Name="primerhorario" Type="varchar" MaxLength="10" />
+          <Property Name="segundohorario" Type="varchar" MaxLength="10" />
+          <Property Name="ci_jugador" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="id_categoria" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Horario">
           <Key>
             <PropertyRef Name="id_horario" />
@@ -59,6 +71,30 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <Association Name="FK_Entrenamiento_Categoria">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Entrenamiento" Type="Self.Entrenamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="Entrenamiento">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Entrenamiento_Jugador">
+          <End Role="Jugador" Type="Self.Jugador" Multiplicity="1" />
+          <End Role="Entrenamiento" Type="Self.Entrenamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugador">
+              <PropertyRef Name="ci_jugador" />
+            </Principal>
+            <Dependent Role="Entrenamiento">
+              <PropertyRef Name="ci_jugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Horario_Administrador">
           <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
           <End Role="Horario" Type="Self.Horario" Multiplicity="*" />
@@ -110,10 +146,19 @@
         <EntityContainer Name="BdClubDeportivoModelStoreContainer">
           <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Entrenamiento" EntityType="Self.Entrenamiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Horario" EntityType="Self.Horario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jugador" EntityType="Self.Jugador" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Secretaria" EntityType="Self.Secretaria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Entrenamiento_Categoria" Association="Self.FK_Entrenamiento_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Entrenamiento" EntitySet="Entrenamiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Entrenamiento_Jugador" Association="Self.FK_Entrenamiento_Jugador">
+            <End Role="Jugador" EntitySet="Jugador" />
+            <End Role="Entrenamiento" EntitySet="Entrenamiento" />
+          </AssociationSet>
           <AssociationSet Name="FK_Horario_Administrador" Association="Self.FK_Horario_Administrador">
             <End Role="Administrador" EntitySet="Administrador" />
             <End Role="Horario" EntitySet="Horario" />
@@ -152,6 +197,7 @@
           <Property Name="nom_categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Horario" Relationship="Self.FK_Horario_Categoria" FromRole="Categoria" ToRole="Horario" />
           <NavigationProperty Name="Jugador" Relationship="BdClubDeportivoModel.FK_Jugador_Categoria" FromRole="Categoria" ToRole="Jugador" />
+          <NavigationProperty Name="Entrenamiento" Relationship="BdClubDeportivoModel.FK_Entrenamiento_Categoria" FromRole="Categoria" ToRole="Entrenamiento" />
         </EntityType>
         <EntityType Name="Horario">
           <Key>
@@ -177,6 +223,7 @@
           <Property Name="id_categoria" Type="Int32" />
           <NavigationProperty Name="Categoria" Relationship="BdClubDeportivoModel.FK_Jugador_Categoria" FromRole="Jugador" ToRole="Categoria" />
           <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Entrenamiento" Relationship="BdClubDeportivoModel.FK_Entrenamiento_Jugador" FromRole="Jugador" ToRole="Entrenamiento" />
         </EntityType>
         <EntityType Name="Secretaria">
           <Key>
@@ -256,6 +303,15 @@
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Jugador" EntitySet="Jugador" />
           </AssociationSet>
+          <EntitySet Name="Entrenamiento" EntityType="BdClubDeportivoModel.Entrenamiento" />
+          <AssociationSet Name="FK_Entrenamiento_Categoria" Association="BdClubDeportivoModel.FK_Entrenamiento_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Entrenamiento" EntitySet="Entrenamiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Entrenamiento_Jugador" Association="BdClubDeportivoModel.FK_Entrenamiento_Jugador">
+            <End Role="Jugador" EntitySet="Jugador" />
+            <End Role="Entrenamiento" EntitySet="Entrenamiento" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK_Jugador_Categoria">
           <End Type="BdClubDeportivoModel.Categoria" Role="Categoria" Multiplicity="0..1" />
@@ -266,6 +322,44 @@
             </Principal>
             <Dependent Role="Jugador">
               <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Entrenamiento">
+          <Key>
+            <PropertyRef Name="id_entrenamiento" />
+          </Key>
+          <Property Name="id_entrenamiento" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="primerdia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="segundodia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="primerhorario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="segundohorario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ci_jugador" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="id_categoria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categoria" Relationship="BdClubDeportivoModel.FK_Entrenamiento_Categoria" FromRole="Entrenamiento" ToRole="Categoria" />
+          <NavigationProperty Name="Jugador" Relationship="BdClubDeportivoModel.FK_Entrenamiento_Jugador" FromRole="Entrenamiento" ToRole="Jugador" />
+        </EntityType>
+        <Association Name="FK_Entrenamiento_Categoria">
+          <End Type="BdClubDeportivoModel.Categoria" Role="Categoria" Multiplicity="1" />
+          <End Type="BdClubDeportivoModel.Entrenamiento" Role="Entrenamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="Entrenamiento">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Entrenamiento_Jugador">
+          <End Type="BdClubDeportivoModel.Jugador" Role="Jugador" Multiplicity="1" />
+          <End Type="BdClubDeportivoModel.Entrenamiento" Role="Entrenamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugador">
+              <PropertyRef Name="ci_jugador" />
+            </Principal>
+            <Dependent Role="Entrenamiento">
+              <PropertyRef Name="ci_jugador" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -332,6 +426,19 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Entrenamiento">
+            <EntityTypeMapping TypeName="BdClubDeportivoModel.Entrenamiento">
+              <MappingFragment StoreEntitySet="Entrenamiento">
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="ci_jugador" ColumnName="ci_jugador" />
+                <ScalarProperty Name="segundohorario" ColumnName="segundohorario" />
+                <ScalarProperty Name="primerhorario" ColumnName="primerhorario" />
+                <ScalarProperty Name="segundodia" ColumnName="segundodia" />
+                <ScalarProperty Name="primerdia" ColumnName="primerdia" />
+                <ScalarProperty Name="id_entrenamiento" ColumnName="id_entrenamiento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
