@@ -9,12 +9,13 @@
         <EntityTypeShape EntityType="BdClubDeportivoModel.Categoria" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BdClubDeportivoModel.Horario" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BdClubDeportivoModel.Jugador" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdClubDeportivoModel.Secretaria" Width="1.5" PointX="3.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdClubDeportivoModel.sysdiagrams" Width="1.5" PointX="7.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdClubDeportivoModel.Secretaria" Width="1.5" PointX="3.375" PointY="6.375" IsExpanded="true" />
         <AssociationConnector Association="BdClubDeportivoModel.FK_Horario_Administrador" ManuallyRouted="false" />
         <AssociationConnector Association="BdClubDeportivoModel.FK_Horario_Categoria" ManuallyRouted="false" />
         <AssociationConnector Association="BdClubDeportivoModel.FK_Jugador_Secretaria" ManuallyRouted="false" />
         <AssociationConnector Association="BdClubDeportivoModel.FK_Jugador_Categoria" />
+        <EntityTypeShape EntityType="BdClubDeportivoModel.Mensualidades" Width="1.5" PointX="3.375" PointY="8.375" />
+        <AssociationConnector Association="BdClubDeportivoModel.fk_jugador" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

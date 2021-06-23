@@ -44,6 +44,14 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.txtBuscarJugador = new Bunifu.Framework.UI.BunifuTextbox();
             this.btnNuevoJugador = new FontAwesome.Sharp.IconButton();
             this.dgvJugadores = new System.Windows.Forms.DataGridView();
+            this.cijugadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomjugadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechanacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechar_reg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cisecretariaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jugadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bdClubDeportivoDataSet = new SGClubDeportivo.Data.BdClubDeportivoDataSet();
             this.jugadorTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter();
@@ -57,14 +65,6 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.categoriaTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.CategoriaTableAdapter();
             this.categoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lblIdCatInsert = new System.Windows.Forms.Label();
-            this.cijugadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomjugadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechanacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechar_reg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cisecretariaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             id_categoriaLabel = new System.Windows.Forms.Label();
             ci_jugadorLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -101,11 +101,11 @@ namespace SGClubDeportivo.Vista.Gestiones
             // linkLabelSalir
             // 
             this.linkLabelSalir.AutoSize = true;
-            this.linkLabelSalir.Font = new System.Drawing.Font("Robot Crush", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelSalir.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.linkLabelSalir.Location = new System.Drawing.Point(572, 9);
             this.linkLabelSalir.Name = "linkLabelSalir";
-            this.linkLabelSalir.Size = new System.Drawing.Size(21, 23);
+            this.linkLabelSalir.Size = new System.Drawing.Size(26, 25);
             this.linkLabelSalir.TabIndex = 1;
             this.linkLabelSalir.TabStop = true;
             this.linkLabelSalir.Text = "X";
@@ -115,11 +115,11 @@ namespace SGClubDeportivo.Vista.Gestiones
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Minehead DEMO", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblTitulo.Location = new System.Drawing.Point(188, 6);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(213, 34);
+            this.lblTitulo.Size = new System.Drawing.Size(359, 31);
             this.lblTitulo.TabIndex = 5;
             this.lblTitulo.Text = "GESTION DE JUGADORES";
             // 
@@ -146,28 +146,28 @@ namespace SGClubDeportivo.Vista.Gestiones
             // lblTituloCategoria
             // 
             this.lblTituloCategoria.AutoSize = true;
-            this.lblTituloCategoria.Font = new System.Drawing.Font("Minehead DEMO", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloCategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblTituloCategoria.Location = new System.Drawing.Point(228, 0);
             this.lblTituloCategoria.Name = "lblTituloCategoria";
-            this.lblTituloCategoria.Size = new System.Drawing.Size(158, 30);
+            this.lblTituloCategoria.Size = new System.Drawing.Size(261, 29);
             this.lblTituloCategoria.TabIndex = 5;
             this.lblTituloCategoria.Text = "CATEGORIA (TODOS)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Typo Oval Demo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(23, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 21);
+            this.label2.Size = new System.Drawing.Size(207, 24);
             this.label2.TabIndex = 8;
             this.label2.Text = "Seleccione categoría";
             // 
             // cmbCategoria
             // 
-            this.cmbCategoria.Font = new System.Drawing.Font("Typo Oval Demo", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Items.AddRange(new object[] {
             "TODOS",
@@ -179,7 +179,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             "SUB 17"});
             this.cmbCategoria.Location = new System.Drawing.Point(211, 55);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(171, 21);
+            this.cmbCategoria.Size = new System.Drawing.Size(171, 23);
             this.cmbCategoria.TabIndex = 9;
             // 
             // btnAceptarCategoria
@@ -277,6 +277,60 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.dgvJugadores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJugadores_CellClick);
             this.dgvJugadores.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.jugadorDataGridView_CellPainting);
             // 
+            // cijugadorDataGridViewTextBoxColumn
+            // 
+            this.cijugadorDataGridViewTextBoxColumn.DataPropertyName = "ci_jugador";
+            this.cijugadorDataGridViewTextBoxColumn.FillWeight = 82.25953F;
+            this.cijugadorDataGridViewTextBoxColumn.HeaderText = "CI";
+            this.cijugadorDataGridViewTextBoxColumn.Name = "cijugadorDataGridViewTextBoxColumn";
+            // 
+            // nomjugadorDataGridViewTextBoxColumn
+            // 
+            this.nomjugadorDataGridViewTextBoxColumn.DataPropertyName = "nom_jugador";
+            this.nomjugadorDataGridViewTextBoxColumn.FillWeight = 241.5161F;
+            this.nomjugadorDataGridViewTextBoxColumn.HeaderText = "NOMBRE COMPLETO";
+            this.nomjugadorDataGridViewTextBoxColumn.Name = "nomjugadorDataGridViewTextBoxColumn";
+            // 
+            // fechanacDataGridViewTextBoxColumn
+            // 
+            this.fechanacDataGridViewTextBoxColumn.DataPropertyName = "fecha_nac";
+            this.fechanacDataGridViewTextBoxColumn.FillWeight = 82.25953F;
+            this.fechanacDataGridViewTextBoxColumn.HeaderText = "FECHA NAC";
+            this.fechanacDataGridViewTextBoxColumn.Name = "fechanacDataGridViewTextBoxColumn";
+            // 
+            // fechar_reg
+            // 
+            this.fechar_reg.DataPropertyName = "fecha_registro";
+            this.fechar_reg.FillWeight = 63.68092F;
+            this.fechar_reg.HeaderText = "FECHA REG";
+            this.fechar_reg.Name = "fechar_reg";
+            // 
+            // cisecretariaDataGridViewTextBoxColumn
+            // 
+            this.cisecretariaDataGridViewTextBoxColumn.DataPropertyName = "ci_secretaria";
+            this.cisecretariaDataGridViewTextBoxColumn.HeaderText = "ci_secretaria";
+            this.cisecretariaDataGridViewTextBoxColumn.Name = "cisecretariaDataGridViewTextBoxColumn";
+            this.cisecretariaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idcategoriaDataGridViewTextBoxColumn
+            // 
+            this.idcategoriaDataGridViewTextBoxColumn.DataPropertyName = "id_categoria";
+            this.idcategoriaDataGridViewTextBoxColumn.HeaderText = "id_categoria";
+            this.idcategoriaDataGridViewTextBoxColumn.Name = "idcategoriaDataGridViewTextBoxColumn";
+            this.idcategoriaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Modificar
+            // 
+            this.Modificar.FillWeight = 154.8154F;
+            this.Modificar.HeaderText = "Editar";
+            this.Modificar.Name = "Modificar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 168.4465F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            // 
             // jugadorBindingSource
             // 
             this.jugadorBindingSource.DataMember = "Jugador";
@@ -360,60 +414,6 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.lblIdCatInsert.Size = new System.Drawing.Size(35, 13);
             this.lblIdCatInsert.TabIndex = 18;
             this.lblIdCatInsert.Text = "label1";
-            // 
-            // cijugadorDataGridViewTextBoxColumn
-            // 
-            this.cijugadorDataGridViewTextBoxColumn.DataPropertyName = "ci_jugador";
-            this.cijugadorDataGridViewTextBoxColumn.FillWeight = 82.25953F;
-            this.cijugadorDataGridViewTextBoxColumn.HeaderText = "CI";
-            this.cijugadorDataGridViewTextBoxColumn.Name = "cijugadorDataGridViewTextBoxColumn";
-            // 
-            // nomjugadorDataGridViewTextBoxColumn
-            // 
-            this.nomjugadorDataGridViewTextBoxColumn.DataPropertyName = "nom_jugador";
-            this.nomjugadorDataGridViewTextBoxColumn.FillWeight = 241.5161F;
-            this.nomjugadorDataGridViewTextBoxColumn.HeaderText = "NOMBRE COMPLETO";
-            this.nomjugadorDataGridViewTextBoxColumn.Name = "nomjugadorDataGridViewTextBoxColumn";
-            // 
-            // fechanacDataGridViewTextBoxColumn
-            // 
-            this.fechanacDataGridViewTextBoxColumn.DataPropertyName = "fecha_nac";
-            this.fechanacDataGridViewTextBoxColumn.FillWeight = 82.25953F;
-            this.fechanacDataGridViewTextBoxColumn.HeaderText = "FECHA NAC";
-            this.fechanacDataGridViewTextBoxColumn.Name = "fechanacDataGridViewTextBoxColumn";
-            // 
-            // fechar_reg
-            // 
-            this.fechar_reg.DataPropertyName = "fecha_registro";
-            this.fechar_reg.FillWeight = 63.68092F;
-            this.fechar_reg.HeaderText = "FECHA REG";
-            this.fechar_reg.Name = "fechar_reg";
-            // 
-            // cisecretariaDataGridViewTextBoxColumn
-            // 
-            this.cisecretariaDataGridViewTextBoxColumn.DataPropertyName = "ci_secretaria";
-            this.cisecretariaDataGridViewTextBoxColumn.HeaderText = "ci_secretaria";
-            this.cisecretariaDataGridViewTextBoxColumn.Name = "cisecretariaDataGridViewTextBoxColumn";
-            this.cisecretariaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idcategoriaDataGridViewTextBoxColumn
-            // 
-            this.idcategoriaDataGridViewTextBoxColumn.DataPropertyName = "id_categoria";
-            this.idcategoriaDataGridViewTextBoxColumn.HeaderText = "id_categoria";
-            this.idcategoriaDataGridViewTextBoxColumn.Name = "idcategoriaDataGridViewTextBoxColumn";
-            this.idcategoriaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Modificar
-            // 
-            this.Modificar.FillWeight = 154.8154F;
-            this.Modificar.HeaderText = "Editar";
-            this.Modificar.Name = "Modificar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 168.4465F;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
             // 
             // frmGestionJugadores
             // 

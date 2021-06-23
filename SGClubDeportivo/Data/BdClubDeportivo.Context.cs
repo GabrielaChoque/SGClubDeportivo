@@ -30,6 +30,6 @@ namespace SGClubDeportivo.Data
         public virtual DbSet<Horario> Horario { get; set; }
         public virtual DbSet<Jugador> Jugador { get; set; }
         public virtual DbSet<Secretaria> Secretaria { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Mensualidades> Mensualidades { get; set; }
     }
 }

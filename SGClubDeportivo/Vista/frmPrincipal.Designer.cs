@@ -58,11 +58,11 @@ namespace SGClubDeportivo.Vista
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Regatto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(216, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(389, 29);
+            this.label1.Size = new System.Drawing.Size(371, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "CLUB DEPORTIVO \"ORURO ROYAL\"";
             // 
@@ -238,6 +238,7 @@ namespace SGClubDeportivo.Vista
             this.btnPagos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPagos.UseVisualStyleBackColor = false;
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // btnJugadores
             // 
