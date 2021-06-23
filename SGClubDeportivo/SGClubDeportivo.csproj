@@ -33,8 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>D:\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,16 +63,82 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Controlador\CategoriaController.cs" />
+    <Compile Include="Controlador\JugadorController.cs" />
+    <Compile Include="Data\BdClubDeportivoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdClubDeportivoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Controlador\AdministradorController.cs" />
+    <Compile Include="Controlador\SecretariaController.cs" />
+    <Compile Include="Data\Administrador.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BdClubDeportivo.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdClubDeportivo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BdClubDeportivo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BdClubDeportivo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Categoria.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Horario.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Jugador.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Secretaria.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sysdiagrams.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vista\frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionJugadores.Designer.cs">
+      <DependentUpon>frmGestionJugadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudJugadores.Designer.cs">
+      <DependentUpon>frmCrudJugadores.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +149,65 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionJugadores.resx">
+      <DependentUpon>frmGestionJugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmCrudJugadores.resx">
+      <DependentUpon>frmCrudJugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Data\BdClubDeportivo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BdClubDeportivo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\BdClubDeportivoDataSet.xsc">
+      <DependentUpon>BdClubDeportivoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\BdClubDeportivoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BdClubDeportivoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\BdClubDeportivoDataSet.xss">
+      <DependentUpon>BdClubDeportivoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\BdClubDeportivo.edmx.diagram">
+      <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Administrador.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+AdministradorDataTable.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+AdministradorRow.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+AdministradorRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+AdministradorRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+CategoriaDataTable.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+CategoriaRow.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+CategoriaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+CategoriaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+HorarioDataTable.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+HorarioRow.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+HorarioRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+HorarioRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+JugadorDataTable.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+JugadorRow.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+JugadorRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+JugadorRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaDataTable.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRow.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoEntities.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Categoria.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Horario.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Jugador.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Secretaria.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.sysdiagrams.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +220,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vista\Jugadores\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\BdClubDeportivo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
+      <LastGenOutput>BdClubDeportivo.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\BdClubDeportivo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
+      <LastGenOutput>BdClubDeportivo.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
