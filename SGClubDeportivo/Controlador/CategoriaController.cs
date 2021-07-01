@@ -16,8 +16,8 @@ namespace SGClubDeportivo.Controlador
             var r = from Categoria in _db.Categoria
                     select new
                     {
-                        id_categoria = Categoria.id_categoria,
-                        nom_categoria = Categoria.nom_categoria
+                        Categoria.id_categoria,
+                        Categoria.nom_categoria
                     };
 
             cmb.ValueMember = "id_categoria";
@@ -29,9 +29,13 @@ namespace SGClubDeportivo.Controlador
         {
             using (var context = new BdClubDeportivoEntities())
             {
+
                 var lista = context.Categoria.Where(x => x.nom_categoria == pNomCategoria).FirstOrDefault();
                 return lista.id_categoria;
-            }
+
+                //   MessageBox.Show("Error de Acceso de Datos","Error", MessageBoxButtons.OK,MessageBoxIcon.Warning)
+
+            }        
         }
     }
 }

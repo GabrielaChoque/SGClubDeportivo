@@ -142,6 +142,12 @@
     <Compile Include="Vista\Gestiones\frmGestionJugadores.Designer.cs">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudEntrenamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudEntrenamiento.Designer.cs">
+      <DependentUpon>frmCrudEntrenamiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas\frmCrudHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionJugadores.resx">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmCrudEntrenamiento.resx">
+      <DependentUpon>frmCrudEntrenamiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmCrudHorarios.resx">
       <DependentUpon>frmCrudHorarios.cs</DependentUpon>

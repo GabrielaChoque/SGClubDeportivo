@@ -20,27 +20,23 @@ namespace SGClubDeportivo.Controlador
         BdClubDeportivoEntities db = new BdClubDeportivoEntities();
 
         
-        public List<Jugador> ListarPorCategoria(string pBuscar, int pIdCategoria)
-        {
-            string c = "SELECT nom_jugador FROM Jugador WHERE nom_jugador LIKE '%" + pBuscar + "%' AND id_categoria=" + Convert.ToString(pIdCategoria);
-            return db.Jugador.SqlQuery(c).ToList();
-        }
  
-        public bool Insertar(Data.Entrenamiento reg)
+ 
+        public bool InsertarEntrenamiento(Data.Entrenamiento reg)
         {
             db.Entrenamiento.Add(reg);
             db.SaveChanges();
             return true;
         }
-        public bool Modificar(Data.Entrenamiento reg)
+        public bool ModificarEntrenamiento(Data.Entrenamiento reg)
         {
             db.Entry(reg).State = System.Data.Entity.EntityState.Modified;
             return  db.SaveChanges() > 0;
         }
-        public bool Eliminar(string pParametro)
+        public bool EliminarEntrenamiento(string pParametro)
         {
-            var reg = db.Jugador.Where(x => x.ci_jugador == pParametro).FirstOrDefault();
-            db.Jugador.Remove(reg);
+            var reg = db.Entrenamiento.Where(x => x.ci_jugador == pParametro).FirstOrDefault();
+            db.Entrenamiento.Remove(reg);
             return db.SaveChanges() > 0;
         }
 

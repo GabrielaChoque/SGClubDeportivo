@@ -39,16 +39,17 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TituloCategoria = new System.Windows.Forms.Label();
-            this.btnAceptar = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.jugadorTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter();
             this.tableAdapterManager = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager();
             this.bdClubDeportivoDataSet = new SGClubDeportivo.Data.BdClubDeportivoDataSet();
             this.dgvJugadores = new System.Windows.Forms.DataGridView();
-            this.jugadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.CI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jugadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -173,26 +174,26 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.TituloCategoria.TabIndex = 5;
             this.TituloCategoria.Text = "CATEGORIA ()";
             // 
-            // btnAceptar
+            // btnEditar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnAceptar.IconColor = System.Drawing.Color.White;
-            this.btnAceptar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAceptar.IconSize = 25;
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(56, 385);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(130, 32);
-            this.btnAceptar.TabIndex = 26;
-            this.btnAceptar.Text = "EDITAR";
-            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnEditar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEditar.IconColor = System.Drawing.Color.White;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 25;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(25, 385);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(130, 32);
+            this.btnEditar.TabIndex = 26;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnAceptar_Click_1);
             // 
             // jugadorTableAdapter
             // 
@@ -233,7 +234,27 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.dgvJugadores.RowHeadersVisible = false;
             this.dgvJugadores.Size = new System.Drawing.Size(587, 227);
             this.dgvJugadores.TabIndex = 31;
-            this.dgvJugadores.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvJugadores_CellPainting);
+            this.dgvJugadores.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvJugadores_CellPainting_1);
+            // 
+            // CI
+            // 
+            this.CI.DataPropertyName = "ci_jugador";
+            this.CI.FillWeight = 96.01413F;
+            this.CI.HeaderText = "CI";
+            this.CI.Name = "CI";
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.DataPropertyName = "nom_jugador";
+            this.NOMBRE.FillWeight = 116.8707F;
+            this.NOMBRE.HeaderText = "NOMBRE COMPLETO";
+            this.NOMBRE.Name = "NOMBRE";
+            // 
+            // categoria
+            // 
+            this.categoria.DataPropertyName = "id_categoria";
+            this.categoria.HeaderText = "ID_CATEGORIA";
+            this.categoria.Name = "categoria";
             // 
             // jugadorBindingSource
             // 
@@ -259,25 +280,26 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // CI
+            // iconButton1
             // 
-            this.CI.DataPropertyName = "ci_jugador";
-            this.CI.FillWeight = 96.01413F;
-            this.CI.HeaderText = "CI";
-            this.CI.Name = "CI";
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.DataPropertyName = "nom_jugador";
-            this.NOMBRE.FillWeight = 116.8707F;
-            this.NOMBRE.HeaderText = "NOMBRE COMPLETO";
-            this.NOMBRE.Name = "NOMBRE";
-            // 
-            // categoria
-            // 
-            this.categoria.DataPropertyName = "id_categoria";
-            this.categoria.HeaderText = "ID_CATEGORIA";
-            this.categoria.Name = "categoria";
+            this.iconButton1.BackColor = System.Drawing.Color.Orange;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Ad;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(217, 385);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(130, 32);
+            this.iconButton1.TabIndex = 32;
+            this.iconButton1.Text = "NUEVO";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // frmGestionHorario
             // 
@@ -285,9 +307,10 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(595, 424);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.dgvJugadores);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -317,7 +340,7 @@ namespace SGClubDeportivo.Vista.Gestiones
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label TituloCategoria;
-        private FontAwesome.Sharp.IconButton btnAceptar;
+        private FontAwesome.Sharp.IconButton btnEditar;
         private System.Windows.Forms.BindingSource jugadorBindingSource;
         private Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter jugadorTableAdapter;
         private Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
@@ -327,5 +350,6 @@ namespace SGClubDeportivo.Vista.Gestiones
         private System.Windows.Forms.DataGridViewTextBoxColumn CI;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
