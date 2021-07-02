@@ -49,15 +49,6 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.panelJugadores = new System.Windows.Forms.Panel();
             this.txtBuscarJ = new System.Windows.Forms.TextBox();
             this.jugadorDataGridView = new System.Windows.Forms.DataGridView();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnSelecJugador = new System.Windows.Forms.Button();
-            this.ci_jugadorLabel1 = new System.Windows.Forms.Label();
-            this.nom_jugadorLabel1 = new System.Windows.Forms.Label();
-            this.nom_categoriaLabel1 = new System.Windows.Forms.Label();
-            this.txtBuscarJugador = new System.Windows.Forms.TextBox();
-            this.mesComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +59,16 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jugadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnSelecJugador = new System.Windows.Forms.Button();
+            this.ci_jugadorLabel1 = new System.Windows.Forms.Label();
+            this.nom_jugadorLabel1 = new System.Windows.Forms.Label();
+            this.nom_categoriaLabel1 = new System.Windows.Forms.Label();
+            this.txtBuscarJugador = new System.Windows.Forms.TextBox();
+            this.mesComboBox = new System.Windows.Forms.ComboBox();
             this.mensualidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -260,7 +260,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.panelJugadores.Controls.Add(this.label15);
             this.panelJugadores.Controls.Add(this.label16);
             this.panelJugadores.Controls.Add(this.btnSelecJugador);
-            this.panelJugadores.Location = new System.Drawing.Point(191, 162);
+            this.panelJugadores.Location = new System.Drawing.Point(205, 61);
             this.panelJugadores.Name = "panelJugadores";
             this.panelJugadores.Size = new System.Drawing.Size(276, 303);
             this.panelJugadores.TabIndex = 93;
@@ -300,6 +300,89 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.jugadorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.jugadorDataGridView.Size = new System.Drawing.Size(257, 156);
             this.jugadorDataGridView.TabIndex = 93;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ci_jugador";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ci_jugador";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "nom_jugador";
+            this.dataGridViewTextBoxColumn7.HeaderText = "nom_jugador";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "fecha_nac";
+            this.dataGridViewTextBoxColumn8.HeaderText = "fecha_nac";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "ci_secretaria";
+            this.dataGridViewTextBoxColumn9.HeaderText = "ci_secretaria";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "id_categoria";
+            this.dataGridViewTextBoxColumn10.HeaderText = "id_categoria";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "fecha_registro";
+            this.dataGridViewTextBoxColumn11.HeaderText = "fecha_registro";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Secretaria";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Secretaria";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Categoria";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Mensualidades";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Mensualidades";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Visible = false;
+            // 
+            // jugadorBindingSource
+            // 
+            this.jugadorBindingSource.DataSource = typeof(SGClubDeportivo.Data.Jugador);
             // 
             // label15
             // 
@@ -403,6 +486,10 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.mesComboBox.Size = new System.Drawing.Size(121, 26);
             this.mesComboBox.TabIndex = 99;
             // 
+            // mensualidadesBindingSource
+            // 
+            this.mensualidadesBindingSource.DataSource = typeof(SGClubDeportivo.Data.Mensualidades);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -413,93 +500,6 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.label3.Size = new System.Drawing.Size(168, 31);
             this.label3.TabIndex = 100;
             this.label3.Text = "HISTORIAL";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "ci_jugador";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ci_jugador";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "nom_jugador";
-            this.dataGridViewTextBoxColumn7.HeaderText = "nom_jugador";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "fecha_nac";
-            this.dataGridViewTextBoxColumn8.HeaderText = "fecha_nac";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "ci_secretaria";
-            this.dataGridViewTextBoxColumn9.HeaderText = "ci_secretaria";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "id_categoria";
-            this.dataGridViewTextBoxColumn10.HeaderText = "id_categoria";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "fecha_registro";
-            this.dataGridViewTextBoxColumn11.HeaderText = "fecha_registro";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Secretaria";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Secretaria";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Categoria";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Categoria";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Mensualidades";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Mensualidades";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Visible = false;
-            // 
-            // jugadorBindingSource
-            // 
-            this.jugadorBindingSource.DataSource = typeof(SGClubDeportivo.Data.Jugador);
-            // 
-            // mensualidadesBindingSource
-            // 
-            this.mensualidadesBindingSource.DataSource = typeof(SGClubDeportivo.Data.Mensualidades);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -594,7 +594,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(669, 578);
+            this.ClientSize = new System.Drawing.Size(669, 440);
             this.Controls.Add(this.panelJugadores);
             this.Controls.Add(this.label3);
             this.Controls.Add(mesLabel);
@@ -613,6 +613,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnBuscar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionVentas";
             this.Text = "frmGestionVentas";
             this.panel2.ResumeLayout(false);
