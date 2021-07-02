@@ -18,13 +18,11 @@ namespace SGClubDeportivo.Data
         public Jugador()
         {
             this.Mensualidades = new HashSet<Mensualidades>();
+            this.Entrenamiento = new HashSet<Entrenamiento>();
         }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Jugador()
-        {
-            this.Entrenamiento = new HashSet<Entrenamiento>();
-        }
+        
     
         public string ci_jugador { get; set; }
         public string nom_jugador { get; set; }
