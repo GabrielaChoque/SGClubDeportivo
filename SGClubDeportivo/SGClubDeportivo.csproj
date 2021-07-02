@@ -67,6 +67,7 @@
     <Compile Include="Controlador\EntrenamientoController.cs" />
     <Compile Include="Controlador\HorarioController.cs" />
     <Compile Include="Controlador\JugadorController.cs" />
+    <Compile Include="Controlador\MensualidadController.cs" />
     <Compile Include="Data\BdClubDeportivoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,10 +105,10 @@
     <Compile Include="Data\Jugador.cs">
       <DependentUpon>BdClubDeportivo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Secretaria.cs">
+    <Compile Include="Data\Mensualidades.cs">
       <DependentUpon>BdClubDeportivo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\sysdiagrams.cs">
+    <Compile Include="Data\Secretaria.cs">
       <DependentUpon>BdClubDeportivo.tt</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -154,6 +155,12 @@
     <Compile Include="Vista\Ventanas\frmCrudHorarios.Designer.cs">
       <DependentUpon>frmCrudHorarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionVentas.Designer.cs">
+      <DependentUpon>frmGestionVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas\frmCrudJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmCrudHorarios.resx">
       <DependentUpon>frmCrudHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionVentas.resx">
+      <DependentUpon>frmGestionVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmCrudJugadores.resx">
       <DependentUpon>frmCrudJugadores.cs</DependentUpon>
@@ -247,6 +257,7 @@
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Categoria.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Horario.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Jugador.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Mensualidades.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Secretaria.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.sysdiagrams.datasource" />
     <None Include="Properties\Settings.settings">

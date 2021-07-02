@@ -17,6 +17,12 @@ namespace SGClubDeportivo.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Jugador()
         {
+            this.Mensualidades = new HashSet<Mensualidades>();
+        }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Jugador()
+        {
             this.Entrenamiento = new HashSet<Entrenamiento>();
         }
     
@@ -29,6 +35,8 @@ namespace SGClubDeportivo.Data
     
         public virtual Secretaria Secretaria { get; set; }
         public virtual Categoria Categoria { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Mensualidades> Mensualidades { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Entrenamiento> Entrenamiento { get; set; }
     }

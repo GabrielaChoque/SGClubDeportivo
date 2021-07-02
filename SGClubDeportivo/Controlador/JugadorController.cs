@@ -14,6 +14,10 @@ namespace SGClubDeportivo.Controlador
         {
             return _db.Jugador.Where(x => x.nom_jugador.Contains(pBuscar)).ToList();
         }
+        public List<Jugador> ListarJugadorci(string pBuscar)
+        {
+            return _db.Jugador.Where(x => x.ci_jugador.Contains(pBuscar)).ToList();
+        }
         public List<Jugador> ListarPorCategoria(string pBuscarNombre, int pIdCategoria)
         {
             string c = "SELECT * FROM Jugador WHERE nom_jugador LIKE '%"+pBuscarNombre+"%' AND id_categoria="+Convert.ToString(pIdCategoria);

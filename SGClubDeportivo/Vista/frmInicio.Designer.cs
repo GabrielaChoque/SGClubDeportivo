@@ -30,26 +30,11 @@ namespace SGClubDeportivo.Vista
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicio));
-            this.linkLabelSalir = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblHora = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // linkLabelSalir
-            // 
-            this.linkLabelSalir.AutoSize = true;
-            this.linkLabelSalir.Font = new System.Drawing.Font("Robot Crush", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelSalir.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.linkLabelSalir.Location = new System.Drawing.Point(572, 18);
-            this.linkLabelSalir.Name = "linkLabelSalir";
-            this.linkLabelSalir.Size = new System.Drawing.Size(21, 23);
-            this.linkLabelSalir.TabIndex = 0;
-            this.linkLabelSalir.TabStop = true;
-            this.linkLabelSalir.Text = "X";
-            this.linkLabelSalir.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             // 
             // label1
             // 
@@ -61,17 +46,6 @@ namespace SGClubDeportivo.Vista
             this.label1.Size = new System.Drawing.Size(267, 80);
             this.label1.TabIndex = 1;
             this.label1.Text = "BIENVENIDO";
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Typo Oval Demo", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.Turquoise;
-            this.lblHora.Location = new System.Drawing.Point(466, 388);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(127, 30);
-            this.lblHora.TabIndex = 2;
-            this.lblHora.Text = "00:00:00";
             // 
             // pictureBox1
             // 
@@ -102,9 +76,7 @@ namespace SGClubDeportivo.Vista
             this.ClientSize = new System.Drawing.Size(605, 444);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblHora);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabelSalir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInicio";
             this.Text = "frmInicio";
@@ -115,10 +87,7 @@ namespace SGClubDeportivo.Vista
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel linkLabelSalir;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblNombre;
     }

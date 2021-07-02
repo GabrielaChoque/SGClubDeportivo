@@ -239,6 +239,7 @@ namespace SGClubDeportivo.Vista
             this.btnPagos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPagos.UseVisualStyleBackColor = false;
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // btnJugadores
             // 
