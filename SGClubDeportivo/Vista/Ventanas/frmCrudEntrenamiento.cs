@@ -37,5 +37,10 @@ namespace SGClubDeportivo.Vista.Ventanas
         {
             this.Close();
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

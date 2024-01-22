@@ -37,25 +37,36 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.comboDia2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.cmbCarnet = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.PrimerDia = new System.Windows.Forms.Label();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabelSalir = new System.Windows.Forms.LinkLabel();
-            this.cmbCarnet = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             ci_jugadorLabel = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ci_jugadorLabel
+            // 
+            ci_jugadorLabel.AutoSize = true;
+            ci_jugadorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ci_jugadorLabel.Location = new System.Drawing.Point(179, 64);
+            ci_jugadorLabel.Name = "ci_jugadorLabel";
+            ci_jugadorLabel.Size = new System.Drawing.Size(114, 17);
+            ci_jugadorLabel.TabIndex = 69;
+            ci_jugadorLabel.Text = "NRO CARNET:";
+            ci_jugadorLabel.Click += new System.EventHandler(this.ci_jugadorLabel_Click);
             // 
             // label7
             // 
@@ -149,6 +160,55 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.panel3.Size = new System.Drawing.Size(502, 96);
             this.panel3.TabIndex = 76;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.Orange;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(12, 13);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(148, 68);
+            this.iconButton1.TabIndex = 74;
+            this.iconButton1.Text = "VISUALIZAR HORARIOS";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(166, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "ID CATEGORIA :";
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(310, 13);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(119, 23);
+            this.cmbCategoria.TabIndex = 68;
+            // 
+            // cmbCarnet
+            // 
+            this.cmbCarnet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCarnet.FormattingEnabled = true;
+            this.cmbCarnet.Location = new System.Drawing.Point(310, 61);
+            this.cmbCarnet.Name = "cmbCarnet";
+            this.cmbCarnet.Size = new System.Drawing.Size(119, 23);
+            this.cmbCarnet.TabIndex = 73;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -188,25 +248,6 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(166, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 17);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "ID CATEGORIA :";
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(310, 13);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(119, 23);
-            this.cmbCategoria.TabIndex = 68;
             // 
             // linkLabel1
             // 
@@ -267,26 +308,6 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.linkLabelSalir.Text = "X";
             this.linkLabelSalir.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             // 
-            // cmbCarnet
-            // 
-            this.cmbCarnet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCarnet.FormattingEnabled = true;
-            this.cmbCarnet.Location = new System.Drawing.Point(310, 61);
-            this.cmbCarnet.Name = "cmbCarnet";
-            this.cmbCarnet.Size = new System.Drawing.Size(119, 23);
-            this.cmbCarnet.TabIndex = 73;
-            // 
-            // ci_jugadorLabel
-            // 
-            ci_jugadorLabel.AutoSize = true;
-            ci_jugadorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ci_jugadorLabel.Location = new System.Drawing.Point(179, 64);
-            ci_jugadorLabel.Name = "ci_jugadorLabel";
-            ci_jugadorLabel.Size = new System.Drawing.Size(114, 17);
-            ci_jugadorLabel.TabIndex = 69;
-            ci_jugadorLabel.Text = "NRO CARNET:";
-            ci_jugadorLabel.Click += new System.EventHandler(this.ci_jugadorLabel_Click);
-            // 
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.SteelBlue;
@@ -306,32 +327,12 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = false;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.Orange;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(12, 13);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(148, 68);
-            this.iconButton1.TabIndex = 74;
-            this.iconButton1.Text = "VISUALIZAR HORARIOS";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // bunifuSeparator1
             // 
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.DimGray;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(20, 190);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
