@@ -118,7 +118,7 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
+            //this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
             // btnCancelar
             // 
@@ -139,7 +139,7 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            //this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // IdcategoriaLabel
             // 
@@ -161,9 +161,9 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(581, 52);
             this.panel1.TabIndex = 71;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp_1);
+            //this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
+            //this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
+            //this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp_1);
             // 
             // linkLabel1
             // 
@@ -177,7 +177,7 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "X";
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
+            //this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // lblTitulo
             // 
@@ -337,7 +337,7 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(119, 23);
             this.cmbCategoria.TabIndex = 67;
-            this.cmbCategoria.SelectedValueChanged += new System.EventHandler(this.cmbCategoria_SelectedValueChanged);
+            //this.cmbCategoria.SelectedValueChanged += new System.EventHandler(this.cmbCategoria_SelectedValueChanged);
             // 
             // PanelHorario
             // 
@@ -557,7 +557,7 @@ namespace SGClubDeportivo.Vista.Ventanas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCrudHorarios";
             this.Text = "frmCrudHorarios";
-            this.Load += new System.EventHandler(this.frmCrudHorarios_Load);
+            //this.Load += new System.EventHandler(this.frmCrudHorarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

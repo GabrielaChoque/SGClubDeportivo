@@ -58,7 +58,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jugadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            //this.jugadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.btnSelecJugador = new System.Windows.Forms.Button();
@@ -83,7 +83,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.panel1.SuspendLayout();
             this.panelJugadores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jugadorDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensualidadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensualidadesDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -292,7 +292,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
-            this.jugadorDataGridView.DataSource = this.jugadorBindingSource;
+            //this.jugadorDataGridView.DataSource = this.jugadorBindingSource;
             this.jugadorDataGridView.Location = new System.Drawing.Point(8, 93);
             this.jugadorDataGridView.Name = "jugadorDataGridView";
             this.jugadorDataGridView.ReadOnly = true;
@@ -382,7 +382,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             // 
             // jugadorBindingSource
             // 
-            this.jugadorBindingSource.DataSource = typeof(SGClubDeportivo.Data.Jugador);
+            //this.jugadorBindingSource.DataSource = typeof(SGClubDeportivo.Data.Jugadores);
             // 
             // label15
             // 
@@ -427,7 +427,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             // 
             // ci_jugadorLabel1
             // 
-            this.ci_jugadorLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jugadorBindingSource, "ci_jugador", true));
+            //this.ci_jugadorLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jugadorBindingSource, "ci_jugador", true));
             this.ci_jugadorLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ci_jugadorLabel1.Location = new System.Drawing.Point(42, 162);
             this.ci_jugadorLabel1.Name = "ci_jugadorLabel1";
@@ -437,7 +437,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             // 
             // nom_jugadorLabel1
             // 
-            this.nom_jugadorLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jugadorBindingSource, "nom_jugador", true));
+            //this.nom_jugadorLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jugadorBindingSource, "nom_jugador", true));
             this.nom_jugadorLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nom_jugadorLabel1.Location = new System.Drawing.Point(202, 162);
             this.nom_jugadorLabel1.Name = "nom_jugadorLabel1";
@@ -447,7 +447,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             // 
             // nom_categoriaLabel1
             // 
-            this.nom_categoriaLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jugadorBindingSource, "Categoria.nom_categoria", true));
+            //this.nom_categoriaLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jugadorBindingSource, "Categoria.nom_categoria", true));
             this.nom_categoriaLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nom_categoriaLabel1.Location = new System.Drawing.Point(381, 162);
             this.nom_categoriaLabel1.Name = "nom_categoriaLabel1";
@@ -623,7 +623,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.panelJugadores.ResumeLayout(false);
             this.panelJugadores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jugadorDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensualidadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensualidadesDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -646,7 +646,7 @@ namespace SGClubDeportivo.Vista.Gestiones
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.Button btnSelecJugador;
         private System.Windows.Forms.DataGridView jugadorDataGridView;
-        private System.Windows.Forms.BindingSource jugadorBindingSource;
+        //private System.Windows.Forms.BindingSource jugadorBindingSource;
         private System.Windows.Forms.TextBox txtBuscarJ;
         private System.Windows.Forms.Label ci_jugadorLabel1;
         private System.Windows.Forms.Label nom_jugadorLabel1;

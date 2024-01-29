@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Bunifu.Framework.Lib;
+using SGClubDeportivo.Controlador;
+using SGClubDeportivo.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,112 +10,112 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SGClubDeportivo.Data;
-using SGClubDeportivo.Controlador;
-using SGClubDeportivo.Vista;
 
 namespace SGClubDeportivo.Vista.Ventanas
 {
-    public partial class frmCrudJugadores : Form
+    public partial class frmCrudJugadores : frmVentanas
     {
-        JugadorController _objJugador = new JugadorController();
-        CategoriaController _objCategoria = new CategoriaController();
-        private string _carnet;
-        private bool _esNuevo=true;
-        private int _idCategoria;
+        private JugadorController _JugadoreController = new JugadorController();
+        private bool esNuevo = true;
+        private int ide;
+        private Jugadores dataJugadoresSeleccionado; //ES CASO DE TENER FK SELECCIOAMOS
+
         public frmCrudJugadores()
         {
-            _esNuevo = true;
             InitializeComponent();
         }
-        public frmCrudJugadores(string pCarnet, int pIdCategoria)
+        public frmCrudJugadores(int ideSeleccionado)
         {
-            _esNuevo = false;
-            _carnet = pCarnet;
-            _idCategoria = pIdCategoria;
+            esNuevo = false;
+            ide = ideSeleccionado;
             InitializeComponent();
         }
 
-        private void frmCrudJugadores_Load(object sender, EventArgs e)
-        {
 
-            if (_esNuevo)
+        private void frmCrudjugador_Load(object sender, EventArgs e)
+        {
+            if (esNuevo)
             {
-                jugadorBindingSource.AddNew();
+                // Configuración para un nuevo registro
+                JugadoresBindingSource.AddNew();
                 lblTituloCrud.Text = "REGISTRAR NUEVO";
-                cmbCategoria.SelectedIndex = 0;
             }
             else
             {
-                jugadorBindingSource.DataSource = _objJugador.BuscarPorPK(_carnet);
-                //this.jugadorTableAdapter.Fill(this.bdClubDeportivoDataSet.Jugador);
-                cmbCategoria.SelectedIndex = _idCategoria-1;
+                lblTituloCrud.Text = "MODIFICAR ";
+                // Cargar datos del categoria existente para edición
+                dataJugadoresSeleccionado = _JugadoreController.Seleccionar(ide); //ES CASO DE TENER FK SELECCIOAMOS
+                JugadoresBindingSource.DataSource = dataJugadoresSeleccionado;
             }
+            CargarCategorias(); //en el comboBox
         }
-
-        
-
-       /* private void jugadorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.jugadorBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bdClubDeportivoDataSet);
-        }*/
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var reg = CargarDatos();
-                if (_esNuevo)
-                {
-                    if (_objJugador.Insertar(reg))
-                    {
-                        MessageBox.Show("REGISTRO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Close();
-                    }
-                    else
-                    { MessageBox.Show("YA EXISTE UN USUARIO CON CI: '" + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+            var reg = PonerDatosForm();
 
-                }
-                else
+            if (esNuevo)
+            {
+                // Agregar nuevo categoria
+                if (_JugadoreController.Insertar(reg))
                 {
-                    if (_objJugador.Modificar(reg))
-                    {
-                        MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Close();
-                    }
+                    MessageBox.Show("REGISTRO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                    Close();
                 }
             }
-            catch (Exception )
+            else
             {
-                MessageBox.Show("DEBE INTRODUCIR LOS DATOS CORRECTAMENTE!!", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-
+                // Actualizar categoria existente
+                if (_JugadoreController.Modificar(reg))
+                {
+                    MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information); this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                    this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                    Close();
+                }
             }
         }
-        private Jugador CargarDatos()
+
+        private Jugadores PonerDatosForm()
         {
-            int pIdCategoria = _objCategoria.ObtenerIdCategoria(cmbCategoria.Text);
+            var reg = (Jugadores)JugadoresBindingSource.Current;
+            // EN CASO DE TENER FK
+            //int codId = nombreComboBox.SelectedIndex;
+            Categorias selectedCategoria = (Categorias)nombreComboBox.SelectedItem; //SELECCIONANDO LA FILA SELECCIONADA DEL FORMULARIO del FK
+            reg.Categoria_id = selectedCategoria.id;  //OBTENIENDO LA id DEL FK
 
-
-            var reg = (Jugador)jugadorBindingSource.Current;
-
-            reg.id_categoria = pIdCategoria;
-            reg.ci_secretaria = "7392393";
-            reg.fecha_registro = Convert.ToDateTime(DateTime.Now.ToString());
             return reg;
+
         }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        private void fecha_nacDateTimePicker_ValueChanged(object sender, EventArgs e)
+        //----PARA EL FK y SE JALA NOMAS DESDE EL ORIGEN DE DATOS EN FORMATO COMBOBOX DEBE ESTAR EN MODO Origen de DAtos y Mstrar Miembro, lo demas vacio-----//
+        CategoriaController _cat = new CategoriaController();
+        BdClubDeportivoEntities _entity = new BdClubDeportivoEntities();
+        private void CargarCategorias()
         {
+            if (esNuevo)
+            {
+                //opcion 1
+                nombreComboBox.DisplayMember = "Nombre";
+                nombreComboBox.DataSource = _cat.Listar("");
+                nombreComboBox.SelectedIndex = 0;
+                //opcion 2
+                //var r = from ru in _entity.Categorias
+                //        select new { ru.Nombre };
+                //nombreComboBox.DisplayMember = "Nombre";
+                //nombreComboBox.DataSource = r.ToList();
+                //nombreComboBox.SelectedIndex = 0;
+            }
+            else
+            {
+                nombreComboBox.DisplayMember = "Nombre";
+                nombreComboBox.DataSource = _cat.Listar("");
+                nombreComboBox.SelectedItem = dataJugadoresSeleccionado.Categoria_id;
+            }
 
         }
-
-        
     }
 }

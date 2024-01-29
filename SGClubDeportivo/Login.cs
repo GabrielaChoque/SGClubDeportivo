@@ -16,6 +16,7 @@ namespace SGClubDeportivo
     {
         AdministradorController _objAdministrador = new AdministradorController();
         SecretariaController _objSecretaria = new SecretariaController();
+        UsuarioController _user = new UsuarioController();
         public Login()
         {
             InitializeComponent();
@@ -31,20 +32,29 @@ namespace SGClubDeportivo
 
             string tipoUsuario="";
 
-            if (_objSecretaria.Autenticar(txtUsuario.Text, txtContrasenia.Text) == "SECRETARIA")
+            if (_user.Autenticar(txtUsuario.Text, txtContrasenia.Text) == "SECRETARIA")
                 tipoUsuario = "SECRETARIA";
-            if (_objAdministrador.Autenticar(txtUsuario.Text, txtContrasenia.Text) == "ADMINISTRATIVO")
+            if (_user.Autenticar(txtUsuario.Text, txtContrasenia.Text) == "ADMINISTRATIVO")
                 tipoUsuario = "ADMIN";
 
-            if (tipoUsuario == "")
+            if (tipoUsuario == "NO LOG")
             {
                 MessageBox.Show("LA CUENTA O CONTRASEÑA SON INCORRECTOS", "NO SE PUDO INICIAR SESION", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                 this.Hide();
-                 frmPrincipal frm = new Vista.frmPrincipal(txtUsuario.Text, tipoUsuario);
-                 frm.ShowDialog();
+                if (tipoUsuario=="ADMIN")
+                {
+                    this.Hide();
+                    frmPrincipal frmAdmin = new Vista.frmPrincipal(txtUsuario.Text, tipoUsuario);
+                    frmAdmin.ShowDialog();
+                }
+                else {
+                    this.Hide();
+                    frmPrincipalSecretario frm = new Vista.frmPrincipalSecretario(txtUsuario.Text, tipoUsuario);
+                    frm.ShowDialog();
+                }
+                
             }
                                 
         }

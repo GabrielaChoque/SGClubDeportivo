@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Recibo de Pago</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h4 {
+            margin: 0;
+        }
+
+        /* Estilos de la Sección de Encabezado */
+        .header {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .header td {
+                vertical-align: top;
+            }
+
+        .nombre-institucion {
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .direccion {
+            font-size: 11px;
+        }
+
+        .nit {
+            font-size: 11px;
+        }
+
+        /* Estilos de la Sección de Datos Personales */
+        .datos-personales {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+            .datos-personales table {
+                width: 100%;
+            }
+
+            .datos-personales th, .datos-personales td {
+                padding: 8px;
+                border: 1px solid black;
+            }
+
+        /* Estilos de la Sección de Detalles de Pago */
+        .detalles-pago {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+            .detalles-pago table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            .detalles-pago th, .detalles-pago td {
+                padding: 8px;
+                border: 1px solid black;
+                
+            }
+
+            .detalles-pago th {
+                font-size: 11px;
+                font-weight: bold;
+                text-align: center;
+                background-color: #D8D8D8; /* Fondo de las celdas de encabezado */
+            }
+
+            .detalles-pago td {
+                font-size: 11px;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <h4 align="center" class="">REPORTE DE PAGO ESTUDIANTIL</h4>
+
+    <table class="header">
+        <tr>
+            <td style="width:70%">
+                <p class="nombre-institucion">NOMBRE DE INSTITUCION: CLUB DEPORTIVO</p>
+                <p class="direccion">DIRECCION: BRASIL Y EJERCITO</p>
+                <!--<p>CELULAR: 12345678</p>-->
+            </td>
+            <td style="width:30%;" align="right">
+                <table>
+                    <tr><td align="center" class="nit">NIT: 12222222222</td></tr>
+                    <tr><td align="center" class="nit">Nro: 00000111</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <div class="datos-personales">
+        <table>
+            <tr>
+                <th>Jugador</th>
+                <td>@CLIENTE</td>
+            </tr>
+            <tr>
+                <th>Carnet</th>
+                <td>@DOCUMENTO</td>
+                <th>Fecha</th>
+                <td>@FECHA</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="detalles-pago">
+        <table>
+            <thead>
+                <tr>
+                    <th>GESTION</th>
+                    <th>MES</th>
+                    <th>CONCEPTO</th>
+                    <th>CORRELATIVO</th>
+                    <th>DESCUENTO</th>
+                    <th>CUOTA_REGULAR</th>
+                    <th>CUOTA_FINAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                @FILAS
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

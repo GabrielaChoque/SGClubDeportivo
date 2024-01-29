@@ -46,71 +46,73 @@ namespace SGClubDeportivo.Controlador
 
         public string Listardias(int idCategoria)
         {
-            string result=""; int i = 0;
-            string[] diasEntrenamiento = new string[4];
-            var lsHorario = db.Horario.ToList();
-            foreach (var dh in lsHorario)
-            {
-                if (dh.id_categoria == idCategoria) { 
-                    diasEntrenamiento[i] = dh.dia;
-                    switch(diasEntrenamiento[i])
-                    {
-                        case "Lunes": 
-                            dias.Add(1);
-                            break;
-                        case "Martes":
-                            dias.Add(2);
-                            break;
-                        case "Miercoles":
-                            dias.Add(3);
-                            break;
-                        case "Jueves":
-                            dias.Add(4);
-                            break;
-                        case "Viernes":
-                            dias.Add(5);
-                            break;
-                    }
-                    result = result + diasEntrenamiento[i]; 
-                    i++;
-                }
-                else
-                    i=i;
-            }
-            return result;
+            //string result=""; int i = 0;
+            //string[] diasEntrenamiento = new string[4];
+            //var lsHorario = db.Horario.ToList();
+            //foreach (var dh in lsHorario)
+            //{
+            //    if (dh.id_categoria == idCategoria) { 
+            //        diasEntrenamiento[i] = dh.dia;
+            //        switch(diasEntrenamiento[i])
+            //        {
+            //            case "Lunes": 
+            //                dias.Add(1);
+            //                break;
+            //            case "Martes":
+            //                dias.Add(2);
+            //                break;
+            //            case "Miercoles":
+            //                dias.Add(3);
+            //                break;
+            //            case "Jueves":
+            //                dias.Add(4);
+            //                break;
+            //            case "Viernes":
+            //                dias.Add(5);
+            //                break;
+            //        }
+            //        result = result + diasEntrenamiento[i]; 
+            //        i++;
+            //    }
+            //    else
+            //        i=i;
+            //}
+            //return result;
+            return "";
         }
         public string ListarHoras(int idCategoria)
         {
-            string result = ""; int i = 0;
-            string[] horasEntrenamiento = new string[4];
-            var lsHorario = db.Horario.ToList();
-            foreach (var dh in lsHorario)
-            {
-                if (dh.id_categoria == idCategoria)
-                {
-                    horasEntrenamiento[i] = dh.hora;
-                    switch (horasEntrenamiento[i])
-                    {
-                        case "9":
-                            horas.Add(1);
-                            break;
-                        case "11":
-                            horas.Add(2);
-                            break;
-                        case "14":
-                            horas.Add(3);
-                            break;
-                        case "16":
-                            horas.Add(4);
-                            break;
-                    }
-                    result = result+horasEntrenamiento[i];
-                    i++;
-                }
-                else
-                    i = i;
-            }
-            return result;
+            //string result = ""; int i = 0;
+            //string[] horasEntrenamiento = new string[4];
+            //var lsHorario = db.Horario.ToList();
+            //foreach (var dh in lsHorario)
+            //{
+            //    if (dh.id_categoria == idCategoria)
+            //    {
+            //        horasEntrenamiento[i] = dh.hora;
+            //        switch (horasEntrenamiento[i])
+            //        {
+            //            case "9":
+            //                horas.Add(1);
+            //                break;
+            //            case "11":
+            //                horas.Add(2);
+            //                break;
+            //            case "14":
+            //                horas.Add(3);
+            //                break;
+            //            case "16":
+            //                horas.Add(4);
+            //                break;
+            //        }
+            //        result = result+horasEntrenamiento[i];
+            //        i++;
+            //    }
+            //    else
+            //        i = i;
+            //}
+            //return result;
+            return "";
         }
 
     }

@@ -32,7 +32,7 @@ namespace SGClubDeportivo.Vista.Gestiones
         {
             this.Validate();
             this.jugadorBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bdClubDeportivoDataSet);
+            //this.tableAdapterManager.UpdateAll(this.bdClubDeportivoDataSet);
         }
 
         private void frmGestionJugadores_Load(object sender, EventArgs e)
@@ -131,16 +131,16 @@ namespace SGClubDeportivo.Vista.Gestiones
         {
             if (this.dgvJugadores.Columns[e.ColumnIndex].Name == "Modificar")
             {
-                frmCrudJugadores AddHorario= new frmCrudJugadores(ci_jugadorLabel1.Text, Convert.ToInt32(id_categoriaLabel1.Text));
-                AddHorario.Show();
-                _objJugador = new JugadorController();
+                //frmCrudJugadores AddHorario= new frmCrudJugadores(ci_jugadorLabel1.Text, Convert.ToInt32(id_categoriaLabel1.Text));
+                //AddHorario.Show();
+                //_objJugador = new JugadorController();
             }
             if (this.dgvJugadores.Columns[e.ColumnIndex].Name == "Eliminar")
             {
                 DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTE JUGADOR?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
-                    _objJugador.Eliminar(ci_jugadorLabel1.Text);
+                    //_objJugador.Eliminar(ci_jugadorLabel1.Text);
                     _objJugador = new JugadorController();
                 }
             }

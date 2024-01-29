@@ -16,6 +16,11 @@ namespace SGClubDeportivo.Vista
     {
         public string _Cargo;
         public string _Carnet;
+        public frmPrincipal()
+        {
+            InitializeComponent();
+
+        }
         public frmPrincipal(string carnet, string cargo)
         {
             InitializeComponent();
@@ -26,8 +31,7 @@ namespace SGClubDeportivo.Vista
 
         private void AbrirFormInPanel(object Formhijo)
         {
-            if (this.PanelContenido.Controls.Count > 0)
-                this.PanelContenido.Controls.RemoveAt(0);
+            this.PanelContenido.Controls.Clear();
             Form fh = Formhijo as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
@@ -43,7 +47,7 @@ namespace SGClubDeportivo.Vista
 
         private void btnJugadores_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Vista.Gestiones.frmGestionJugadores());
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionJugadors());
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -59,6 +63,38 @@ namespace SGClubDeportivo.Vista
         private void btnHorarios_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new Vista.Gestiones.frmGestionHorario());
+        }
+
+        private void btnMensualidades_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionMensualidades());
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionCategorias());
+        }
+
+        private void btnPagos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionGuiaPrecios());
+        }
+
+        private void btnInscripciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionInscripciones());
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionUsuarios());
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login frm = new Login();
+            frm.ShowDialog();
         }
     }
 }

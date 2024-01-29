@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>D:\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
@@ -44,6 +47,12 @@
     </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.3\lib\itextsharp.xmlworker.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -65,19 +74,14 @@
   <ItemGroup>
     <Compile Include="Controlador\CategoriaController.cs" />
     <Compile Include="Controlador\EntrenamientoController.cs" />
+    <Compile Include="Controlador\GuiaPrecioController.cs" />
     <Compile Include="Controlador\HorarioController.cs" />
+    <Compile Include="Controlador\InscripcionController.cs" />
     <Compile Include="Controlador\JugadorController.cs" />
     <Compile Include="Controlador\MensualidadController.cs" />
-    <Compile Include="Data\BdClubDeportivoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BdClubDeportivoDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Controlador\UsuarioController.cs" />
     <Compile Include="Controlador\AdministradorController.cs" />
     <Compile Include="Controlador\SecretariaController.cs" />
-    <Compile Include="Data\Administrador.cs">
-      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\BdClubDeportivo.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,22 +97,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Data\Categoria.cs">
+    <Compile Include="Data\Categorias.cs">
       <DependentUpon>BdClubDeportivo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Entrenamiento.cs">
+    <Compile Include="Data\GuiaPrecios.cs">
       <DependentUpon>BdClubDeportivo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Horario.cs">
-      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Jugador.cs">
+    <Compile Include="Data\Jugadores.cs">
       <DependentUpon>BdClubDeportivo.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Mensualidades.cs">
       <DependentUpon>BdClubDeportivo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Secretaria.cs">
+    <Compile Include="Data\sysdiagrams.cs">
+      <DependentUpon>BdClubDeportivo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Usuarios.cs">
       <DependentUpon>BdClubDeportivo.tt</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -119,6 +123,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\frmGestiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmGestiones.Designer.cs">
+      <DependentUpon>frmGestiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,11 +141,41 @@
     <Compile Include="Vista\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\frmPrincipalSecretario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmPrincipalSecretario.Designer.cs">
+      <DependentUpon>frmPrincipalSecretario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmVentanas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmVentanas.Designer.cs">
+      <DependentUpon>frmVentanas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionCategorias.Designer.cs">
+      <DependentUpon>frmGestionCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionGuiaPrecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionGuiaPrecios.Designer.cs">
+      <DependentUpon>frmGestionGuiaPrecios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Gestiones\frmGestionHorario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Gestiones\frmGestionHorario.Designer.cs">
       <DependentUpon>frmGestionHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionInscripciones.Designer.cs">
+      <DependentUpon>frmGestionInscripciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Gestiones\frmGestionJugadores.cs">
       <SubType>Form</SubType>
@@ -143,17 +183,23 @@
     <Compile Include="Vista\Gestiones\frmGestionJugadores.Designer.cs">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Ventanas\frmCrudEntrenamiento.cs">
+    <Compile Include="Vista\Gestiones\frmGestionJugadors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Ventanas\frmCrudEntrenamiento.Designer.cs">
-      <DependentUpon>frmCrudEntrenamiento.cs</DependentUpon>
+    <Compile Include="Vista\Gestiones\frmGestionJugadors.Designer.cs">
+      <DependentUpon>frmGestionJugadors.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Ventanas\frmCrudHorarios.cs">
+    <Compile Include="Vista\Gestiones\frmGestionMensualidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Ventanas\frmCrudHorarios.Designer.cs">
-      <DependentUpon>frmCrudHorarios.cs</DependentUpon>
+    <Compile Include="Vista\Gestiones\frmGestionMensualidades.Designer.cs">
+      <DependentUpon>frmGestionMensualidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionUsuarios.Designer.cs">
+      <DependentUpon>frmGestionUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Gestiones\frmGestionVentas.cs">
       <SubType>Form</SubType>
@@ -161,18 +207,49 @@
     <Compile Include="Vista\Gestiones\frmGestionVentas.Designer.cs">
       <DependentUpon>frmGestionVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudCategorias.Designer.cs">
+      <DependentUpon>frmCrudCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudGuiaPrecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudGuiaPrecios.Designer.cs">
+      <DependentUpon>frmCrudGuiaPrecios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudHorarios.Designer.cs">
+      <DependentUpon>frmCrudHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudInscripciones.Designer.cs">
+      <DependentUpon>frmCrudInscripciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas\frmCrudJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Ventanas\frmCrudJugadores.Designer.cs">
       <DependentUpon>frmCrudJugadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Ventanas\VerHorario.cs">
+    <Compile Include="Vista\Ventanas\frmCrudMensualidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Ventanas\VerHorario.Designer.cs">
-      <DependentUpon>VerHorario.cs</DependentUpon>
+    <Compile Include="Vista\Ventanas\frmCrudMensualidades.Designer.cs">
+      <DependentUpon>frmCrudMensualidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCrudUsuarios.Designer.cs">
+      <DependentUpon>frmCrudUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\Inscripciones.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,49 +261,75 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vista\frmGestiones.resx">
+      <DependentUpon>frmGestiones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmPrincipalSecretario.resx">
+      <DependentUpon>frmPrincipalSecretario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmVentanas.resx">
+      <DependentUpon>frmVentanas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionCategorias.resx">
+      <DependentUpon>frmGestionCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionGuiaPrecios.resx">
+      <DependentUpon>frmGestionGuiaPrecios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionHorario.resx">
       <DependentUpon>frmGestionHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionInscripciones.resx">
+      <DependentUpon>frmGestionInscripciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionJugadores.resx">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Ventanas\frmCrudEntrenamiento.resx">
-      <DependentUpon>frmCrudEntrenamiento.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionJugadors.resx">
+      <DependentUpon>frmGestionJugadors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Ventanas\frmCrudHorarios.resx">
-      <DependentUpon>frmCrudHorarios.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionMensualidades.resx">
+      <DependentUpon>frmGestionMensualidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionUsuarios.resx">
+      <DependentUpon>frmGestionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionVentas.resx">
       <DependentUpon>frmGestionVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmCrudCategorias.resx">
+      <DependentUpon>frmCrudCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmCrudGuiaPrecios.resx">
+      <DependentUpon>frmCrudGuiaPrecios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmCrudHorarios.resx">
+      <DependentUpon>frmCrudHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmCrudInscripciones.resx">
+      <DependentUpon>frmCrudInscripciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmCrudJugadores.resx">
       <DependentUpon>frmCrudJugadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Ventanas\VerHorario.resx">
-      <DependentUpon>VerHorario.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\Ventanas\frmCrudMensualidades.resx">
+      <DependentUpon>frmCrudMensualidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmCrudUsuarios.resx">
+      <DependentUpon>frmCrudUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Data\BdClubDeportivo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BdClubDeportivo.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Data\BdClubDeportivoDataSet.xsc">
-      <DependentUpon>BdClubDeportivoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Data\BdClubDeportivoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BdClubDeportivoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Data\BdClubDeportivoDataSet.xss">
-      <DependentUpon>BdClubDeportivoDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Data\BdClubDeportivo.edmx.diagram">
       <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
     </None>
@@ -252,14 +355,16 @@
     <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRow.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRowChangeEvent.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRowChangeEventHandler.datasource" />
-    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet.datasource" />
-    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoEntities.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Categoria.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Categorias.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.GuiaPrecios.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Horario.datasource" />
-    <None Include="Properties\DataSources\SGClubDeportivo.Data.Jugador.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Inscripciones.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Jugadores.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Mensualidades.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Secretaria.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.sysdiagrams.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.Usuarios.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -275,11 +380,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Vista\Jugadores\" />
+    <Folder Include="Vista\Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Plantilla.html" />
+    <None Include="bin\Debug\editar.ico" />
+    <None Include="bin\Debug\eliminar.ico" />
     <Content Include="Data\BdClubDeportivo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
@@ -290,6 +399,9 @@
       <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
       <LastGenOutput>BdClubDeportivo.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

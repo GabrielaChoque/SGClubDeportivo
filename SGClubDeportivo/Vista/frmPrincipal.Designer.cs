@@ -39,7 +39,9 @@ namespace SGClubDeportivo.Vista
             this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.PannelMenu = new System.Windows.Forms.Panel();
             this.Sidebar = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.btnHorarios = new FontAwesome.Sharp.IconButton();
+            this.btnUsuarios = new FontAwesome.Sharp.IconButton();
+            this.btnCategorias = new FontAwesome.Sharp.IconButton();
+            this.btnInscripciones = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnMensualidades = new FontAwesome.Sharp.IconButton();
             this.btnPagos = new FontAwesome.Sharp.IconButton();
@@ -60,7 +62,7 @@ namespace SGClubDeportivo.Vista
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(216, 12);
+            this.label1.Location = new System.Drawing.Point(333, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(371, 25);
             this.label1.TabIndex = 0;
@@ -76,13 +78,13 @@ namespace SGClubDeportivo.Vista
             this.panelBarraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraSuperior.Location = new System.Drawing.Point(0, 0);
             this.panelBarraSuperior.Name = "panelBarraSuperior";
-            this.panelBarraSuperior.Size = new System.Drawing.Size(838, 53);
+            this.panelBarraSuperior.Size = new System.Drawing.Size(1076, 53);
             this.panelBarraSuperior.TabIndex = 36;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(611, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(728, 1);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 43);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -92,7 +94,7 @@ namespace SGClubDeportivo.Vista
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(169, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(286, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -109,7 +111,7 @@ namespace SGClubDeportivo.Vista
             this.iconButton1.IconColor = System.Drawing.Color.LightCoral;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(789, 5);
+            this.iconButton1.Location = new System.Drawing.Point(1027, 3);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(37, 41);
             this.iconButton1.TabIndex = 40;
@@ -131,7 +133,7 @@ namespace SGClubDeportivo.Vista
             this.PannelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PannelMenu.Location = new System.Drawing.Point(0, 53);
             this.PannelMenu.Name = "PannelMenu";
-            this.PannelMenu.Size = new System.Drawing.Size(233, 444);
+            this.PannelMenu.Size = new System.Drawing.Size(211, 652);
             this.PannelMenu.TabIndex = 37;
             // 
             // Sidebar
@@ -141,7 +143,9 @@ namespace SGClubDeportivo.Vista
             this.Sidebar.BackColor = System.Drawing.Color.SteelBlue;
             this.Sidebar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Sidebar.BackgroundImage")));
             this.Sidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Sidebar.Controls.Add(this.btnHorarios);
+            this.Sidebar.Controls.Add(this.btnUsuarios);
+            this.Sidebar.Controls.Add(this.btnCategorias);
+            this.Sidebar.Controls.Add(this.btnInscripciones);
             this.Sidebar.Controls.Add(this.btnSalir);
             this.Sidebar.Controls.Add(this.btnMensualidades);
             this.Sidebar.Controls.Add(this.btnPagos);
@@ -156,29 +160,71 @@ namespace SGClubDeportivo.Vista
             this.Sidebar.Location = new System.Drawing.Point(5, 5);
             this.Sidebar.Name = "Sidebar";
             this.Sidebar.Quality = 10;
-            this.Sidebar.Size = new System.Drawing.Size(218, 426);
+            this.Sidebar.Size = new System.Drawing.Size(206, 647);
             this.Sidebar.TabIndex = 2;
             // 
-            // btnHorarios
+            // btnUsuarios
             // 
-            this.btnHorarios.BackColor = System.Drawing.Color.Transparent;
-            this.btnHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHorarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHorarios.ForeColor = System.Drawing.Color.Black;
-            this.btnHorarios.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            this.btnHorarios.IconColor = System.Drawing.Color.Black;
-            this.btnHorarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHorarios.IconSize = 30;
-            this.btnHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHorarios.Location = new System.Drawing.Point(7, 240);
-            this.btnHorarios.Name = "btnHorarios";
-            this.btnHorarios.Size = new System.Drawing.Size(191, 38);
-            this.btnHorarios.TabIndex = 23;
-            this.btnHorarios.Text = "HORARIOS";
-            this.btnHorarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHorarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHorarios.UseVisualStyleBackColor = false;
-            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
+            this.btnUsuarios.BackColor = System.Drawing.Color.Transparent;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.Color.Black;
+            this.btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.Running;
+            this.btnUsuarios.IconColor = System.Drawing.Color.Black;
+            this.btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUsuarios.IconSize = 30;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(7, 334);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(191, 38);
+            this.btnUsuarios.TabIndex = 25;
+            this.btnUsuarios.Text = "USUARIOS";
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // btnCategorias
+            // 
+            this.btnCategorias.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.ForeColor = System.Drawing.Color.Black;
+            this.btnCategorias.IconChar = FontAwesome.Sharp.IconChar.Running;
+            this.btnCategorias.IconColor = System.Drawing.Color.Black;
+            this.btnCategorias.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCategorias.IconSize = 30;
+            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategorias.Location = new System.Drawing.Point(7, 152);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Size = new System.Drawing.Size(191, 38);
+            this.btnCategorias.TabIndex = 24;
+            this.btnCategorias.Text = "CATEGORIAS";
+            this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategorias.UseVisualStyleBackColor = false;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+            // 
+            // btnInscripciones
+            // 
+            this.btnInscripciones.BackColor = System.Drawing.Color.Transparent;
+            this.btnInscripciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscripciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscripciones.ForeColor = System.Drawing.Color.Black;
+            this.btnInscripciones.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            this.btnInscripciones.IconColor = System.Drawing.Color.Black;
+            this.btnInscripciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInscripciones.IconSize = 30;
+            this.btnInscripciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInscripciones.Location = new System.Drawing.Point(7, 290);
+            this.btnInscripciones.Name = "btnInscripciones";
+            this.btnInscripciones.Size = new System.Drawing.Size(191, 38);
+            this.btnInscripciones.TabIndex = 23;
+            this.btnInscripciones.Text = "INSCRIPCIONES";
+            this.btnInscripciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInscripciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInscripciones.UseVisualStyleBackColor = false;
+            this.btnInscripciones.Click += new System.EventHandler(this.btnInscripciones_Click);
             // 
             // btnSalir
             // 
@@ -191,7 +237,7 @@ namespace SGClubDeportivo.Vista
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 30;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(7, 284);
+            this.btnSalir.Location = new System.Drawing.Point(3, 597);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(191, 38);
             this.btnSalir.TabIndex = 22;
@@ -199,6 +245,7 @@ namespace SGClubDeportivo.Vista
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnMensualidades
             // 
@@ -211,14 +258,15 @@ namespace SGClubDeportivo.Vista
             this.btnMensualidades.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMensualidades.IconSize = 30;
             this.btnMensualidades.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMensualidades.Location = new System.Drawing.Point(7, 152);
+            this.btnMensualidades.Location = new System.Drawing.Point(7, 240);
             this.btnMensualidades.Name = "btnMensualidades";
             this.btnMensualidades.Size = new System.Drawing.Size(191, 38);
             this.btnMensualidades.TabIndex = 21;
-            this.btnMensualidades.Text = "MESUALIDADES";
+            this.btnMensualidades.Text = "MENSUALIDADES";
             this.btnMensualidades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMensualidades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMensualidades.UseVisualStyleBackColor = false;
+            this.btnMensualidades.Click += new System.EventHandler(this.btnMensualidades_Click);
             // 
             // btnPagos
             // 
@@ -235,11 +283,11 @@ namespace SGClubDeportivo.Vista
             this.btnPagos.Name = "btnPagos";
             this.btnPagos.Size = new System.Drawing.Size(191, 38);
             this.btnPagos.TabIndex = 18;
-            this.btnPagos.Text = "PAGOS";
+            this.btnPagos.Text = "GUIA DE PRECIOS";
             this.btnPagos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPagos.UseVisualStyleBackColor = false;
-            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click_1);
             // 
             // btnJugadores
             // 
@@ -311,9 +359,9 @@ namespace SGClubDeportivo.Vista
             // 
             this.PanelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
             this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenido.Location = new System.Drawing.Point(233, 53);
+            this.PanelContenido.Location = new System.Drawing.Point(211, 53);
             this.PanelContenido.Name = "PanelContenido";
-            this.PanelContenido.Size = new System.Drawing.Size(605, 444);
+            this.PanelContenido.Size = new System.Drawing.Size(865, 652);
             this.PanelContenido.TabIndex = 38;
             // 
             // frmPrincipal
@@ -321,7 +369,7 @@ namespace SGClubDeportivo.Vista
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(838, 497);
+            this.ClientSize = new System.Drawing.Size(1076, 705);
             this.Controls.Add(this.PanelContenido);
             this.Controls.Add(this.PannelMenu);
             this.Controls.Add(this.panelBarraSuperior);
@@ -350,14 +398,16 @@ namespace SGClubDeportivo.Vista
         private Bunifu.Framework.UI.BunifuDragControl MoverDashboard;
         private System.Windows.Forms.Panel PannelMenu;
         private Bunifu.Framework.UI.BunifuGradientPanel Sidebar;
-        private FontAwesome.Sharp.IconButton btnMensualidades;
-        private FontAwesome.Sharp.IconButton btnPagos;
-        private FontAwesome.Sharp.IconButton btnJugadores;
-        private FontAwesome.Sharp.IconButton btnInicio;
         private Bunifu.Framework.UI.BunifuSeparator LineaSidebar;
-        private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.Panel PanelContenido;
-        private FontAwesome.Sharp.IconButton btnHorarios;
+        public FontAwesome.Sharp.IconButton btnMensualidades;
+        public FontAwesome.Sharp.IconButton btnPagos;
+        public FontAwesome.Sharp.IconButton btnJugadores;
+        public FontAwesome.Sharp.IconButton btnInicio;
+        public System.Windows.Forms.Label label2;
+        public FontAwesome.Sharp.IconButton btnSalir;
+        public FontAwesome.Sharp.IconButton btnInscripciones;
+        public FontAwesome.Sharp.IconButton btnCategorias;
+        public FontAwesome.Sharp.IconButton btnUsuarios;
     }
 }

@@ -19,12 +19,12 @@ namespace SGClubDeportivo.Vista.Gestiones
         public frmGestionVentas()
         {
             InitializeComponent();
-            jugadorBindingSource.DataSource = _objJugador.Listar("123456789");
+            //jugadorBindingSource.DataSource = _objJugador.Listar("123456789");
             mensualidadesBindingSource.DataSource = _objMensualidad.Listar("1234567890123");
         }
         private void ListarJugadores_TextChanged(object sender, EventArgs e)
         {
-            jugadorBindingSource.DataSource = _objJugador.Listar(txtBuscarJ.Text);
+            //jugadorBindingSource.DataSource = _objJugador.Listar(txtBuscarJ.Text);
         }
 
         private void btnSelecJugador_Click(object sender, EventArgs e)
@@ -47,8 +47,8 @@ namespace SGClubDeportivo.Vista.Gestiones
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            var reg = (Jugador)jugadorBindingSource.Current;
-            jugadorBindingSource.DataSource = _objJugador.BuscarPorPK(txtBuscarJugador.Text);
+            //var reg = (Jugadores)jugadorBindingSource.Current;
+            //jugadorBindingSource.DataSource = _objJugador.BuscarPorPK(txtBuscarJugador.Text);
 
             
             if (ci_jugadorLabel1.Text != "")
@@ -70,7 +70,7 @@ namespace SGClubDeportivo.Vista.Gestiones
                 mensualidadesBindingSource.AddNew();
                 var reg = CargarDatosMensualidades();
 
-                MessageBox.Show(reg.ciJugador + reg.Estado + reg.Mes);
+                //MessageBox.Show(reg.ciJugador + reg.Estado + reg.Mes);
                 if (_objMensualidad.Insertar(reg))
                 {
                     MessageBox.Show("MENSUALIDAD REGISTRADA SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -89,9 +89,9 @@ namespace SGClubDeportivo.Vista.Gestiones
         {
             int indice = mesComboBox.SelectedIndex; //selecciona el numero de fila de entre los items del combobox
             var reg = (Mensualidades)mensualidadesBindingSource.Current;
-            reg.Mes = mesComboBox.Items[indice].ToString(); //selecciona el dato del combobox correcto
-            reg.Estado = "Pagado";
-            reg.ciJugador = ci_jugadorLabel1.Text;
+            //reg.Mes = mesComboBox.Items[indice].ToString(); //selecciona el dato del combobox correcto
+            //reg.Estado = "Pagado";
+            //reg.ciJugador = ci_jugadorLabel1.Text;
             return reg;
         }
     }

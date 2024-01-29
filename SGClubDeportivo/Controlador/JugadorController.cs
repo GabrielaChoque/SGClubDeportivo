@@ -10,39 +10,49 @@ namespace SGClubDeportivo.Controlador
 
         BdClubDeportivoEntities _db = new BdClubDeportivoEntities();
 
-        public List<Jugador> Listar(string pBuscar)
+        public List<Jugadores> Listar(string pBuscar)
         {
-            return _db.Jugador.Where(x => x.nom_jugador.Contains(pBuscar)).ToList();
+            return _db.Jugadores.Where(x => x.Nombres.Contains(pBuscar)).ToList();
         }
-        public List<Jugador> ListarJugadorci(string pBuscar)
+
+        public List<Jugadores> ListarJugadorci(string pBuscar)
         {
-            return _db.Jugador.Where(x => x.ci_jugador.Contains(pBuscar)).ToList();
+            return _db.Jugadores.Where(x => x.Ci_jugador.Contains(pBuscar)).ToList();
         }
-        public List<Jugador> ListarPorCategoria(string pBuscarNombre, int pIdCategoria)
+        public Jugadores SeleccionarPorCI(string ci)
         {
-            string c = "SELECT * FROM Jugador WHERE nom_jugador LIKE '%"+pBuscarNombre+"%' AND id_categoria="+Convert.ToString(pIdCategoria);
-            return _db.Jugador.SqlQuery(c).ToList();
+            //return _db.Jugadores.Where(x => x.Ci_jugador==ci).FirstOrDefault();
+            return _db.Jugadores.Where(x => x.Ci_jugador.Contains(ci)).FirstOrDefault();
         }
-        public bool Insertar(Data.Jugador reg)
+        public List<Jugadores> ListarPorCategoria(string pBuscarNombre, int pIdCategoria)
         {
-            _db.Jugador.Add(reg);
+            string c = "SELECT * FROM Jugadores WHERE Nombres LIKE '%" + pBuscarNombre + "%' AND id_categoria=" + Convert.ToString(pIdCategoria);
+            return _db.Jugadores.SqlQuery(c).ToList();
+        }
+        public bool Insertar(Data.Jugadores reg)
+        {
+            _db.Jugadores.Add(reg);
             _db.SaveChanges();
             return true;
         }
-        public bool Modificar(Data.Jugador reg)
+        public bool Modificar(Data.Jugadores reg)
         {
             _db.Entry(reg).State = System.Data.Entity.EntityState.Modified;
             return _db.SaveChanges() > 0;
         }
-        public bool Eliminar(string pParametro)
+        public Jugadores Seleccionar(int id)
         {
-            var reg = _db.Jugador.Where(x => x.ci_jugador == pParametro).FirstOrDefault();
-            _db.Jugador.Remove(reg);
+            return _db.Jugadores.Find(id);
+        }
+        public bool Eliminar(int pParametro)
+        {
+            var reg = _db.Jugadores.Where(x => x.id == pParametro).FirstOrDefault();
+            _db.Jugadores.Remove(reg);
             return _db.SaveChanges() > 0;
         }
-        internal List<Jugador> BuscarPorPK(string pCuenta)
+        internal List<Jugadores> BuscarPorPK(string pCuenta)
         {
-            return _db.Jugador.Where(x => x.ci_jugador == pCuenta).ToList();
+            return _db.Jugadores.Where(x => x.Ci_jugador == pCuenta).ToList();
         }
     }
 }

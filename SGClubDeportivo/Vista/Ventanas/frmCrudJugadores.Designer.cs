@@ -1,5 +1,4 @@
-﻿
-namespace SGClubDeportivo.Vista.Ventanas
+﻿namespace SGClubDeportivo.Vista.Ventanas
 {
     partial class frmCrudJugadores
     {
@@ -30,234 +29,208 @@ namespace SGClubDeportivo.Vista.Ventanas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label apellidosLabel;
             System.Windows.Forms.Label ci_jugadorLabel;
-            System.Windows.Forms.Label fecha_nacLabel;
-            System.Windows.Forms.Label fecha_registroLabel;
-            System.Windows.Forms.Label nom_jugadorLabel;
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.btnAceptar = new FontAwesome.Sharp.IconButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblTituloCrud = new System.Windows.Forms.Label();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label fechaNacimientoLabel;
+            System.Windows.Forms.Label nombresLabel;
+            System.Windows.Forms.Label tipoLabel;
+            System.Windows.Forms.Label nombreLabel;
+            this.JugadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.apellidosTextBox = new System.Windows.Forms.TextBox();
             this.ci_jugadorTextBox = new System.Windows.Forms.TextBox();
-            this.fecha_nacDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.fecha_registroDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.nom_jugadorTextBox = new System.Windows.Forms.TextBox();
-            this.jugadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fechaNacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.nombresTextBox = new System.Windows.Forms.TextBox();
+            this.tipoComboBox = new System.Windows.Forms.ComboBox();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nombreComboBox = new System.Windows.Forms.ComboBox();
+            apellidosLabel = new System.Windows.Forms.Label();
             ci_jugadorLabel = new System.Windows.Forms.Label();
-            fecha_nacLabel = new System.Windows.Forms.Label();
-            fecha_registroLabel = new System.Windows.Forms.Label();
-            nom_jugadorLabel = new System.Windows.Forms.Label();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource)).BeginInit();
+            fechaNacimientoLabel = new System.Windows.Forms.Label();
+            nombresLabel = new System.Windows.Forms.Label();
+            tipoLabel = new System.Windows.Forms.Label();
+            nombreLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.JugadoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Crimson;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Typo Oval Demo", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnCancelar.IconColor = System.Drawing.Color.White;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 25;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(178, 238);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(111, 32);
-            this.btnCancelar.TabIndex = 27;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Typo Oval Demo", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.btnAceptar.IconColor = System.Drawing.Color.White;
-            this.btnAceptar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAceptar.IconSize = 25;
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(12, 238);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(111, 32);
-            this.btnAceptar.TabIndex = 25;
-            this.btnAceptar.Text = "ACEPTAR";
-            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // panel4
+            // apellidosLabel
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
-            this.panel4.Controls.Add(this.lblTituloCrud);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(305, 44);
-            this.panel4.TabIndex = 37;
-            // 
-            // lblTituloCrud
-            // 
-            this.lblTituloCrud.AutoSize = true;
-            this.lblTituloCrud.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloCrud.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTituloCrud.Location = new System.Drawing.Point(45, 13);
-            this.lblTituloCrud.Name = "lblTituloCrud";
-            this.lblTituloCrud.Size = new System.Drawing.Size(205, 23);
-            this.lblTituloCrud.TabIndex = 0;
-            this.lblTituloCrud.Text = "MODIFICAR JUGADOR";
-            this.lblTituloCrud.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.Font = new System.Drawing.Font("Typo Oval Demo", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Items.AddRange(new object[] {
-            "SUB 7",
-            "SUB 9",
-            "SUB 11",
-            "SUB 13",
-            "SUB 15",
-            "SUB 17"});
-            this.cmbCategoria.Location = new System.Drawing.Point(170, 64);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(119, 21);
-            this.cmbCategoria.TabIndex = 47;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(167, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "CATEGORIA";
+            apellidosLabel.AutoSize = true;
+            apellidosLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            apellidosLabel.Location = new System.Drawing.Point(120, 95);
+            apellidosLabel.Name = "apellidosLabel";
+            apellidosLabel.Size = new System.Drawing.Size(52, 13);
+            apellidosLabel.TabIndex = 41;
+            apellidosLabel.Text = "Apellidos:";
             // 
             // ci_jugadorLabel
             // 
             ci_jugadorLabel.AutoSize = true;
-            ci_jugadorLabel.Location = new System.Drawing.Point(9, 48);
+            ci_jugadorLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            ci_jugadorLabel.Location = new System.Drawing.Point(120, 121);
             ci_jugadorLabel.Name = "ci_jugadorLabel";
-            ci_jugadorLabel.Size = new System.Drawing.Size(81, 13);
-            ci_jugadorLabel.TabIndex = 48;
-            ci_jugadorLabel.Text = "NRO CARNET:";
+            ci_jugadorLabel.Size = new System.Drawing.Size(57, 13);
+            ci_jugadorLabel.TabIndex = 43;
+            ci_jugadorLabel.Text = "Ci jugador:";
+            // 
+            // fechaNacimientoLabel
+            // 
+            fechaNacimientoLabel.AutoSize = true;
+            fechaNacimientoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            fechaNacimientoLabel.Location = new System.Drawing.Point(120, 148);
+            fechaNacimientoLabel.Name = "fechaNacimientoLabel";
+            fechaNacimientoLabel.Size = new System.Drawing.Size(96, 13);
+            fechaNacimientoLabel.TabIndex = 45;
+            fechaNacimientoLabel.Text = "Fecha Nacimiento:";
+            // 
+            // nombresLabel
+            // 
+            nombresLabel.AutoSize = true;
+            nombresLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            nombresLabel.Location = new System.Drawing.Point(120, 173);
+            nombresLabel.Name = "nombresLabel";
+            nombresLabel.Size = new System.Drawing.Size(52, 13);
+            nombresLabel.TabIndex = 47;
+            nombresLabel.Text = "Nombres:";
+            // 
+            // tipoLabel
+            // 
+            tipoLabel.AutoSize = true;
+            tipoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            tipoLabel.Location = new System.Drawing.Point(120, 199);
+            tipoLabel.Name = "tipoLabel";
+            tipoLabel.Size = new System.Drawing.Size(31, 13);
+            tipoLabel.TabIndex = 49;
+            tipoLabel.Text = "Tipo:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            nombreLabel.Location = new System.Drawing.Point(125, 232);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 50;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // JugadoresBindingSource
+            // 
+            this.JugadoresBindingSource.DataSource = typeof(SGClubDeportivo.Data.Jugadores);
+            // 
+            // apellidosTextBox
+            // 
+            this.apellidosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.JugadoresBindingSource, "Apellidos", true));
+            this.apellidosTextBox.Location = new System.Drawing.Point(222, 92);
+            this.apellidosTextBox.Name = "apellidosTextBox";
+            this.apellidosTextBox.Size = new System.Drawing.Size(200, 20);
+            this.apellidosTextBox.TabIndex = 42;
             // 
             // ci_jugadorTextBox
             // 
-            this.ci_jugadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jugadorBindingSource, "ci_jugador", true));
-            this.ci_jugadorTextBox.Location = new System.Drawing.Point(12, 64);
+            this.ci_jugadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.JugadoresBindingSource, "Ci_jugador", true));
+            this.ci_jugadorTextBox.Location = new System.Drawing.Point(222, 118);
             this.ci_jugadorTextBox.Name = "ci_jugadorTextBox";
-            this.ci_jugadorTextBox.Size = new System.Drawing.Size(143, 20);
-            this.ci_jugadorTextBox.TabIndex = 49;
+            this.ci_jugadorTextBox.Size = new System.Drawing.Size(200, 20);
+            this.ci_jugadorTextBox.TabIndex = 44;
             // 
-            // fecha_nacLabel
+            // fechaNacimientoDateTimePicker
             // 
-            fecha_nacLabel.AutoSize = true;
-            fecha_nacLabel.Location = new System.Drawing.Point(9, 133);
-            fecha_nacLabel.Name = "fecha_nacLabel";
-            fecha_nacLabel.Size = new System.Drawing.Size(130, 13);
-            fecha_nacLabel.TabIndex = 50;
-            fecha_nacLabel.Text = "FECHA DE NACIMIENTO";
+            this.fechaNacimientoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.JugadoresBindingSource, "FechaNacimiento", true));
+            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(222, 144);
+            this.fechaNacimientoDateTimePicker.Name = "fechaNacimientoDateTimePicker";
+            this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaNacimientoDateTimePicker.TabIndex = 46;
             // 
-            // fecha_nacDateTimePicker
+            // nombresTextBox
             // 
-            this.fecha_nacDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.jugadorBindingSource, "fecha_nac", true));
-            this.fecha_nacDateTimePicker.Location = new System.Drawing.Point(12, 149);
-            this.fecha_nacDateTimePicker.Name = "fecha_nacDateTimePicker";
-            this.fecha_nacDateTimePicker.Size = new System.Drawing.Size(277, 20);
-            this.fecha_nacDateTimePicker.TabIndex = 51;
+            this.nombresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.JugadoresBindingSource, "Nombres", true));
+            this.nombresTextBox.Location = new System.Drawing.Point(222, 170);
+            this.nombresTextBox.Name = "nombresTextBox";
+            this.nombresTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nombresTextBox.TabIndex = 48;
             // 
-            // fecha_registroLabel
+            // tipoComboBox
             // 
-            fecha_registroLabel.AutoSize = true;
-            fecha_registroLabel.Location = new System.Drawing.Point(8, 177);
-            fecha_registroLabel.Name = "fecha_registroLabel";
-            fecha_registroLabel.Size = new System.Drawing.Size(119, 13);
-            fecha_registroLabel.TabIndex = 52;
-            fecha_registroLabel.Text = "FECHA DE REGISTRO";
+            this.tipoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.JugadoresBindingSource, "Tipo", true));
+            this.tipoComboBox.FormattingEnabled = true;
+            this.tipoComboBox.Location = new System.Drawing.Point(222, 196);
+            this.tipoComboBox.Name = "tipoComboBox";
+            this.tipoComboBox.Size = new System.Drawing.Size(200, 21);
+            this.tipoComboBox.TabIndex = 50;
             // 
-            // fecha_registroDateTimePicker
+            // categoriasBindingSource
             // 
-            this.fecha_registroDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.jugadorBindingSource, "fecha_registro", true));
-            this.fecha_registroDateTimePicker.Enabled = false;
-            this.fecha_registroDateTimePicker.Location = new System.Drawing.Point(12, 193);
-            this.fecha_registroDateTimePicker.Name = "fecha_registroDateTimePicker";
-            this.fecha_registroDateTimePicker.Size = new System.Drawing.Size(277, 20);
-            this.fecha_registroDateTimePicker.TabIndex = 53;
+            this.categoriasBindingSource.DataSource = typeof(SGClubDeportivo.Data.Categorias);
             // 
-            // nom_jugadorLabel
+            // nombreComboBox
             // 
-            nom_jugadorLabel.AutoSize = true;
-            nom_jugadorLabel.Location = new System.Drawing.Point(9, 90);
-            nom_jugadorLabel.Name = "nom_jugadorLabel";
-            nom_jugadorLabel.Size = new System.Drawing.Size(195, 13);
-            nom_jugadorLabel.TabIndex = 54;
-            nom_jugadorLabel.Text = "NOMBRE COMPLETO DEL JUGADOR";
-            // 
-            // nom_jugadorTextBox
-            // 
-            this.nom_jugadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jugadorBindingSource, "nom_jugador", true));
-            this.nom_jugadorTextBox.Location = new System.Drawing.Point(12, 107);
-            this.nom_jugadorTextBox.Name = "nom_jugadorTextBox";
-            this.nom_jugadorTextBox.Size = new System.Drawing.Size(277, 20);
-            this.nom_jugadorTextBox.TabIndex = 55;
-            // 
-            // jugadorBindingSource
-            // 
-            this.jugadorBindingSource.DataSource = typeof(SGClubDeportivo.Data.Jugador);
+            this.nombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.JugadoresBindingSource, "Categorias.Nombre", true));
+            this.nombreComboBox.DataSource = this.categoriasBindingSource;
+            this.nombreComboBox.DisplayMember = "Nombre";
+            this.nombreComboBox.FormattingEnabled = true;
+            this.nombreComboBox.Location = new System.Drawing.Point(220, 229);
+            this.nombreComboBox.Name = "nombreComboBox";
+            this.nombreComboBox.Size = new System.Drawing.Size(202, 21);
+            this.nombreComboBox.TabIndex = 51;
             // 
             // frmCrudJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(153)))), ((int)(((byte)(199)))));
-            this.ClientSize = new System.Drawing.Size(305, 284);
+            this.ClientSize = new System.Drawing.Size(506, 514);
+            this.Controls.Add(nombreLabel);
+            this.Controls.Add(this.nombreComboBox);
+            this.Controls.Add(apellidosLabel);
+            this.Controls.Add(this.apellidosTextBox);
             this.Controls.Add(ci_jugadorLabel);
             this.Controls.Add(this.ci_jugadorTextBox);
-            this.Controls.Add(fecha_nacLabel);
-            this.Controls.Add(this.fecha_nacDateTimePicker);
-            this.Controls.Add(fecha_registroLabel);
-            this.Controls.Add(this.fecha_registroDateTimePicker);
-            this.Controls.Add(nom_jugadorLabel);
-            this.Controls.Add(this.nom_jugadorTextBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbCategoria);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(fechaNacimientoLabel);
+            this.Controls.Add(this.fechaNacimientoDateTimePicker);
+            this.Controls.Add(nombresLabel);
+            this.Controls.Add(this.nombresTextBox);
+            this.Controls.Add(tipoLabel);
+            this.Controls.Add(this.tipoComboBox);
             this.Name = "frmCrudJugadores";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCrudJugadores";
-            this.Load += new System.EventHandler(this.frmCrudJugadores_Load);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.frmCrudjugador_Load);
+            this.Controls.SetChildIndex(this.btnAceptar, 0);
+            this.Controls.SetChildIndex(this.btnCancelar, 0);
+            this.Controls.SetChildIndex(this.tipoComboBox, 0);
+            this.Controls.SetChildIndex(tipoLabel, 0);
+            this.Controls.SetChildIndex(this.nombresTextBox, 0);
+            this.Controls.SetChildIndex(nombresLabel, 0);
+            this.Controls.SetChildIndex(this.fechaNacimientoDateTimePicker, 0);
+            this.Controls.SetChildIndex(fechaNacimientoLabel, 0);
+            this.Controls.SetChildIndex(this.ci_jugadorTextBox, 0);
+            this.Controls.SetChildIndex(ci_jugadorLabel, 0);
+            this.Controls.SetChildIndex(this.apellidosTextBox, 0);
+            this.Controls.SetChildIndex(apellidosLabel, 0);
+            this.Controls.SetChildIndex(this.nombreComboBox, 0);
+            this.Controls.SetChildIndex(nombreLabel, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.JugadoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton btnCancelar;
-        private FontAwesome.Sharp.IconButton btnAceptar;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblTituloCrud;
-        private System.Windows.Forms.BindingSource jugadorBindingSource;
-        private System.Windows.Forms.ComboBox cmbCategoria;
-        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.BindingSource JugadoresBindingSource;
+        private System.Windows.Forms.TextBox apellidosTextBox;
         private System.Windows.Forms.TextBox ci_jugadorTextBox;
-        private System.Windows.Forms.DateTimePicker fecha_nacDateTimePicker;
-        private System.Windows.Forms.DateTimePicker fecha_registroDateTimePicker;
-        private System.Windows.Forms.TextBox nom_jugadorTextBox;
+        private System.Windows.Forms.DateTimePicker fechaNacimientoDateTimePicker;
+        private System.Windows.Forms.TextBox nombresTextBox;
+        private System.Windows.Forms.ComboBox tipoComboBox;
+        private System.Windows.Forms.BindingSource categoriasBindingSource;
+        private System.Windows.Forms.ComboBox nombreComboBox;
     }
 }

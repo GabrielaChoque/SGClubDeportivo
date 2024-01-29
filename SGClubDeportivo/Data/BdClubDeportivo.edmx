@@ -5,365 +5,365 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="BdClubDeportivoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Administrador">
+        <EntityType Name="Categorias">
           <Key>
-            <PropertyRef Name="ci_admin" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="ci_admin" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="nom_admin" Type="varchar" MaxLength="250" />
-          <Property Name="contrasenia" Type="varchar" MaxLength="50" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="Categoria">
+        <EntityType Name="GuiaPrecios">
           <Key>
-            <PropertyRef Name="id_categoria" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nom_categoria" Type="varchar" MaxLength="50" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Concepto" Type="nvarchar" MaxLength="255" />
+          <Property Name="Precio" Type="int" />
         </EntityType>
-        <EntityType Name="Entrenamiento">
+        <EntityType Name="Jugadores">
           <Key>
-            <PropertyRef Name="id_entrenamiento" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="id_entrenamiento" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="primerdia" Type="varchar" MaxLength="10" />
-          <Property Name="segundodia" Type="varchar" MaxLength="10" />
-          <Property Name="primerhorario" Type="varchar" MaxLength="10" />
-          <Property Name="segundohorario" Type="varchar" MaxLength="10" />
-          <Property Name="ci_jugador" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Horario">
-          <Key>
-            <PropertyRef Name="id_horario" />
-          </Key>
-          <Property Name="id_horario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="hora" Type="varchar" MaxLength="25" />
-          <Property Name="dia" Type="varchar" MaxLength="250" />
-          <Property Name="id_categoria" Type="int" />
-          <Property Name="ci_admin" Type="varchar" MaxLength="20" />
-        </EntityType>
-        <EntityType Name="Jugador">
-          <Key>
-            <PropertyRef Name="ci_jugador" />
-          </Key>
-          <Property Name="ci_jugador" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="nom_jugador" Type="varchar" MaxLength="250" />
-          <Property Name="fecha_nac" Type="date" />
-          <Property Name="fecha_registro" Type="date" />
-          <Property Name="ci_secretaria" Type="varchar" MaxLength="20" />
-          <Property Name="id_categoria" Type="int" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ci_jugador" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="255" />
+          <Property Name="Nombres" Type="nvarchar" MaxLength="255" />
+          <Property Name="Apellidos" Type="nvarchar" MaxLength="255" />
+          <Property Name="FechaNacimiento" Type="date" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="255" />
+          <Property Name="Categoria_id" Type="int" />
         </EntityType>
         <EntityType Name="Mensualidades">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Mes" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="ciJugador" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Gestion" Type="int" />
+          <Property Name="Mes" Type="nvarchar" MaxLength="255" />
+          <Property Name="Concepto" Type="nvarchar" MaxLength="255" />
+          <Property Name="CuotaFinal" Type="int" />
+          <Property Name="FechPago" Type="date" />
+          <Property Name="Jugador_id" Type="int" />
+          <Property Name="Usuario_id" Type="int" />
+          <Property Name="Guiaprecios_id" Type="int" />
         </EntityType>
-        <EntityType Name="Secretaria">
+        <EntityType Name="sysdiagrams">
           <Key>
-            <PropertyRef Name="ci_secretaria" />
+            <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="ci_secretaria" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="nom_secretaria" Type="varchar" MaxLength="250" />
-          <Property Name="contrasenia" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <Association Name="FK_Horario_Administrador">
-          <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
-          <End Role="Horario" Type="Self.Horario" Multiplicity="*" />
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="255" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" />
+          <Property Name="Rol" Type="nvarchar" MaxLength="255" />
+          <Property Name="Nombres" Type="nvarchar" MaxLength="255" />
+          <Property Name="Apellidos" Type="nvarchar" MaxLength="255" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__Jugadores__Categ__3D5E1FD2">
+          <End Role="Categorias" Type="Self.Categorias" Multiplicity="0..1" />
+          <End Role="Jugadores" Type="Self.Jugadores" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Administrador">
-              <PropertyRef Name="ci_admin" />
+            <Principal Role="Categorias">
+              <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="Horario">
-              <PropertyRef Name="ci_admin" />
+            <Dependent Role="Jugadores">
+              <PropertyRef Name="Categoria_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Horario_Categoria">
-          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
-          <End Role="Horario" Type="Self.Horario" Multiplicity="*" />
+        <Association Name="FK__Mensualid__Guiap__412EB0B6">
+          <End Role="GuiaPrecios" Type="Self.GuiaPrecios" Multiplicity="0..1" />
+          <End Role="Mensualidades" Type="Self.Mensualidades" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Categoria">
-              <PropertyRef Name="id_categoria" />
+            <Principal Role="GuiaPrecios">
+              <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="Horario">
-              <PropertyRef Name="id_categoria" />
+            <Dependent Role="Mensualidades">
+              <PropertyRef Name="Guiaprecios_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_jugador">
-          <End Role="Jugador" Type="Self.Jugador" Multiplicity="1">
+        <Association Name="FK__Mensualid__Jugad__403A8C7D">
+          <End Role="Jugadores" Type="Self.Jugadores" Multiplicity="0..1" />
+          <End Role="Mensualidades" Type="Self.Mensualidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mensualidades">
+              <PropertyRef Name="Jugador_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Mensualid__Usuar__4222D4EF">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Mensualidades" Type="Self.Mensualidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mensualidades">
+              <PropertyRef Name="Usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Jugadores_Categorias">
+          <End Role="Categorias" Type="Self.Categorias" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Jugadores" Type="Self.Jugadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorias">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Jugadores">
+              <PropertyRef Name="Categoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mencualidades_GuiaPrecios">
+          <End Role="GuiaPrecios" Type="Self.GuiaPrecios" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="Mensualidades" Type="Self.Mensualidades" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Jugador">
-              <PropertyRef Name="ci_jugador" />
+            <Principal Role="GuiaPrecios">
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Mensualidades">
-              <PropertyRef Name="ciJugador" />
+              <PropertyRef Name="Guiaprecios_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Jugador_Categoria">
-          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
-          <End Role="Jugador" Type="Self.Jugador" Multiplicity="*" />
+        <Association Name="FK_Mensualidades_Jugadores">
+          <End Role="Jugadores" Type="Self.Jugadores" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Mensualidades" Type="Self.Mensualidades" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Categoria">
-              <PropertyRef Name="id_categoria" />
+            <Principal Role="Jugadores">
+              <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="Jugador">
-              <PropertyRef Name="id_categoria" />
+            <Dependent Role="Mensualidades">
+              <PropertyRef Name="Jugador_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Jugador_Secretaria">
-          <End Role="Secretaria" Type="Self.Secretaria" Multiplicity="0..1" />
-          <End Role="Jugador" Type="Self.Jugador" Multiplicity="*" />
+        <Association Name="FK_Mensualidades_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Mensualidades" Type="Self.Mensualidades" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Secretaria">
-              <PropertyRef Name="ci_secretaria" />
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="Jugador">
-              <PropertyRef Name="ci_secretaria" />
+            <Dependent Role="Mensualidades">
+              <PropertyRef Name="Usuario_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BdClubDeportivoModelStoreContainer">
-          <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Entrenamiento" EntityType="Self.Entrenamiento" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Horario" EntityType="Self.Horario" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Jugador" EntityType="Self.Jugador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GuiaPrecios" EntityType="Self.GuiaPrecios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jugadores" EntityType="Self.Jugadores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Mensualidades" EntityType="Self.Mensualidades" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Secretaria" EntityType="Self.Secretaria" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Horario_Administrador" Association="Self.FK_Horario_Administrador">
-            <End Role="Administrador" EntitySet="Administrador" />
-            <End Role="Horario" EntitySet="Horario" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Jugadores__Categ__3D5E1FD2" Association="Self.FK__Jugadores__Categ__3D5E1FD2">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Jugadores" EntitySet="Jugadores" />
           </AssociationSet>
-          <AssociationSet Name="FK_Horario_Categoria" Association="Self.FK_Horario_Categoria">
-            <End Role="Categoria" EntitySet="Categoria" />
-            <End Role="Horario" EntitySet="Horario" />
-          </AssociationSet>
-          <AssociationSet Name="fk_jugador" Association="Self.fk_jugador">
-            <End Role="Jugador" EntitySet="Jugador" />
+          <AssociationSet Name="FK__Mensualid__Guiap__412EB0B6" Association="Self.FK__Mensualid__Guiap__412EB0B6">
+            <End Role="GuiaPrecios" EntitySet="GuiaPrecios" />
             <End Role="Mensualidades" EntitySet="Mensualidades" />
           </AssociationSet>
-          <AssociationSet Name="FK_Jugador_Categoria" Association="Self.FK_Jugador_Categoria">
-            <End Role="Categoria" EntitySet="Categoria" />
-            <End Role="Jugador" EntitySet="Jugador" />
+          <AssociationSet Name="FK__Mensualid__Jugad__403A8C7D" Association="Self.FK__Mensualid__Jugad__403A8C7D">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Mensualidades" EntitySet="Mensualidades" />
           </AssociationSet>
-          <AssociationSet Name="FK_Jugador_Secretaria" Association="Self.FK_Jugador_Secretaria">
-            <End Role="Secretaria" EntitySet="Secretaria" />
-            <End Role="Jugador" EntitySet="Jugador" />
+          <AssociationSet Name="FK__Mensualid__Usuar__4222D4EF" Association="Self.FK__Mensualid__Usuar__4222D4EF">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Mensualidades" EntitySet="Mensualidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Jugadores_Categorias" Association="Self.FK_Jugadores_Categorias">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Jugadores" EntitySet="Jugadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mencualidades_GuiaPrecios" Association="Self.FK_Mencualidades_GuiaPrecios">
+            <End Role="GuiaPrecios" EntitySet="GuiaPrecios" />
+            <End Role="Mensualidades" EntitySet="Mensualidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mensualidades_Jugadores" Association="Self.FK_Mensualidades_Jugadores">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Mensualidades" EntitySet="Mensualidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mensualidades_Usuarios" Association="Self.FK_Mensualidades_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Mensualidades" EntitySet="Mensualidades" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BdClubDeportivoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Administrador">
+        <EntityType Name="Categorias">
           <Key>
-            <PropertyRef Name="ci_admin" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="ci_admin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nom_admin" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="contrasenia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Horario" Relationship="Self.FK_Horario_Administrador" FromRole="Administrador" ToRole="Horario" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Jugadores" Relationship="Self.FK__Jugadores__Categ__3D5E1FD2" FromRole="Categorias" ToRole="Jugadores" />
         </EntityType>
-        <EntityType Name="Categoria">
+        <EntityType Name="GuiaPrecios">
           <Key>
-            <PropertyRef Name="id_categoria" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="id_categoria" Type="Int32" Nullable="false" />
-          <Property Name="nom_categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Horario" Relationship="Self.FK_Horario_Categoria" FromRole="Categoria" ToRole="Horario" />
-          <NavigationProperty Name="Jugador" Relationship="BdClubDeportivoModel.FK_Jugador_Categoria" FromRole="Categoria" ToRole="Jugador" />
-          <NavigationProperty Name="Entrenamiento" Relationship="BdClubDeportivoModel.FK_Entrenamiento_Categoria" FromRole="Categoria" ToRole="Entrenamiento" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Correlativo" Type="Int32" />
+          <Property Name="Concepto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Precio" Type="Int32" />
+          <NavigationProperty Name="Mensualidades" Relationship="BdClubDeportivoModel.FK__Mensualid__Guiap__412EB0B6" FromRole="GuiaPrecios" ToRole="Mensualidades" />
         </EntityType>
-        <EntityType Name="Horario">
+        <EntityType Name="Jugadores">
           <Key>
-            <PropertyRef Name="id_horario" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="id_horario" Type="Int32" Nullable="false" />
-          <Property Name="hora" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="dia" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="id_categoria" Type="Int32" />
-          <Property Name="ci_admin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Administrador" Relationship="Self.FK_Horario_Administrador" FromRole="Horario" ToRole="Administrador" />
-          <NavigationProperty Name="Categoria" Relationship="Self.FK_Horario_Categoria" FromRole="Horario" ToRole="Categoria" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ci_jugador" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Nombres" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Apellidos" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="Categoria_id" Type="Int32" />
+          <NavigationProperty Name="Categorias" Relationship="Self.FK__Jugadores__Categ__3D5E1FD2" FromRole="Jugadores" ToRole="Categorias" />
+          <Property Name="Estado" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Guiaprecios_id" Type="Int32" />
+          <NavigationProperty Name="Mensualidades" Relationship="BdClubDeportivoModel.FK__Mensualid__Jugad__412EB0B6" FromRole="Jugadores" ToRole="Mensualidades" />
         </EntityType>
-        <EntityType Name="Jugador">
-          <Key>
-            <PropertyRef Name="ci_jugador" />
-          </Key>
-          <Property Name="ci_jugador" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nom_jugador" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="fecha_nac" Type="DateTime" Precision="0" />
-          <Property Name="ci_secretaria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Secretaria" Relationship="Self.FK_Jugador_Secretaria" FromRole="Jugador" ToRole="Secretaria" />
-          <Property Name="id_categoria" Type="Int32" />
-          <NavigationProperty Name="Categoria" Relationship="BdClubDeportivoModel.FK_Jugador_Categoria" FromRole="Jugador" ToRole="Categoria" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Entrenamiento" Relationship="BdClubDeportivoModel.FK_Entrenamiento_Jugador" FromRole="Jugador" ToRole="Entrenamiento" />
-          <NavigationProperty Name="Mensualidades" Relationship="BdClubDeportivoModel.fk_jugador" FromRole="Jugador" ToRole="Mensualidades" />
-        </EntityType>
-        <EntityType Name="Secretaria">
-          <Key>
-            <PropertyRef Name="ci_secretaria" />
-          </Key>
-          <Property Name="ci_secretaria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nom_secretaria" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="contrasenia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Jugador" Relationship="Self.FK_Jugador_Secretaria" FromRole="Secretaria" ToRole="Jugador" />
-        </EntityType>
-        <Association Name="FK_Horario_Administrador">
-          <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
-          <End Role="Horario" Type="Self.Horario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Administrador">
-              <PropertyRef Name="ci_admin" />
-            </Principal>
-            <Dependent Role="Horario">
-              <PropertyRef Name="ci_admin" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Horario_Categoria">
-          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
-          <End Role="Horario" Type="Self.Horario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Categoria">
-              <PropertyRef Name="id_categoria" />
-            </Principal>
-            <Dependent Role="Horario">
-              <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Jugador_Secretaria">
-          <End Role="Secretaria" Type="Self.Secretaria" Multiplicity="0..1" />
-          <End Role="Jugador" Type="Self.Jugador" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Secretaria">
-              <PropertyRef Name="ci_secretaria" />
-            </Principal>
-            <Dependent Role="Jugador">
-              <PropertyRef Name="ci_secretaria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="BdClubDeportivoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Administrador" EntityType="Self.Administrador" />
-          <EntitySet Name="Categoria" EntityType="Self.Categoria" />
-          <EntitySet Name="Horario" EntityType="Self.Horario" />
-          <EntitySet Name="Jugador" EntityType="Self.Jugador" />
-          <EntitySet Name="Secretaria" EntityType="Self.Secretaria" />
-          <AssociationSet Name="FK_Horario_Administrador" Association="Self.FK_Horario_Administrador">
-            <End Role="Administrador" EntitySet="Administrador" />
-            <End Role="Horario" EntitySet="Horario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Horario_Categoria" Association="Self.FK_Horario_Categoria">
-            <End Role="Categoria" EntitySet="Categoria" />
-            <End Role="Horario" EntitySet="Horario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Jugador_Secretaria" Association="Self.FK_Jugador_Secretaria">
-            <End Role="Secretaria" EntitySet="Secretaria" />
-            <End Role="Jugador" EntitySet="Jugador" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Jugador_Categoria" Association="BdClubDeportivoModel.FK_Jugador_Categoria">
-            <End Role="Categoria" EntitySet="Categoria" />
-            <End Role="Jugador" EntitySet="Jugador" />
-          </AssociationSet>
-          <EntitySet Name="Entrenamiento" EntityType="BdClubDeportivoModel.Entrenamiento" />
-          <AssociationSet Name="FK_Entrenamiento_Categoria" Association="BdClubDeportivoModel.FK_Entrenamiento_Categoria">
-            <End Role="Categoria" EntitySet="Categoria" />
-            <End Role="Entrenamiento" EntitySet="Entrenamiento" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Entrenamiento_Jugador" Association="BdClubDeportivoModel.FK_Entrenamiento_Jugador">
-            <End Role="Jugador" EntitySet="Jugador" />
-            <End Role="Entrenamiento" EntitySet="Entrenamiento" />
-          </AssociationSet>
-          <EntitySet Name="Mensualidades" EntityType="BdClubDeportivoModel.Mensualidades" />
-          <AssociationSet Name="fk_jugador" Association="BdClubDeportivoModel.fk_jugador">
-            <End Role="Jugador" EntitySet="Jugador" />
-            <End Role="Mensualidades" EntitySet="Mensualidades" />
-          </AssociationSet>
-        </EntityContainer>
-        <Association Name="FK_Jugador_Categoria">
-          <End Type="BdClubDeportivoModel.Categoria" Role="Categoria" Multiplicity="0..1" />
-          <End Type="BdClubDeportivoModel.Jugador" Role="Jugador" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Categoria">
-              <PropertyRef Name="id_categoria" />
-            </Principal>
-            <Dependent Role="Jugador">
-              <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Entrenamiento">
-          <Key>
-            <PropertyRef Name="id_entrenamiento" />
-          </Key>
-          <Property Name="id_entrenamiento" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="primerdia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="segundodia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="primerhorario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="segundohorario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="ci_jugador" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="id_categoria" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Categoria" Relationship="BdClubDeportivoModel.FK_Entrenamiento_Categoria" FromRole="Entrenamiento" ToRole="Categoria" />
-          <NavigationProperty Name="Jugador" Relationship="BdClubDeportivoModel.FK_Entrenamiento_Jugador" FromRole="Entrenamiento" ToRole="Jugador" />
-        </EntityType>
-        <Association Name="FK_Entrenamiento_Categoria">
-          <End Type="BdClubDeportivoModel.Categoria" Role="Categoria" Multiplicity="1" />
-          <End Type="BdClubDeportivoModel.Entrenamiento" Role="Entrenamiento" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Categoria">
-              <PropertyRef Name="id_categoria" />
-            </Principal>
-            <Dependent Role="Entrenamiento">
-              <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Entrenamiento_Jugador">
-          <End Type="BdClubDeportivoModel.Jugador" Role="Jugador" Multiplicity="1" />
-          <End Type="BdClubDeportivoModel.Entrenamiento" Role="Entrenamiento" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Jugador">
-              <PropertyRef Name="ci_jugador" />
-            </Principal>
-            <Dependent Role="Entrenamiento">
-              <PropertyRef Name="ci_jugador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Mensualidades">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Mes" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Estado" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ciJugador" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Jugador" Relationship="BdClubDeportivoModel.fk_jugador" FromRole="Mensualidades" ToRole="Jugador" />
+          <Property Name="Correlativo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Gestion" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
+          <Property Name="Concepto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CuotaRegular" Type="Int32" />
+          <Property Name="Descuento" Type="Int32" />
+          <Property Name="CuotaFinal" Type="Int32" />
+          <Property Name="Inscripcion_id" Type="Int32" />
+          <Property Name="FechPago" Type="DateTime" Precision="0" />
+          <Property Name="Jugador_id" Type="Int32" />
+          <Property Name="Usuario_id" Type="Int32" />
+          <NavigationProperty Name="Jugadores" Relationship="BdClubDeportivoModel.FK__Mensualid__Jugad__412EB0B6" FromRole="Mensualidades" ToRole="Jugadores" />
+          <NavigationProperty Name="Usuarios" Relationship="BdClubDeportivoModel.FK__Mensualid__Usuar__4222D4EF" FromRole="Mensualidades" ToRole="Usuarios" />
+          <Property Name="Guiaprecios_id" Type="Int32" />
+          <NavigationProperty Name="GuiaPrecios" Relationship="BdClubDeportivoModel.FK__Mensualid__Guiap__412EB0B6" FromRole="Mensualidades" ToRole="GuiaPrecios" />
         </EntityType>
-        <Association Name="fk_jugador">
-          <End Type="BdClubDeportivoModel.Jugador" Role="Jugador" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Rol" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Nombres" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Apellidos" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Mensualidades" Relationship="BdClubDeportivoModel.FK__Mensualid__Usuar__4222D4EF" FromRole="Usuarios" ToRole="Mensualidades" />
+        </EntityType>
+        <Association Name="FK__Jugadores__Categ__3D5E1FD2">
+          <End Role="Categorias" Type="Self.Categorias" Multiplicity="0..1" />
+          <End Role="Jugadores" Type="Self.Jugadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorias">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Jugadores">
+              <PropertyRef Name="Categoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BdClubDeportivoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categorias" EntityType="Self.Categorias" />
+          <EntitySet Name="GuiaPrecios" EntityType="Self.GuiaPrecios" />
+          <EntitySet Name="Jugadores" EntityType="Self.Jugadores" />
+          <EntitySet Name="Mensualidades" EntityType="Self.Mensualidades" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK__Jugadores__Categ__3D5E1FD2" Association="Self.FK__Jugadores__Categ__3D5E1FD2">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Jugadores" EntitySet="Jugadores" />
+          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="BdClubDeportivoModel.sysdiagrams" />
+          <AssociationSet Name="FK__Mensualid__Jugad__412EB0B6" Association="BdClubDeportivoModel.FK__Mensualid__Jugad__412EB0B6">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Mensualidades" EntitySet="Mensualidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Mensualid__Usuar__4222D4EF" Association="BdClubDeportivoModel.FK__Mensualid__Usuar__4222D4EF">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Mensualidades" EntitySet="Mensualidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Mensualid__Guiap__412EB0B6" Association="BdClubDeportivoModel.FK__Mensualid__Guiap__412EB0B6">
+            <End Role="GuiaPrecios" EntitySet="GuiaPrecios" />
+            <End Role="Mensualidades" EntitySet="Mensualidades" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK__Mensualid__Jugad__412EB0B6">
+          <End Type="BdClubDeportivoModel.Jugadores" Role="Jugadores" Multiplicity="0..1" />
           <End Type="BdClubDeportivoModel.Mensualidades" Role="Mensualidades" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Jugador">
-              <PropertyRef Name="ci_jugador" />
+            <Principal Role="Jugadores">
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Mensualidades">
-              <PropertyRef Name="ciJugador" />
+              <PropertyRef Name="Jugador_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Mensualid__Usuar__4222D4EF">
+          <End Type="BdClubDeportivoModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="BdClubDeportivoModel.Mensualidades" Role="Mensualidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mensualidades">
+              <PropertyRef Name="Usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Mensualid__Guiap__412EB0B6">
+          <End Type="BdClubDeportivoModel.GuiaPrecios" Role="GuiaPrecios" Multiplicity="0..1" />
+          <End Type="BdClubDeportivoModel.Mensualidades" Role="Mensualidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GuiaPrecios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mensualidades">
+              <PropertyRef Name="Guiaprecios_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -373,75 +373,73 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BdClubDeportivoModelStoreContainer" CdmEntityContainer="BdClubDeportivoEntities">
-          <EntitySetMapping Name="Administrador">
-            <EntityTypeMapping TypeName="BdClubDeportivoModel.Administrador">
-              <MappingFragment StoreEntitySet="Administrador">
-                <ScalarProperty Name="ci_admin" ColumnName="ci_admin" />
-                <ScalarProperty Name="nom_admin" ColumnName="nom_admin" />
-                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+          <EntitySetMapping Name="Categorias">
+            <EntityTypeMapping TypeName="BdClubDeportivoModel.Categorias">
+              <MappingFragment StoreEntitySet="Categorias">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Categoria">
-            <EntityTypeMapping TypeName="BdClubDeportivoModel.Categoria">
-              <MappingFragment StoreEntitySet="Categoria">
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="nom_categoria" ColumnName="nom_categoria" />
+          <EntitySetMapping Name="GuiaPrecios">
+            <EntityTypeMapping TypeName="BdClubDeportivoModel.GuiaPrecios">
+              <MappingFragment StoreEntitySet="GuiaPrecios">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Horario">
-            <EntityTypeMapping TypeName="BdClubDeportivoModel.Horario">
-              <MappingFragment StoreEntitySet="Horario">
-                <ScalarProperty Name="id_horario" ColumnName="id_horario" />
-                <ScalarProperty Name="hora" ColumnName="hora" />
-                <ScalarProperty Name="dia" ColumnName="dia" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="ci_admin" ColumnName="ci_admin" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Jugador">
-            <EntityTypeMapping TypeName="BdClubDeportivoModel.Jugador">
-              <MappingFragment StoreEntitySet="Jugador">
-                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="ci_jugador" ColumnName="ci_jugador" />
-                <ScalarProperty Name="nom_jugador" ColumnName="nom_jugador" />
-                <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
-                <ScalarProperty Name="ci_secretaria" ColumnName="ci_secretaria" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Secretaria">
-            <EntityTypeMapping TypeName="BdClubDeportivoModel.Secretaria">
-              <MappingFragment StoreEntitySet="Secretaria">
-                <ScalarProperty Name="ci_secretaria" ColumnName="ci_secretaria" />
-                <ScalarProperty Name="nom_secretaria" ColumnName="nom_secretaria" />
-                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+          <EntitySetMapping Name="Jugadores">
+            <EntityTypeMapping TypeName="BdClubDeportivoModel.Jugadores">
+              <MappingFragment StoreEntitySet="Jugadores">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Ci_jugador" ColumnName="Ci_jugador" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Categoria_id" ColumnName="Categoria_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Mensualidades">
             <EntityTypeMapping TypeName="BdClubDeportivoModel.Mensualidades">
               <MappingFragment StoreEntitySet="Mensualidades">
-                <ScalarProperty Name="ciJugador" ColumnName="ciJugador" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Guiaprecios_id" ColumnName="Guiaprecios_id" />
+                <ScalarProperty Name="Usuario_id" ColumnName="Usuario_id" />
+                <ScalarProperty Name="Jugador_id" ColumnName="Jugador_id" />
+                <ScalarProperty Name="FechPago" ColumnName="FechPago" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Gestion" ColumnName="Gestion" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="CuotaFinal" ColumnName="CuotaFinal" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Entrenamiento">
-            <EntityTypeMapping TypeName="BdClubDeportivoModel.Entrenamiento">
-              <MappingFragment StoreEntitySet="Entrenamiento">
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="ci_jugador" ColumnName="ci_jugador" />
-                <ScalarProperty Name="segundohorario" ColumnName="segundohorario" />
-                <ScalarProperty Name="primerhorario" ColumnName="primerhorario" />
-                <ScalarProperty Name="segundodia" ColumnName="segundodia" />
-                <ScalarProperty Name="primerdia" ColumnName="primerdia" />
-                <ScalarProperty Name="id_entrenamiento" ColumnName="id_entrenamiento" />
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="BdClubDeportivoModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BdClubDeportivoModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

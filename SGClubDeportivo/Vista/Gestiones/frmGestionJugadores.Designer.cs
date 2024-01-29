@@ -53,16 +53,16 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.Modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jugadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bdClubDeportivoDataSet = new SGClubDeportivo.Data.BdClubDeportivoDataSet();
-            this.jugadorTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter();
-            this.tableAdapterManager = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager();
+            //this.bdClubDeportivoDataSet = new SGClubDeportivo.Data.BdClubDeportivoDataSet();
+            //this.jugadorTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter();
+            //this.tableAdapterManager = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager();
             this.id_categoriaLabel1 = new System.Windows.Forms.Label();
             this.ci_jugadorLabel1 = new System.Windows.Forms.Label();
-            this.bdClubDeportivoDataSet1 = new SGClubDeportivo.Data.BdClubDeportivoDataSet();
+            //this.bdClubDeportivoDataSet1 = new SGClubDeportivo.Data.BdClubDeportivoDataSet();
             this.jugadorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.MoverVentanaCrud = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriaTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.CategoriaTableAdapter();
+            //this.categoriaTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.CategoriaTableAdapter();
             this.categoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lblIdCatInsert = new System.Windows.Forms.Label();
             id_categoriaLabel = new System.Windows.Forms.Label();
@@ -71,8 +71,8 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet1)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).BeginInit();
@@ -334,26 +334,26 @@ namespace SGClubDeportivo.Vista.Gestiones
             // jugadorBindingSource
             // 
             this.jugadorBindingSource.DataMember = "Jugador";
-            this.jugadorBindingSource.DataSource = this.bdClubDeportivoDataSet;
+            //this.jugadorBindingSource.DataSource = this.bdClubDeportivoDataSet;
             // 
             // bdClubDeportivoDataSet
             // 
-            this.bdClubDeportivoDataSet.DataSetName = "BdClubDeportivoDataSet";
-            this.bdClubDeportivoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.bdClubDeportivoDataSet.DataSetName = "BdClubDeportivoDataSet";
+            //this.bdClubDeportivoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // jugadorTableAdapter
             // 
-            this.jugadorTableAdapter.ClearBeforeFill = true;
+            //this.jugadorTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.AdministradorTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CategoriaTableAdapter = null;
-            this.tableAdapterManager.HorarioTableAdapter = null;
-            this.tableAdapterManager.JugadorTableAdapter = this.jugadorTableAdapter;
-            this.tableAdapterManager.SecretariaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            //this.tableAdapterManager.AdministradorTableAdapter = null;
+            //this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            //this.tableAdapterManager.CategoriaTableAdapter = null;
+            //this.tableAdapterManager.HorarioTableAdapter = null;
+            //this.tableAdapterManager.JugadorTableAdapter = this.jugadorTableAdapter;
+            //this.tableAdapterManager.SecretariaTableAdapter = null;
+            //this.tableAdapterManager.UpdateOrder = SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // id_categoriaLabel1
             // 
@@ -377,13 +377,13 @@ namespace SGClubDeportivo.Vista.Gestiones
             // 
             // bdClubDeportivoDataSet1
             // 
-            this.bdClubDeportivoDataSet1.DataSetName = "BdClubDeportivoDataSet";
-            this.bdClubDeportivoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.bdClubDeportivoDataSet1.DataSetName = "BdClubDeportivoDataSet";
+            //this.bdClubDeportivoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // jugadorBindingSource1
             // 
             this.jugadorBindingSource1.DataMember = "Jugador";
-            this.jugadorBindingSource1.DataSource = this.bdClubDeportivoDataSet1;
+            //this.jugadorBindingSource1.DataSource = this.bdClubDeportivoDataSet1;
             // 
             // MoverVentanaCrud
             // 
@@ -395,16 +395,16 @@ namespace SGClubDeportivo.Vista.Gestiones
             // categoriaBindingSource
             // 
             this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.bdClubDeportivoDataSet;
+            //this.categoriaBindingSource.DataSource = this.bdClubDeportivoDataSet;
             // 
             // categoriaTableAdapter
             // 
-            this.categoriaTableAdapter.ClearBeforeFill = true;
+            //this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
             // categoriaBindingSource1
             // 
             this.categoriaBindingSource1.DataMember = "Categoria";
-            this.categoriaBindingSource1.DataSource = this.bdClubDeportivoDataSet1;
+            //this.categoriaBindingSource1.DataSource = this.bdClubDeportivoDataSet1;
             // 
             // lblIdCatInsert
             // 
@@ -444,8 +444,8 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet1)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).EndInit();
@@ -466,18 +466,18 @@ namespace SGClubDeportivo.Vista.Gestiones
         private Bunifu.Framework.UI.BunifuFlatButton btnAceptarCategoria;
         private Bunifu.Framework.UI.BunifuTextbox txtBuscarJugador;
         private FontAwesome.Sharp.IconButton btnNuevoJugador;
-        private Data.BdClubDeportivoDataSet bdClubDeportivoDataSet;
+        //private Data.BdClubDeportivoDataSet bdClubDeportivoDataSet;
         private System.Windows.Forms.BindingSource jugadorBindingSource;
-        private Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter jugadorTableAdapter;
-        private Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        //private Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter jugadorTableAdapter;
+        //private Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView dgvJugadores;
         private System.Windows.Forms.Label id_categoriaLabel1;
         private System.Windows.Forms.Label ci_jugadorLabel1;
-        private Data.BdClubDeportivoDataSet bdClubDeportivoDataSet1;
+        //private Data.BdClubDeportivoDataSet bdClubDeportivoDataSet1;
         private System.Windows.Forms.BindingSource jugadorBindingSource1;
         private Bunifu.Framework.UI.BunifuDragControl MoverVentanaCrud;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
-        private Data.BdClubDeportivoDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
+        //private Data.BdClubDeportivoDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
         private System.Windows.Forms.BindingSource categoriaBindingSource1;
         private System.Windows.Forms.Label lblIdCatInsert;
         private System.Windows.Forms.DataGridViewTextBoxColumn cijugadorDataGridViewTextBoxColumn;

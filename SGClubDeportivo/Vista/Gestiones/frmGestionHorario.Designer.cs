@@ -40,9 +40,9 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.panel3 = new System.Windows.Forms.Panel();
             this.TituloCategoria = new System.Windows.Forms.Label();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.jugadorTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter();
-            this.tableAdapterManager = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager();
-            this.bdClubDeportivoDataSet = new SGClubDeportivo.Data.BdClubDeportivoDataSet();
+            //this.jugadorTableAdapter = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter();
+            //this.tableAdapterManager = new SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager();
+            //this.bdClubDeportivoDataSet = new SGClubDeportivo.Data.BdClubDeportivoDataSet();
             this.dgvJugadores = new System.Windows.Forms.DataGridView();
             this.CI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -197,22 +197,22 @@ namespace SGClubDeportivo.Vista.Gestiones
             // 
             // jugadorTableAdapter
             // 
-            this.jugadorTableAdapter.ClearBeforeFill = true;
+            //this.jugadorTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.AdministradorTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CategoriaTableAdapter = null;
-            this.tableAdapterManager.HorarioTableAdapter = null;
-            this.tableAdapterManager.JugadorTableAdapter = this.jugadorTableAdapter;
-            this.tableAdapterManager.SecretariaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            //this.tableAdapterManager.AdministradorTableAdapter = null;
+            //this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            //this.tableAdapterManager.CategoriaTableAdapter = null;
+            //this.tableAdapterManager.HorarioTableAdapter = null;
+            //this.tableAdapterManager.JugadorTableAdapter = this.jugadorTableAdapter;
+            //this.tableAdapterManager.SecretariaTableAdapter = null;
+            //this.tableAdapterManager.UpdateOrder = SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // bdClubDeportivoDataSet
             // 
-            this.bdClubDeportivoDataSet.DataSetName = "BdClubDeportivoDataSet";
-            this.bdClubDeportivoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.bdClubDeportivoDataSet.DataSetName = "BdClubDeportivoDataSet";
+            //this.bdClubDeportivoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dgvJugadores
             // 
@@ -323,7 +323,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.bdClubDeportivoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jugadorBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -342,9 +342,9 @@ namespace SGClubDeportivo.Vista.Gestiones
         private System.Windows.Forms.Label TituloCategoria;
         private FontAwesome.Sharp.IconButton btnEditar;
         private System.Windows.Forms.BindingSource jugadorBindingSource;
-        private Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter jugadorTableAdapter;
-        private Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private Data.BdClubDeportivoDataSet bdClubDeportivoDataSet;
+        //private Data.BdClubDeportivoDataSetTableAdapters.JugadorTableAdapter jugadorTableAdapter;
+        //private Data.BdClubDeportivoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        //private Data.BdClubDeportivoDataSet bdClubDeportivoDataSet;
         private System.Windows.Forms.DataGridView dgvJugadores;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.DataGridViewTextBoxColumn CI;

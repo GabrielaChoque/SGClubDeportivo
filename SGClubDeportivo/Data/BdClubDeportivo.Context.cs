@@ -25,13 +25,11 @@ namespace SGClubDeportivo.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Administrador> Administrador { get; set; }
-        public virtual DbSet<Categoria> Categoria { get; set; }
-        public virtual DbSet<Horario> Horario { get; set; }
-        public virtual DbSet<Jugador> Jugador { get; set; }
-        public virtual DbSet<Secretaria> Secretaria { get; set; }
-        //public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Entrenamiento> Entrenamiento { get; set; }
+        public virtual DbSet<Categorias> Categorias { get; set; }
+        public virtual DbSet<GuiaPrecios> GuiaPrecios { get; set; }
+        public virtual DbSet<Jugadores> Jugadores { get; set; }
         public virtual DbSet<Mensualidades> Mensualidades { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

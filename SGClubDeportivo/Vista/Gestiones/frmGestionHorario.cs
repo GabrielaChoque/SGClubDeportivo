@@ -32,7 +32,7 @@ namespace SGClubDeportivo.Vista.Gestiones
        public void refrescar()
         {
             using (BdClubDeportivoEntities db = new BdClubDeportivoEntities()) {
-                var lst = from d in db.Jugador select d;
+                var lst = from d in db.Jugadores select d;
                 //dataListJugador.DataSource = lst.ToList();
             }
         }
@@ -125,8 +125,8 @@ namespace SGClubDeportivo.Vista.Gestiones
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            frmCrudEntrenamiento frmCrud = new frmCrudEntrenamiento();
-            frmCrud.Show();
+            //frmCrudEntrenamiento frmCrud = new frmCrudEntrenamiento();
+            //frmCrud.Show();
         }
 
         private void dgvJugadores_CellPainting_1(object sender, DataGridViewCellPaintingEventArgs e)
