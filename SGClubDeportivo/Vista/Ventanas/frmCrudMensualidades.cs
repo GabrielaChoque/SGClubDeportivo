@@ -180,7 +180,7 @@ namespace SGClubDeportivo.Vista.Ventanas
             reg.Jugador_id = idJugador;
             reg.Usuario_id = idUsuario;
             reg.FechPago = DateTime.Now;
-
+            reg.CuotaFinal = (int)cuotaFinalNumericUpDown.Value;
 
             object valorSeleccionado = conceptoComboBox.SelectedValue;
             if (valorSeleccionado != null)
@@ -357,6 +357,18 @@ namespace SGClubDeportivo.Vista.Ventanas
             }
 
         }
+
+        private void conceptoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var GuiaPrecioSeleccionado = (GuiaPrecios)conceptoComboBox.SelectedItem;
+
+            if (GuiaPrecioSeleccionado != null)
+            {
+                GuiaPrecios filagPrecios = _gPre.Seleccionar(GuiaPrecioSeleccionado.id);
+                cuotaFinalNumericUpDown.Value = (int)filagPrecios.Precio;
+            }
+        }
+
         private bool CamposValidos() //PARA REALIZAR VALIDACIONES
         {
             // Aquí debes realizar las validaciones necesarias, por ejemplo:

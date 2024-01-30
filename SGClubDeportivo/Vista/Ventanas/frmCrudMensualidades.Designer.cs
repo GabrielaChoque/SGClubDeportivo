@@ -203,6 +203,7 @@
             this.conceptoComboBox.Name = "conceptoComboBox";
             this.conceptoComboBox.Size = new System.Drawing.Size(121, 21);
             this.conceptoComboBox.TabIndex = 61;
+            this.conceptoComboBox.SelectedIndexChanged += new System.EventHandler(this.conceptoComboBox_SelectedIndexChanged);
             // 
             // frmCrudMensualidades
             // 

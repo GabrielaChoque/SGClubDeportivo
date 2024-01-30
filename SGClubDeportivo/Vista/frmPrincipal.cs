@@ -19,7 +19,7 @@ namespace SGClubDeportivo.Vista
         public frmPrincipal()
         {
             InitializeComponent();
-
+            AbrirFormInPanel(new Vista.frmInicio(_Carnet, _Cargo));
         }
         public frmPrincipal(string carnet, string cargo)
         {

@@ -298,6 +298,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             paginahtml_texto = paginahtml_texto.Replace("@MONTOTXT", MontoenTexto);
             //paginahtml_texto = paginahtml_texto.Replace("@CONCEPTOPAGO", ConceptoMensualidad.ToString());
             paginahtml_texto = paginahtml_texto.Replace("@MES", Mesfila.ToString());
+            paginahtml_texto = paginahtml_texto.Replace("@ESPACIO", " ");
 
             //GENERACION DE PDF O MANIOBRAS PDF
             string tempFilePath = Path.GetTempFileName() + ".pdf";
