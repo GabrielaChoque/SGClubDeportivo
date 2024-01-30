@@ -32,7 +32,7 @@
             // 
             // btnMensualidades
             // 
-            this.btnMensualidades.Location = new System.Drawing.Point(7, 196);
+            this.btnMensualidades.Location = new System.Drawing.Point(7, 152);
             // 
             // btnPagos
             // 
@@ -41,7 +41,8 @@
             // 
             // btnInscripciones
             // 
-            this.btnInscripciones.Location = new System.Drawing.Point(7, 152);
+            this.btnInscripciones.Location = new System.Drawing.Point(15, 322);
+            this.btnInscripciones.Visible = false;
             // 
             // btnCategorias
             // 

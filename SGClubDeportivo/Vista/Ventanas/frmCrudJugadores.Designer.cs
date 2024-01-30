@@ -34,7 +34,7 @@
             System.Windows.Forms.Label fechaNacimientoLabel;
             System.Windows.Forms.Label nombresLabel;
             System.Windows.Forms.Label tipoLabel;
-            System.Windows.Forms.Label nombreLabel;
+            System.Windows.Forms.Label categoria_idLabel;
             this.JugadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
             this.ci_jugadorTextBox = new System.Windows.Forms.TextBox();
@@ -42,13 +42,13 @@
             this.nombresTextBox = new System.Windows.Forms.TextBox();
             this.tipoComboBox = new System.Windows.Forms.ComboBox();
             this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nombreComboBox = new System.Windows.Forms.ComboBox();
+            this.categoria_idComboBox = new System.Windows.Forms.ComboBox();
             apellidosLabel = new System.Windows.Forms.Label();
             ci_jugadorLabel = new System.Windows.Forms.Label();
             fechaNacimientoLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
             tipoLabel = new System.Windows.Forms.Label();
-            nombreLabel = new System.Windows.Forms.Label();
+            categoria_idLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.JugadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -111,15 +111,15 @@
             tipoLabel.TabIndex = 49;
             tipoLabel.Text = "Tipo:";
             // 
-            // nombreLabel
+            // categoria_idLabel
             // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            nombreLabel.Location = new System.Drawing.Point(125, 232);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 50;
-            nombreLabel.Text = "Nombre:";
+            categoria_idLabel.AutoSize = true;
+            categoria_idLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            categoria_idLabel.Location = new System.Drawing.Point(120, 239);
+            categoria_idLabel.Name = "categoria_idLabel";
+            categoria_idLabel.Size = new System.Drawing.Size(66, 13);
+            categoria_idLabel.TabIndex = 50;
+            categoria_idLabel.Text = "Categoria id:";
             // 
             // JugadoresBindingSource
             // 
@@ -161,6 +161,10 @@
             // 
             this.tipoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.JugadoresBindingSource, "Tipo", true));
             this.tipoComboBox.FormattingEnabled = true;
+            this.tipoComboBox.Items.AddRange(new object[] {
+            "ANUAL",
+            "VACACIONAL",
+            "REGULAR"});
             this.tipoComboBox.Location = new System.Drawing.Point(222, 196);
             this.tipoComboBox.Name = "tipoComboBox";
             this.tipoComboBox.Size = new System.Drawing.Size(200, 21);
@@ -170,24 +174,21 @@
             // 
             this.categoriasBindingSource.DataSource = typeof(SGClubDeportivo.Data.Categorias);
             // 
-            // nombreComboBox
+            // categoria_idComboBox
             // 
-            this.nombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.JugadoresBindingSource, "Categorias.Nombre", true));
-            this.nombreComboBox.DataSource = this.categoriasBindingSource;
-            this.nombreComboBox.DisplayMember = "Nombre";
-            this.nombreComboBox.FormattingEnabled = true;
-            this.nombreComboBox.Location = new System.Drawing.Point(220, 229);
-            this.nombreComboBox.Name = "nombreComboBox";
-            this.nombreComboBox.Size = new System.Drawing.Size(202, 21);
-            this.nombreComboBox.TabIndex = 51;
+            this.categoria_idComboBox.FormattingEnabled = true;
+            this.categoria_idComboBox.Location = new System.Drawing.Point(222, 239);
+            this.categoria_idComboBox.Name = "categoria_idComboBox";
+            this.categoria_idComboBox.Size = new System.Drawing.Size(121, 21);
+            this.categoria_idComboBox.TabIndex = 51;
             // 
             // frmCrudJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 514);
-            this.Controls.Add(nombreLabel);
-            this.Controls.Add(this.nombreComboBox);
+            this.Controls.Add(this.categoria_idComboBox);
+            this.Controls.Add(categoria_idLabel);
             this.Controls.Add(apellidosLabel);
             this.Controls.Add(this.apellidosTextBox);
             this.Controls.Add(ci_jugadorLabel);
@@ -213,8 +214,8 @@
             this.Controls.SetChildIndex(ci_jugadorLabel, 0);
             this.Controls.SetChildIndex(this.apellidosTextBox, 0);
             this.Controls.SetChildIndex(apellidosLabel, 0);
-            this.Controls.SetChildIndex(this.nombreComboBox, 0);
-            this.Controls.SetChildIndex(nombreLabel, 0);
+            this.Controls.SetChildIndex(categoria_idLabel, 0);
+            this.Controls.SetChildIndex(this.categoria_idComboBox, 0);
             ((System.ComponentModel.ISupportInitialize)(this.JugadoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -231,6 +232,6 @@
         private System.Windows.Forms.TextBox nombresTextBox;
         private System.Windows.Forms.ComboBox tipoComboBox;
         private System.Windows.Forms.BindingSource categoriasBindingSource;
-        private System.Windows.Forms.ComboBox nombreComboBox;
+        private System.Windows.Forms.ComboBox categoria_idComboBox;
     }
 }

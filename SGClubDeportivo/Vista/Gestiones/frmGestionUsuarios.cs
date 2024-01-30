@@ -1,5 +1,4 @@
 ﻿using SGClubDeportivo.Controlador;
-using SGClubDeportivo.Data.BdClubDeportivoDataSetTableAdapters;
 using SGClubDeportivo.Data;
 using SGClubDeportivo.Vista.Ventanas;
 using System;

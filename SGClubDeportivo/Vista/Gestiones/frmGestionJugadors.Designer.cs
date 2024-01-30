@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionJugadors));
             this.JugadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.JugadoresDataGridView = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +39,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddMensualidad = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.JugadoresBindingSource)).BeginInit();
@@ -81,6 +83,7 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.Categoria_id,
+            this.AddMensualidad,
             this.Editar,
             this.Eliminar});
             this.JugadoresDataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -144,6 +147,15 @@
             this.Categoria_id.Name = "Categoria_id";
             this.Categoria_id.ReadOnly = true;
             // 
+            // AddMensualidad
+            // 
+            this.AddMensualidad.HeaderText = "AddMensualidad";
+            this.AddMensualidad.Image = ((System.Drawing.Image)(resources.GetObject("AddMensualidad.Image")));
+            this.AddMensualidad.Name = "AddMensualidad";
+            this.AddMensualidad.ReadOnly = true;
+            this.AddMensualidad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AddMensualidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
@@ -192,6 +204,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria_id;
+        private System.Windows.Forms.DataGridViewImageColumn AddMensualidad;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }

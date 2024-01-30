@@ -42,13 +42,14 @@ namespace SGClubDeportivo.Vista.Gestiones
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             // Abrir un nuevo formulario para agregar Mensualidadess
-            frmCrudMensualidades frmAgregar = new frmCrudMensualidades();
+            //frmCrudMensualidades frmAgregar = new frmCrudMensualidades();
+            frmCrudMensualidades frmAgregar = new frmCrudMensualidades((int)dataJugadoresSeleccionado.id,0);
             DialogResult result = frmAgregar.ShowDialog();
 
             // Recargar los datos si se agregó un Mensualidades
             if (result == DialogResult.OK)
             {
-                CargarDatos(txtBuscar.text);
+                CargarMensualidadesJugador(txtBuscar.text);
             }
         }
 
@@ -64,7 +65,19 @@ namespace SGClubDeportivo.Vista.Gestiones
         public void CargarMensualidadesJugador(string textSearch)
         {
             MensualidadesBindingSource.DataSource = _Mensualidades.CargarJugadoresConMensualidades(textSearch);
-            dataJugadoresSeleccionado = _jug.SeleccionarPorCI(txtBuscar.text);//--------------------------------------------------------
+            dataJugadoresSeleccionado = _jug.SeleccionarPorCI(txtBuscar.text);
+            if (dataJugadoresSeleccionado == null )
+            {
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled= true;
+                if (txtBuscar.text=="")
+                {
+                    btnAgregar.Enabled = false;
+                }
+            }
         }
 
 
@@ -130,6 +143,22 @@ namespace SGClubDeportivo.Vista.Gestiones
                             }
                         }
                     }
+                    else if (MensualidadesDataGridView.Columns[e.ColumnIndex].Name == "PrintBoleta")
+                    {
+                        // Lógica para eliminar la fila seleccionada
+                        // Puedes obtener el ID u otra información de la fila seleccionada usando:
+                        var idMensualidad = Convert.ToInt32(MensualidadesDataGridView.Rows[e.RowIndex].Cells["id"].Value);
+                        var FechaPago = Convert.ToDateTime(MensualidadesDataGridView.Rows[e.RowIndex].Cells["FechPago"].Value);
+                        //OBTENER NOMBRE COMPLETO
+                        int idjugador = Convert.ToInt32(MensualidadesDataGridView.Rows[e.RowIndex].Cells["Jugador_id"].Value);
+                        Jugadores dataSelectJugador = _jug.Seleccionar(idjugador);
+                        var NombreCompleto = dataSelectJugador.Nombres + " " + dataSelectJugador.Apellidos;
+                        //Y LO DEMAS
+                        var MontoPagado = Convert.ToInt32(MensualidadesDataGridView.Rows[e.RowIndex].Cells["CuotaFinal"].Value);
+                        var ConceptoMensualidad = Convert.ToString(MensualidadesDataGridView.Rows[e.RowIndex].Cells["Concepto"].Value);
+                        ImprimirBoleta(idMensualidad, FechaPago, NombreCompleto, MontoPagado, ConceptoMensualidad);
+
+                    }
                 }
             }
             catch (Exception ex)
@@ -149,25 +178,142 @@ namespace SGClubDeportivo.Vista.Gestiones
             }
         }
         //---EN CASO DE TENER FK---//
-        InscripcionController _ins = new InscripcionController();
+        //InscripcionController _ins = new InscripcionController(); ////ESTE CODIGO OBTIENE DESDE 2 TABLAS LA INFO - TRASPASA 2 TABLAS PARA OBTENER INFORMACION
         JugadorController _jug = new JugadorController();
+        GuiaPrecioController _gPre = new GuiaPrecioController();
+        UsuarioController _user = new UsuarioController();
         private void MensualidadesDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
             //ESTO SIRVE PARA REEMPLAZAR CON EL VALOR DE UN ATRIBUTO DE LA OTRA TABLA, EN VEZ DE id_fk reemplazar por un valor
             //NO OLVIDAR RENOMBRAR EN EL DATAGRIDVIEW EN EL (name) para q coincidan las columnas. //solo podemos cambiar el HeaderText del DataGridView
-            if (MensualidadesDataGridView.Columns[e.ColumnIndex].Name == "Inscripcion_id" && e.Value != null)
+            //if (MensualidadesDataGridView.Columns[e.ColumnIndex].Name == "Jugador_id" && e.Value != null)
+            //{
+            //    //ESTE CODIGO OBTIENE DESDE 2 TABLAS LA INFO - TRASPASA 2 TABLAS PARA OBTENER INFORMACION
+            //    //int inscripcionId = Convert.ToInt32(e.Value); //obtenemos el id del datagridView
+            //    //Inscripciones inscripcion = _ins.Seleccionar(inscripcionId); //OBTENEMOS FILA EN EL INSCRIPCIONES (tenemos idJugador
+            //    //int jugadorId = Convert.ToInt32(inscripcion.Jugador_id); //seleccionando Id jugador
+            //    //Jugadores jugador = _jug.Seleccionar(jugadorId); //OBTENEMOS FILA EN EL Jugadores (tenemos idJugador
+            //}
+            if (MensualidadesDataGridView.Columns[e.ColumnIndex].Name == "Jugador_id" && e.Value != null)
             {
-                int inscripcionId = Convert.ToInt32(e.Value); //obtenemos el id del datagridView
-                Inscripciones inscripcion = _ins.Seleccionar(inscripcionId); //OBTENEMOS FILA EN EL INSCRIPCIONES (tenemos idJugador
-
-                int jugadorId = Convert.ToInt32(inscripcion.Jugador_id); //seleccionando Id jugador
+                int jugadorId = Convert.ToInt32(e.Value); //seleccionando Id jugador
                 Jugadores jugador = _jug.Seleccionar(jugadorId); //OBTENEMOS FILA EN EL Jugadores (tenemos idJugador
-
                 e.Value = jugador?.Ci_jugador ?? string.Empty; //y el valor lo pongo en la coumna
+            }
+            if (MensualidadesDataGridView.Columns[e.ColumnIndex].Name == "Guiaprecios_id" && e.Value != null)
+            {
+                int Guiaprecios_idId = Convert.ToInt32(e.Value); //seleccionando Id jugador
+                GuiaPrecios gPrecios = _gPre.Seleccionar(Guiaprecios_idId); //OBTENEMOS FILA EN EL Jugadores (tenemos idJugador
+                e.Value = gPrecios?.Concepto ?? string.Empty; //y el valor lo pongo en la coumna
+            }
+            if (MensualidadesDataGridView.Columns[e.ColumnIndex].Name == "Guiaprecios_id1" && e.Value != null)
+            {
+                int Guiaprecios_idId = Convert.ToInt32(e.Value); //seleccionando Id jugador
+                GuiaPrecios gPrecios = _gPre.Seleccionar(Guiaprecios_idId); //OBTENEMOS FILA EN EL Jugadores (tenemos idJugador
+                e.Value = gPrecios?.Precio ?? null; //y el valor lo pongo en la coumna
+            }
+            if (MensualidadesDataGridView.Columns[e.ColumnIndex].Name == "Usuario_id" && e.Value != null)
+            {
+                int userId = Convert.ToInt32(e.Value); //seleccionando Id jugador
+                Usuarios usuario = _user.Seleccionar(userId); //OBTENEMOS FILA EN EL Jugadores (tenemos idJugador
+                string NomC = usuario.Apellidos + " " + usuario.Nombres;
+                e.Value = NomC;
+            }
+        }
+        private string ConvertirNumeroATexto(int numero)
+        {
+            if (numero < 0 || numero > 5000)
+            {
+                throw new ArgumentOutOfRangeException("Número fuera del rango admitido (0-5000)");
+            }
+
+            if (numero == 0)
+            {
+                return "CERO";
+            }
+
+            string[] unidades = { "", "UNO", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE" };
+            string[] especiales = { "DIEZ", "ONCE", "DOCE", "TRECE", "CATORCE", "QUINCE", "DIECISEIS", "DIECISIETE", "DIECIOCHO", "DIECINUEVE" };
+            string[] decenas = { "", "", "VEINTE", "TREINTA", "CUARENTA", "CINCUENTA", "SESENTA", "SETENTA", "OCHENTA", "NOVENTA" };
+
+            if (numero < 10)
+            {
+                return unidades[numero];
+            }
+            else if (numero >= 10 && numero < 20)
+            {
+                return especiales[numero - 10];
+            }
+            else if (numero < 100)
+            {
+                int unidad = numero % 10;
+                int decena = numero / 10;
+                return $"{decenas[decena]} {unidades[unidad]}";
+            }
+            else if (numero < 1000)
+            {
+                int centena = numero / 100;
+                int residuo = numero % 100;
+                return $"{unidades[centena]} CIENTO {(residuo > 0 ? ConvertirNumeroATexto(residuo) : "")}";
+            }
+            else if (numero < 10000)
+            {
+                int millar = numero / 1000;
+                int residuo = numero % 1000;
+                return $"{ConvertirNumeroATexto(millar)} MIL {(residuo > 0 ? ConvertirNumeroATexto(residuo) : "")}";
+            }
+            else
+            {
+                // Manejar otros casos según tus necesidades
+                return "Número fuera de rango admitido";
             }
         }
 
+        private void ImprimirBoleta(int idMensualidad, DateTime FechaPago, string NombreJugador, int MontoPagado,string ConceptoMensualidad)
+        {
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf"; //nombre del pdf
+            string paginahtml_texto = Properties.Resources.BoletaPago.ToString();//agregarmos Plantilla.html como recurso desde Proyecto -> Propiedades
+            //REEMPLAZANDO LOS @NAME
+            string MontoenTexto = ConvertirNumeroATexto(MontoPagado);
+            paginahtml_texto = paginahtml_texto.Replace("@NUMERO", idMensualidad.ToString());
+            paginahtml_texto = paginahtml_texto.Replace("@FECHATEXTO", FechaPago.ToString("dd/mm/yyyy"));
+            paginahtml_texto = paginahtml_texto.Replace("@NOMBRE", NombreJugador.ToString());
+            paginahtml_texto = paginahtml_texto.Replace("@MONTOPAGADO", MontoPagado.ToString());
+            paginahtml_texto = paginahtml_texto.Replace("@MONTOTXT", MontoenTexto);
+            paginahtml_texto = paginahtml_texto.Replace("@CONCEPTOPAGO", ConceptoMensualidad.ToString());
+
+            //GENERACION DE PDF O MANIOBRAS PDF
+            string tempFilePath = Path.GetTempFileName() + ".pdf";
+            using (FileStream stream = new FileStream(tempFilePath, FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
+                PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                pdfDoc.Add(new Phrase("")); // AÑADE TEXTO AL PDF
+
+                // Utilizar StreamReader para leer la cadena HTML
+                using (StringReader sr = new StringReader(paginahtml_texto))
+                {
+                    XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                }
+
+                pdfDoc.Close();
+                stream.Close();
+            }
+
+            // Abrir el PDF en el navegador predeterminado
+            try
+            {
+                Process.Start(tempFilePath);
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción que pueda ocurrir al intentar abrir el navegador predeterminado
+                MessageBox.Show("No se pudo abrir el navegador predeterminado. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             SaveFileDialog guardar = new SaveFileDialog();
@@ -228,16 +374,25 @@ namespace SGClubDeportivo.Vista.Gestiones
             string filas = string.Empty;
             foreach (DataGridViewRow row in MensualidadesDataGridView.Rows)
             {
+                // formato de fecha
+                DateTime fecha = (DateTime)row.Cells["FechPago"].Value;
+                string fechaFormateada = fecha.ToString("dd/MM/yyyy");
+                //
+
+                int idPrecios = Convert.ToInt32(row.Cells["Guiaprecios_id"].Value);
+                GuiaPrecios gPrecios = _gPre.Seleccionar(idPrecios); //OBTENEMOS FILA EN EL Jugadores (tenemos idJugador
+                
+
                 filas += "<tr>";
                 filas += "<td>" + row.Cells["Gestion"].Value.ToString() + "</td>";
                 filas += "<td>" + row.Cells["Mes"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Concepto"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Correlativo"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Descuento"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["CuotaRegular"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["CuotaFinal"].Value.ToString() + "</td>";
+                filas += "<td>" + gPrecios.Concepto.ToString() + "</td>"; //DE Q ES EL PAGO GUIA PRECIO
+                filas += "<td>" + gPrecios.Precio.ToString() + "</td>"; //MONTO A PAGAR
+                filas += "<td>" + row.Cells["Concepto"].Value.ToString() + "</td>"; //DESCRIPCION MENSUALIDAD
+                filas += "<td>" + row.Cells["CuotaFinal"].Value.ToString() + "</td>"; //MONTO PAGADO
+                filas += "<td>" + fechaFormateada + "</td>"; //FECHA DE PAGO MENSUALIDAD
                 filas += "</tr>";
-            }
+            } 
             paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
 
             //ACCIONES NECESARIAS PARA EL PDF - ESTE DIRECTAMENTE GENERA PARA GUARDAR EL PDF

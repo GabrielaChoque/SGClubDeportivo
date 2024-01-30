@@ -29,7 +29,7 @@ namespace SGClubDeportivo.Vista
             AbrirFormInPanel(new Vista.frmInicio(_Carnet, _Cargo));
         }
 
-        private void AbrirFormInPanel(object Formhijo)
+        public void AbrirFormInPanel(object Formhijo)
         {
             this.PanelContenido.Controls.Clear();
             Form fh = Formhijo as Form;
@@ -82,7 +82,6 @@ namespace SGClubDeportivo.Vista
 
         private void btnInscripciones_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Vista.Gestiones.frmGestionInscripciones());
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)

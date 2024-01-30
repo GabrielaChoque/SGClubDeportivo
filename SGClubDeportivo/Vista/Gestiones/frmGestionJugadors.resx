@@ -120,6 +120,24 @@
   <metadata name="JugadoresBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="AddMensualidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="AddMensualidad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG7SURBVFhH7ZS9SgNBFIW38RHEh7CzUMRt/AELE6yMrZBO
+        YxffwQcwhdgJ2oqFFgmRsKubQILBKimiaAwbMQEjdikc5wx3IMXesJvdgIEc+ODOMPecO5Mlxr/VaaUy
+        k7edY4Catn0rbL+Rsx5iebsoAGra9q2w/Ua24CS0gbxFgrZ9a+T+j/jaXDtu3tSPUn1tUE8fiHbMDEQ9
+        vU/hsl96wRPeFMMLB2FQTSXF+dW1onqY9AwZhld/K27eUgwvN2b2cTi3tysyF5eKrKwHzf3g1Q9viuGl
+        DfLri+Isc6JArff9wvVTDC998Gl1QRSW5xWo9b5fuH6K4aUPulsr4nlzSYFa7/uF66cYXoMm44BieHk1
+        RQnF8Or2vsU4oRheXk1RQjG89EG30xWNt3cF6rDrwAOgUf+VNl6bodeTN4B6QhhJ3E960hDr0QaQtwCo
+        w64DD4DGYU8adD15A6gnhJFk+g2om4RcT84Ana+eOqieEEaSqL4BeFMMLzn5r542auBNMbysYrn20myp
+        ab1MRgFe8LRK5RrF8MrZzobkR/9+UQFPeFPMcFnW4+zdfWk7azs7UQAveJL9VAMyjD+XARdUkqvKLwAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

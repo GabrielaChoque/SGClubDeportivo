@@ -37,7 +37,7 @@ namespace SGClubDeportivo.Vista.Ventanas
             {
                 // Configuración para un nuevo registro
                 categoriasBindingSource.AddNew();
-                lblTituloCrud.Text = "REGISTRAR NUEVO";
+                lblTituloCrud.Text = "REGISTRAR NUEVA CATEGORIA";
                 // Puedes inicializar otros controles según tu diseño
             }
             else
@@ -51,28 +51,36 @@ namespace SGClubDeportivo.Vista.Ventanas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            var reg = CargarDatos();
-
-            if (esNuevo)
+            if (CamposValidos())
             {
-                // Agregar nuevo categoria
-                if (categoriaController.AgregarCategoria(reg))
+                var reg = CargarDatos();
+
+                if (esNuevo)
                 {
-                    MessageBox.Show("REGISTRO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
-                    Close();
+                    // Agregar nuevo categoria
+                    if (categoriaController.AgregarCategoria(reg))
+                    {
+                        MessageBox.Show("REGISTRO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                        Close();
+                    }
+                }
+                else
+                {
+                    // Actualizar categoria existente
+                    if (categoriaController.ActualizarCategoria(reg))
+                    {
+                        MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information); this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                        this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                        Close();
+                    }
                 }
             }
             else
             {
-                // Actualizar categoria existente
-                if (categoriaController.ActualizarCategoria(reg))
-                {
-                    MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information); this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
-                    this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
-                    Close();
-                }
+                MessageBox.Show("INTRODUZCA LOS CAMPOS CORRECTAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error); this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
             }
+                
         }
 
         private Categorias CargarDatos()
@@ -86,6 +94,17 @@ namespace SGClubDeportivo.Vista.Ventanas
         {
             Close();
         }
+        private bool CamposValidos() //PARA REALIZAR VALIDACIONES
+        {
+            // Aquí debes realizar las validaciones necesarias, por ejemplo:
+            if (string.IsNullOrWhiteSpace(nombreTextBox.Text))
+            {
+                return false;
+            }
 
+            // Puedes agregar más validaciones según los requisitos de tus campos
+
+            return true;
+        }
     }
 }

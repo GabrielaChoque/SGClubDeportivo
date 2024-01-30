@@ -29,7 +29,7 @@ namespace SGClubDeportivo.Data
         public virtual DbSet<GuiaPrecios> GuiaPrecios { get; set; }
         public virtual DbSet<Jugadores> Jugadores { get; set; }
         public virtual DbSet<Mensualidades> Mensualidades { get; set; }
-        public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
     }
 }

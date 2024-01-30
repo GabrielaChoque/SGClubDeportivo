@@ -15,21 +15,17 @@ namespace SGClubDeportivo.Data
     public partial class Mensualidades
     {
         public int id { get; set; }
-        public string Correlativo { get; set; }
         public Nullable<int> Gestion { get; set; }
-        public Nullable<int> Mes { get; set; }
+        public string Mes { get; set; }
         public string Concepto { get; set; }
-        public Nullable<int> CuotaRegular { get; set; }
-        public Nullable<int> Descuento { get; set; }
         public Nullable<int> CuotaFinal { get; set; }
-        public Nullable<int> Inscripcion_id { get; set; }
         public Nullable<System.DateTime> FechPago { get; set; }
         public Nullable<int> Jugador_id { get; set; }
         public Nullable<int> Usuario_id { get; set; }
         public Nullable<int> Guiaprecios_id { get; set; }
     
+        public virtual GuiaPrecios GuiaPrecios { get; set; }
         public virtual Jugadores Jugadores { get; set; }
         public virtual Usuarios Usuarios { get; set; }
-        public virtual GuiaPrecios GuiaPrecios { get; set; }
     }
 }

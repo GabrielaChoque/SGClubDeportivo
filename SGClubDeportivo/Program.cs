@@ -18,12 +18,13 @@ namespace SGClubDeportivo
        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Login());
+            Application.Run(new Login());
             //Application.Run(new frmGestionMensualidades());
             //Application.Run(new frmGestionInscripciones());
             //Application.Run(new frmGestionJugadors());
             //Application.Run(new frmPrincipalSecretario());
-            Application.Run(new frmGestionGuiaPrecios());
+            //Application.Run(new frmGestionUsuarios());
+            //Application.Run(new frmPrincipal());
         }
     }
 }

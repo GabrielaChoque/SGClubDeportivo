@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Recibo de Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .recibo-container {
+            border: 2px solid black;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .recibo-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 2px solid #000;
+            margin-bottom: 10px;
+        }
+
+        .recibo-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .recibo-number {
+            text-align: right;
+            font-size: 18px;
+        }
+
+        .recibo-details {
+            padding: 10px;
+        }
+
+        .lugar-fecha {
+            font-size: 16px;
+        }
+
+        .monto-container {
+            border: 1px solid black;
+            padding: 1px;
+            margin-top: 10px;
+        }
+
+        .monto-text {
+            font-size: 18px;
+        }
+
+        .concepto {
+            text-decoration: underline;
+            text-align: center;
+        }
+
+        .firmas {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .linea-firma {
+            border: 1px solid black;
+            margin-top: 100px;
+            width: 190px;
+            display: inline-block;
+        }
+
+        .nombre-firma {
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="recibo-container">
+        <div class="recibo-header">
+            <div class="recibo-title">RECIBO</div>
+            <div class="recibo-number">Nº @NUMERO</div>
+        </div>
+        ____________________________________________________________________________
+        <div class="recibo-details">
+            <div class="lugar-fecha">
+                <p>Lugar y Fecha</p>
+                <p>Oruro, @FECHATEXTO</p>
+            </div>
+
+            <p style="border: 1px solid black">Recibí de @NOMBRE la cantidad de Bs @MONTOPAGADO</p>
+            <div class="monto-container">
+                <div class="monto-text">
+                    <p>@MONTOTXT 00/100</p>
+                </div>
+            </div>
+            ____________________________________________________________________________
+            <p class="concepto">Por concepto de Pago: @CONCEPTOPAGO</p>
+            
+            <div class="firmas">
+                <div class="linea-firma"></div>
+                <div class="nombre-firma">
+                    <p>_____________________</p>
+                    <p>Nombre y Firma</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

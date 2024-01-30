@@ -1,4 +1,5 @@
-﻿using SGClubDeportivo.Data;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using SGClubDeportivo.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -85,6 +86,19 @@ namespace SGClubDeportivo.Controlador
         //        return "Usuario." + nom;
         //    }
         //}
+        public Usuarios SeleccionarPorCI(string username, string password)
+        {
+            //return _db.Jugadores.Where(x => x.Ci_jugador==ci).FirstOrDefault();
+            return _db.Usuarios.Where(x => x.Username == username && x.Password == password).SingleOrDefault();
+        }
     }
 
 }
+public static class GlobalVariables
+{
+    public static string UsuarioActual { get; set; }
+    public static string NomC { get; set; }
+    public static string Rol { get; set; }
+    public static int idUsuario { get; set; }
+}
+

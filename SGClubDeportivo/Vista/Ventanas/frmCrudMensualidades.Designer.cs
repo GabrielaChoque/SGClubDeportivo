@@ -29,34 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label conceptoLabel;
-            System.Windows.Forms.Label correlativoLabel;
-            System.Windows.Forms.Label cuotaFinalLabel;
-            System.Windows.Forms.Label cuotaRegularLabel;
-            System.Windows.Forms.Label descuentoLabel;
             System.Windows.Forms.Label gestionLabel;
             System.Windows.Forms.Label mesLabel;
-            System.Windows.Forms.Label ci_jugadorLabel;
+            System.Windows.Forms.Label conceptoLabel;
+            System.Windows.Forms.Label cuotaFinalLabel;
+            System.Windows.Forms.Label conceptoLabel1;
+            System.Windows.Forms.Label fechPagoLabel;
             this.MensualidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.conceptoTextBox = new System.Windows.Forms.TextBox();
-            this.correlativoTextBox = new System.Windows.Forms.TextBox();
-            this.cuotaFinalTextBox = new System.Windows.Forms.TextBox();
-            this.cuotaRegularTextBox = new System.Windows.Forms.TextBox();
-            this.descuentoTextBox = new System.Windows.Forms.TextBox();
-            this.gestionTextBox = new System.Windows.Forms.TextBox();
-            this.mesComboBox = new System.Windows.Forms.ComboBox();
-            this.ci_jugadorComboBox = new System.Windows.Forms.ComboBox();
             this.jugadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            conceptoLabel = new System.Windows.Forms.Label();
-            correlativoLabel = new System.Windows.Forms.Label();
-            cuotaFinalLabel = new System.Windows.Forms.Label();
-            cuotaRegularLabel = new System.Windows.Forms.Label();
-            descuentoLabel = new System.Windows.Forms.Label();
+            this.gestionNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.mesComboBox = new System.Windows.Forms.ComboBox();
+            this.conceptoTextBox = new System.Windows.Forms.TextBox();
+            this.cuotaFinalNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.guiaPreciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fechPagoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.conceptoComboBox = new System.Windows.Forms.ComboBox();
             gestionLabel = new System.Windows.Forms.Label();
             mesLabel = new System.Windows.Forms.Label();
-            ci_jugadorLabel = new System.Windows.Forms.Label();
+            conceptoLabel = new System.Windows.Forms.Label();
+            cuotaFinalLabel = new System.Windows.Forms.Label();
+            conceptoLabel1 = new System.Windows.Forms.Label();
+            fechPagoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MensualidadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jugadoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuotaFinalNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guiaPreciosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -67,206 +65,185 @@
             // 
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // conceptoLabel
-            // 
-            conceptoLabel.AutoSize = true;
-            conceptoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            conceptoLabel.Location = new System.Drawing.Point(105, 79);
-            conceptoLabel.Name = "conceptoLabel";
-            conceptoLabel.Size = new System.Drawing.Size(56, 13);
-            conceptoLabel.TabIndex = 41;
-            conceptoLabel.Text = "Concepto:";
-            // 
-            // correlativoLabel
-            // 
-            correlativoLabel.AutoSize = true;
-            correlativoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            correlativoLabel.Location = new System.Drawing.Point(105, 105);
-            correlativoLabel.Name = "correlativoLabel";
-            correlativoLabel.Size = new System.Drawing.Size(60, 13);
-            correlativoLabel.TabIndex = 43;
-            correlativoLabel.Text = "Correlativo:";
-            // 
-            // cuotaFinalLabel
-            // 
-            cuotaFinalLabel.AutoSize = true;
-            cuotaFinalLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            cuotaFinalLabel.Location = new System.Drawing.Point(105, 131);
-            cuotaFinalLabel.Name = "cuotaFinalLabel";
-            cuotaFinalLabel.Size = new System.Drawing.Size(63, 13);
-            cuotaFinalLabel.TabIndex = 45;
-            cuotaFinalLabel.Text = "Cuota Final:";
-            // 
-            // cuotaRegularLabel
-            // 
-            cuotaRegularLabel.AutoSize = true;
-            cuotaRegularLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            cuotaRegularLabel.Location = new System.Drawing.Point(105, 157);
-            cuotaRegularLabel.Name = "cuotaRegularLabel";
-            cuotaRegularLabel.Size = new System.Drawing.Size(78, 13);
-            cuotaRegularLabel.TabIndex = 47;
-            cuotaRegularLabel.Text = "Cuota Regular:";
-            // 
-            // descuentoLabel
-            // 
-            descuentoLabel.AutoSize = true;
-            descuentoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            descuentoLabel.Location = new System.Drawing.Point(105, 183);
-            descuentoLabel.Name = "descuentoLabel";
-            descuentoLabel.Size = new System.Drawing.Size(62, 13);
-            descuentoLabel.TabIndex = 49;
-            descuentoLabel.Text = "Descuento:";
-            // 
             // gestionLabel
             // 
             gestionLabel.AutoSize = true;
-            gestionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            gestionLabel.Location = new System.Drawing.Point(105, 209);
+            gestionLabel.Location = new System.Drawing.Point(135, 72);
             gestionLabel.Name = "gestionLabel";
             gestionLabel.Size = new System.Drawing.Size(46, 13);
-            gestionLabel.TabIndex = 51;
+            gestionLabel.TabIndex = 55;
             gestionLabel.Text = "Gestion:";
             // 
             // mesLabel
             // 
             mesLabel.AutoSize = true;
-            mesLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            mesLabel.Location = new System.Drawing.Point(105, 235);
+            mesLabel.Location = new System.Drawing.Point(141, 111);
             mesLabel.Name = "mesLabel";
             mesLabel.Size = new System.Drawing.Size(30, 13);
-            mesLabel.TabIndex = 53;
+            mesLabel.TabIndex = 56;
             mesLabel.Text = "Mes:";
             // 
-            // ci_jugadorLabel
+            // conceptoLabel
             // 
-            ci_jugadorLabel.AutoSize = true;
-            ci_jugadorLabel.Location = new System.Drawing.Point(115, 274);
-            ci_jugadorLabel.Name = "ci_jugadorLabel";
-            ci_jugadorLabel.Size = new System.Drawing.Size(57, 13);
-            ci_jugadorLabel.TabIndex = 54;
-            ci_jugadorLabel.Text = "Ci jugador:";
+            conceptoLabel.AutoSize = true;
+            conceptoLabel.Location = new System.Drawing.Point(81, 145);
+            conceptoLabel.Name = "conceptoLabel";
+            conceptoLabel.Size = new System.Drawing.Size(116, 13);
+            conceptoLabel.TabIndex = 57;
+            conceptoLabel.Text = "Concepto Mensualidad";
+            // 
+            // cuotaFinalLabel
+            // 
+            cuotaFinalLabel.AutoSize = true;
+            cuotaFinalLabel.Location = new System.Drawing.Point(154, 173);
+            cuotaFinalLabel.Name = "cuotaFinalLabel";
+            cuotaFinalLabel.Size = new System.Drawing.Size(63, 13);
+            cuotaFinalLabel.TabIndex = 58;
+            cuotaFinalLabel.Text = "Cuota Final:";
+            // 
+            // conceptoLabel1
+            // 
+            conceptoLabel1.AutoSize = true;
+            conceptoLabel1.Location = new System.Drawing.Point(113, 242);
+            conceptoLabel1.Name = "conceptoLabel1";
+            conceptoLabel1.Size = new System.Drawing.Size(84, 13);
+            conceptoLabel1.TabIndex = 60;
+            conceptoLabel1.Text = "Concepto Pago:";
+            // 
+            // fechPagoLabel
+            // 
+            fechPagoLabel.AutoSize = true;
+            fechPagoLabel.Location = new System.Drawing.Point(153, 205);
+            fechPagoLabel.Name = "fechPagoLabel";
+            fechPagoLabel.Size = new System.Drawing.Size(62, 13);
+            fechPagoLabel.TabIndex = 59;
+            fechPagoLabel.Text = "Fech Pago:";
             // 
             // MensualidadesBindingSource
             // 
             this.MensualidadesBindingSource.DataSource = typeof(SGClubDeportivo.Data.Mensualidades);
             // 
-            // conceptoTextBox
+            // jugadoresBindingSource
             // 
-            this.conceptoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "Concepto", true));
-            this.conceptoTextBox.Location = new System.Drawing.Point(189, 76);
-            this.conceptoTextBox.Name = "conceptoTextBox";
-            this.conceptoTextBox.Size = new System.Drawing.Size(121, 20);
-            this.conceptoTextBox.TabIndex = 42;
+            this.jugadoresBindingSource.DataSource = typeof(SGClubDeportivo.Data.Jugadores);
             // 
-            // correlativoTextBox
+            // gestionNumericUpDown
             // 
-            this.correlativoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "Correlativo", true));
-            this.correlativoTextBox.Location = new System.Drawing.Point(189, 102);
-            this.correlativoTextBox.Name = "correlativoTextBox";
-            this.correlativoTextBox.Size = new System.Drawing.Size(121, 20);
-            this.correlativoTextBox.TabIndex = 44;
-            // 
-            // cuotaFinalTextBox
-            // 
-            this.cuotaFinalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "CuotaFinal", true));
-            this.cuotaFinalTextBox.Location = new System.Drawing.Point(189, 128);
-            this.cuotaFinalTextBox.Name = "cuotaFinalTextBox";
-            this.cuotaFinalTextBox.Size = new System.Drawing.Size(121, 20);
-            this.cuotaFinalTextBox.TabIndex = 46;
-            // 
-            // cuotaRegularTextBox
-            // 
-            this.cuotaRegularTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "CuotaRegular", true));
-            this.cuotaRegularTextBox.Location = new System.Drawing.Point(189, 154);
-            this.cuotaRegularTextBox.Name = "cuotaRegularTextBox";
-            this.cuotaRegularTextBox.Size = new System.Drawing.Size(121, 20);
-            this.cuotaRegularTextBox.TabIndex = 48;
-            // 
-            // descuentoTextBox
-            // 
-            this.descuentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "Descuento", true));
-            this.descuentoTextBox.Location = new System.Drawing.Point(189, 180);
-            this.descuentoTextBox.Name = "descuentoTextBox";
-            this.descuentoTextBox.Size = new System.Drawing.Size(121, 20);
-            this.descuentoTextBox.TabIndex = 50;
-            // 
-            // gestionTextBox
-            // 
-            this.gestionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "Gestion", true));
-            this.gestionTextBox.Location = new System.Drawing.Point(189, 206);
-            this.gestionTextBox.Name = "gestionTextBox";
-            this.gestionTextBox.Size = new System.Drawing.Size(121, 20);
-            this.gestionTextBox.TabIndex = 52;
+            this.gestionNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.MensualidadesBindingSource, "Gestion", true));
+            this.gestionNumericUpDown.Location = new System.Drawing.Point(187, 72);
+            this.gestionNumericUpDown.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.gestionNumericUpDown.Name = "gestionNumericUpDown";
+            this.gestionNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.gestionNumericUpDown.TabIndex = 56;
             // 
             // mesComboBox
             // 
             this.mesComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "Mes", true));
             this.mesComboBox.FormattingEnabled = true;
-            this.mesComboBox.Location = new System.Drawing.Point(189, 232);
+            this.mesComboBox.Items.AddRange(new object[] {
+            "ENERO",
+            "FEBRERO",
+            "MARZO",
+            "ABRIL",
+            "MAYO",
+            "JUNIO",
+            "JULIO",
+            "AGOSTO",
+            "SEPTIEMBRE",
+            "OCTUBRE",
+            "NOVIEMBRE",
+            "DICIEMBRE"});
+            this.mesComboBox.Location = new System.Drawing.Point(177, 108);
             this.mesComboBox.Name = "mesComboBox";
             this.mesComboBox.Size = new System.Drawing.Size(121, 21);
-            this.mesComboBox.TabIndex = 54;
+            this.mesComboBox.TabIndex = 57;
             // 
-            // ci_jugadorComboBox
+            // conceptoTextBox
             // 
-            this.ci_jugadorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "Inscripciones.Jugadores.Ci_jugador", true));
-            this.ci_jugadorComboBox.DataSource = this.jugadoresBindingSource;
-            this.ci_jugadorComboBox.DisplayMember = "Ci_jugador";
-            this.ci_jugadorComboBox.FormattingEnabled = true;
-            this.ci_jugadorComboBox.Location = new System.Drawing.Point(189, 271);
-            this.ci_jugadorComboBox.Name = "ci_jugadorComboBox";
-            this.ci_jugadorComboBox.Size = new System.Drawing.Size(121, 21);
-            this.ci_jugadorComboBox.TabIndex = 55;
+            this.conceptoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "Concepto", true));
+            this.conceptoTextBox.Location = new System.Drawing.Point(204, 138);
+            this.conceptoTextBox.Name = "conceptoTextBox";
+            this.conceptoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.conceptoTextBox.TabIndex = 58;
             // 
-            // jugadoresBindingSource
+            // cuotaFinalNumericUpDown
             // 
-            this.jugadoresBindingSource.DataSource = typeof(SGClubDeportivo.Data.Jugadores);
+            this.cuotaFinalNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.MensualidadesBindingSource, "CuotaFinal", true));
+            this.cuotaFinalNumericUpDown.Location = new System.Drawing.Point(223, 173);
+            this.cuotaFinalNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.cuotaFinalNumericUpDown.Name = "cuotaFinalNumericUpDown";
+            this.cuotaFinalNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.cuotaFinalNumericUpDown.TabIndex = 59;
+            // 
+            // guiaPreciosBindingSource
+            // 
+            this.guiaPreciosBindingSource.DataSource = typeof(SGClubDeportivo.Data.GuiaPrecios);
+            // 
+            // fechPagoDateTimePicker
+            // 
+            this.fechPagoDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.fechPagoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.MensualidadesBindingSource, "FechPago", true));
+            this.fechPagoDateTimePicker.Location = new System.Drawing.Point(221, 201);
+            this.fechPagoDateTimePicker.Name = "fechPagoDateTimePicker";
+            this.fechPagoDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fechPagoDateTimePicker.TabIndex = 60;
+            // 
+            // conceptoComboBox
+            // 
+            this.conceptoComboBox.FormattingEnabled = true;
+            this.conceptoComboBox.Location = new System.Drawing.Point(223, 242);
+            this.conceptoComboBox.Name = "conceptoComboBox";
+            this.conceptoComboBox.Size = new System.Drawing.Size(121, 21);
+            this.conceptoComboBox.TabIndex = 61;
             // 
             // frmCrudMensualidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 501);
-            this.Controls.Add(ci_jugadorLabel);
-            this.Controls.Add(this.ci_jugadorComboBox);
+            this.ClientSize = new System.Drawing.Size(531, 501);
+            this.Controls.Add(this.conceptoComboBox);
+            this.Controls.Add(conceptoLabel1);
+            this.Controls.Add(fechPagoLabel);
+            this.Controls.Add(this.fechPagoDateTimePicker);
+            this.Controls.Add(cuotaFinalLabel);
+            this.Controls.Add(this.cuotaFinalNumericUpDown);
             this.Controls.Add(conceptoLabel);
             this.Controls.Add(this.conceptoTextBox);
-            this.Controls.Add(correlativoLabel);
-            this.Controls.Add(this.correlativoTextBox);
-            this.Controls.Add(cuotaFinalLabel);
-            this.Controls.Add(this.cuotaFinalTextBox);
-            this.Controls.Add(cuotaRegularLabel);
-            this.Controls.Add(this.cuotaRegularTextBox);
-            this.Controls.Add(descuentoLabel);
-            this.Controls.Add(this.descuentoTextBox);
-            this.Controls.Add(gestionLabel);
-            this.Controls.Add(this.gestionTextBox);
             this.Controls.Add(mesLabel);
             this.Controls.Add(this.mesComboBox);
+            this.Controls.Add(gestionLabel);
+            this.Controls.Add(this.gestionNumericUpDown);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "frmCrudMensualidades";
             this.Text = "frmCrudMensualidades";
             this.Load += new System.EventHandler(this.frmCrudMensualidades_Load);
-            this.Controls.SetChildIndex(this.btnAceptar, 0);
-            this.Controls.SetChildIndex(this.btnCancelar, 0);
+            this.Controls.SetChildIndex(this.gestionNumericUpDown, 0);
+            this.Controls.SetChildIndex(gestionLabel, 0);
             this.Controls.SetChildIndex(this.mesComboBox, 0);
             this.Controls.SetChildIndex(mesLabel, 0);
-            this.Controls.SetChildIndex(this.gestionTextBox, 0);
-            this.Controls.SetChildIndex(gestionLabel, 0);
-            this.Controls.SetChildIndex(this.descuentoTextBox, 0);
-            this.Controls.SetChildIndex(descuentoLabel, 0);
-            this.Controls.SetChildIndex(this.cuotaRegularTextBox, 0);
-            this.Controls.SetChildIndex(cuotaRegularLabel, 0);
-            this.Controls.SetChildIndex(this.cuotaFinalTextBox, 0);
-            this.Controls.SetChildIndex(cuotaFinalLabel, 0);
-            this.Controls.SetChildIndex(this.correlativoTextBox, 0);
-            this.Controls.SetChildIndex(correlativoLabel, 0);
             this.Controls.SetChildIndex(this.conceptoTextBox, 0);
             this.Controls.SetChildIndex(conceptoLabel, 0);
-            this.Controls.SetChildIndex(this.ci_jugadorComboBox, 0);
-            this.Controls.SetChildIndex(ci_jugadorLabel, 0);
+            this.Controls.SetChildIndex(this.cuotaFinalNumericUpDown, 0);
+            this.Controls.SetChildIndex(cuotaFinalLabel, 0);
+            this.Controls.SetChildIndex(this.fechPagoDateTimePicker, 0);
+            this.Controls.SetChildIndex(fechPagoLabel, 0);
+            this.Controls.SetChildIndex(conceptoLabel1, 0);
+            this.Controls.SetChildIndex(this.btnAceptar, 0);
+            this.Controls.SetChildIndex(this.btnCancelar, 0);
+            this.Controls.SetChildIndex(this.conceptoComboBox, 0);
             ((System.ComponentModel.ISupportInitialize)(this.MensualidadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jugadoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuotaFinalNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guiaPreciosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,14 +252,13 @@
         #endregion
 
         private System.Windows.Forms.BindingSource MensualidadesBindingSource;
-        private System.Windows.Forms.TextBox conceptoTextBox;
-        private System.Windows.Forms.TextBox correlativoTextBox;
-        private System.Windows.Forms.TextBox cuotaFinalTextBox;
-        private System.Windows.Forms.TextBox cuotaRegularTextBox;
-        private System.Windows.Forms.TextBox descuentoTextBox;
-        private System.Windows.Forms.TextBox gestionTextBox;
-        private System.Windows.Forms.ComboBox mesComboBox;
-        private System.Windows.Forms.ComboBox ci_jugadorComboBox;
         private System.Windows.Forms.BindingSource jugadoresBindingSource;
+        private System.Windows.Forms.NumericUpDown gestionNumericUpDown;
+        private System.Windows.Forms.ComboBox mesComboBox;
+        private System.Windows.Forms.TextBox conceptoTextBox;
+        private System.Windows.Forms.NumericUpDown cuotaFinalNumericUpDown;
+        private System.Windows.Forms.BindingSource guiaPreciosBindingSource;
+        private System.Windows.Forms.DateTimePicker fechPagoDateTimePicker;
+        private System.Windows.Forms.ComboBox conceptoComboBox;
     }
 }

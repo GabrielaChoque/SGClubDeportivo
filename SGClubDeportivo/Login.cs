@@ -1,4 +1,5 @@
 ﻿using SGClubDeportivo.Controlador;
+using SGClubDeportivo.Data;
 using SGClubDeportivo.Vista;
 using System;
 using System.Collections.Generic;
@@ -43,11 +44,17 @@ namespace SGClubDeportivo
             }
             else
             {
+                Usuarios usuarioseleccionado = _user.SeleccionarPorCI(txtUsuario.Text, txtContrasenia.Text);
                 if (tipoUsuario=="ADMIN")
                 {
                     this.Hide();
                     frmPrincipal frmAdmin = new Vista.frmPrincipal(txtUsuario.Text, tipoUsuario);
                     frmAdmin.ShowDialog();
+                    //ASIGNACION DE VARIABLES GLOBALES
+                    GlobalVariables.UsuarioActual = usuarioseleccionado.Username;
+                    GlobalVariables.NomC = usuarioseleccionado.Nombres + " " + usuarioseleccionado.Apellidos;
+                    GlobalVariables.Rol = usuarioseleccionado.Rol;
+                    GlobalVariables.idUsuario = usuarioseleccionado.id;
                 }
                 else {
                     this.Hide();

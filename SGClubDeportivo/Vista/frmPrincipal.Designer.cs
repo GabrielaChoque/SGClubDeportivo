@@ -174,7 +174,7 @@ namespace SGClubDeportivo.Vista
             this.btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUsuarios.IconSize = 30;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(7, 334);
+            this.btnUsuarios.Location = new System.Drawing.Point(7, 284);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(191, 38);
             this.btnUsuarios.TabIndex = 25;
@@ -216,7 +216,7 @@ namespace SGClubDeportivo.Vista
             this.btnInscripciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnInscripciones.IconSize = 30;
             this.btnInscripciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInscripciones.Location = new System.Drawing.Point(7, 290);
+            this.btnInscripciones.Location = new System.Drawing.Point(0, 370);
             this.btnInscripciones.Name = "btnInscripciones";
             this.btnInscripciones.Size = new System.Drawing.Size(191, 38);
             this.btnInscripciones.TabIndex = 23;
@@ -224,6 +224,7 @@ namespace SGClubDeportivo.Vista
             this.btnInscripciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInscripciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInscripciones.UseVisualStyleBackColor = false;
+            this.btnInscripciones.Visible = false;
             this.btnInscripciones.Click += new System.EventHandler(this.btnInscripciones_Click);
             // 
             // btnSalir

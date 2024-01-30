@@ -39,6 +39,7 @@
         .datos-personales {
             width: 100%;
             margin-top: 20px;
+            font-size: 11px;
         }
 
             .datos-personales table {
@@ -47,7 +48,7 @@
 
             .datos-personales th, .datos-personales td {
                 padding: 8px;
-                border: 1px solid black;
+                /*border: 1px solid black;*/
             }
 
         /* Estilos de la Sección de Detalles de Pago */
@@ -90,25 +91,20 @@
                 <p class="direccion">DIRECCION: BRASIL Y EJERCITO</p>
                 <!--<p>CELULAR: 12345678</p>-->
             </td>
-            <td style="width:30%;" align="right">
-                <table>
-                    <tr><td align="center" class="nit">NIT: 12222222222</td></tr>
-                    <tr><td align="center" class="nit">Nro: 00000111</td></tr>
-                </table>
-            </td>
+            
         </tr>
     </table>
 
     <div class="datos-personales">
         <table>
             <tr>
-                <th>Jugador</th>
+                <th>Nombre del Jugador:</th>
                 <td>@CLIENTE</td>
             </tr>
             <tr>
-                <th>Carnet</th>
+                <th>Carnet:</th>
                 <td>@DOCUMENTO</td>
-                <th>Fecha</th>
+                <th>Fecha de Impresión:</th>
                 <td>@FECHA</td>
             </tr>
         </table>
@@ -120,11 +116,11 @@
                 <tr>
                     <th>GESTION</th>
                     <th>MES</th>
-                    <th>CONCEPTO</th>
-                    <th>CORRELATIVO</th>
-                    <th>DESCUENTO</th>
-                    <th>CUOTA_REGULAR</th>
-                    <th>CUOTA_FINAL</th>
+                    <th>GUIA DE PAGO</th>
+                    <th>MONTO A PAGAR</th>
+                    <th>DESCRIPCION</th>
+                    <th>MONTO PAGADO</th>
+                    <th>FECHA DE PAGO</th>
                 </tr>
             </thead>
             <tbody>

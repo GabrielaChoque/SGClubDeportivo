@@ -112,6 +112,22 @@ namespace SGClubDeportivo.Vista.Gestiones
                             }
                         }
                     }
+                    else if (JugadoresDataGridView.Columns[e.ColumnIndex].Name == "AddMensualidad")
+                    {
+                        // Lógica para editar la fila seleccionada
+                        // Puedes obtener el ID u otra información de la fila seleccionada usando:
+                        var idJugador = Convert.ToInt32(JugadoresDataGridView.Rows[e.RowIndex].Cells["id"].Value);
+                        var idGuiaPrecio = 0; //ES 0 PORQUE SOMOS EXTERNOS
+                        frmCrudMensualidades frm = new frmCrudMensualidades(idJugador, idGuiaPrecio);
+                        DialogResult result = frm.ShowDialog();
+
+                        // Recargar los datos si se editó un Jugadores
+                        if (result == DialogResult.OK)
+                        {
+                            _Jugadores = new JugadorController(); //no olvidar esta linea para actualizar tabla
+                            CargarDatos(txtBuscar.text);
+                        }
+                    }
                 }
             }
             catch (Exception ex)

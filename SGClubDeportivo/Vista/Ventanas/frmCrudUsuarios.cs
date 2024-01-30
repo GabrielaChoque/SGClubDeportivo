@@ -37,39 +37,47 @@ namespace SGClubDeportivo.Vista.Ventanas
             {
                 // Configuración para un nuevo registro
                 UsuariosBindingSource.AddNew();
-                lblTituloCrud.Text = "REGISTRAR NUEVO";
+                lblTituloCrud.Text = "REGISTRAR NUEVO USUARIO";
             }
             else
             {
-                lblTituloCrud.Text = "MODIFICAR ";
+                lblTituloCrud.Text = "MODIFICAR USUARIO";
                 // Cargar datos del categoria existente para edición
                 UsuariosBindingSource.DataSource = _UsuarioController.Seleccionar(ide);
             }
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            var reg = PonerDatosForm();
-
-            if (esNuevo)
+            if (CamposValidos()) //PUESTO PARA VAIDACIONES
             {
-                // Agregar nuevo categoria
-                if (_UsuarioController.Insertar(reg))
+                var reg = PonerDatosForm();
+
+                if (esNuevo)
                 {
-                    MessageBox.Show("REGISTRO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
-                    Close();
+                    // Agregar nuevo categoria
+                    if (_UsuarioController.Insertar(reg))
+                    {
+                        MessageBox.Show("REGISTRO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                        Close();
+                    }
+                }
+                else
+                {
+                    // Actualizar categoria existente
+                    if (_UsuarioController.Modificar(reg))
+                    {
+                        MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information); this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                        this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                        Close();
+                    }
                 }
             }
             else
             {
-                // Actualizar categoria existente
-                if (_UsuarioController.Modificar(reg))
-                {
-                    MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information); this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
-                    this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
-                    Close();
-                }
+                MessageBox.Show("INTRODUZCA LOS CAMPOS CORRECTAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error); this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
             }
+                
         }
 
         private Usuarios PonerDatosForm()
@@ -83,5 +91,17 @@ namespace SGClubDeportivo.Vista.Ventanas
             Close();
         }
         //HASTA ACA
+        private bool CamposValidos() //PARA REALIZAR VALIDACIONES
+        {
+            // Aquí debes realizar las validaciones necesarias, por ejemplo:
+            if (string.IsNullOrWhiteSpace(apellidosTextBox.Text) || string.IsNullOrWhiteSpace(nombresTextBox.Text) || string.IsNullOrWhiteSpace(passwordTextBox.Text) || string.IsNullOrWhiteSpace(rolComboBox.Text) || string.IsNullOrWhiteSpace(telefonoNumericUpDown.Text) || string.IsNullOrWhiteSpace(usernameTextBox.Text))
+            {
+                return false;
+            }
+
+            // Puedes agregar más validaciones según los requisitos de tus campos
+
+            return true;
+        }
     }
 }

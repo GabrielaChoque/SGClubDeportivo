@@ -30,19 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             this.MensualidadesDataGridView = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inscripcion_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correlativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CuotaRegular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CuotaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.MensualidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Guiaprecios_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Guiaprecios_id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Jugador_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CuotaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrintBoleta = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Usuario_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MensualidadesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MensualidadesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +65,7 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Enabled = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // MensualidadesDataGridView
@@ -78,16 +81,18 @@
             this.MensualidadesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MensualidadesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.Inscripcion_id,
-            this.Correlativo,
+            this.Guiaprecios_id,
+            this.Guiaprecios_id1,
             this.Gestion,
             this.Mes,
-            this.Concepto,
-            this.CuotaRegular,
-            this.Descuento,
+            this.Jugador_id,
             this.CuotaFinal,
+            this.FechPago,
+            this.Concepto,
+            this.PrintBoleta,
             this.Editar,
-            this.Eliminar});
+            this.Eliminar,
+            this.Usuario_id});
             this.MensualidadesDataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MensualidadesDataGridView.DataSource = this.MensualidadesBindingSource;
             this.MensualidadesDataGridView.Location = new System.Drawing.Point(12, 95);
@@ -98,86 +103,6 @@
             this.MensualidadesDataGridView.TabIndex = 61;
             this.MensualidadesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MensualidadesDataGridView_CellContentClick);
             this.MensualidadesDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.MensualidadesDataGridView_CellFormatting);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // Inscripcion_id
-            // 
-            this.Inscripcion_id.DataPropertyName = "Inscripcion_id";
-            this.Inscripcion_id.HeaderText = "Ci Jugador";
-            this.Inscripcion_id.Name = "Inscripcion_id";
-            this.Inscripcion_id.ReadOnly = true;
-            // 
-            // Correlativo
-            // 
-            this.Correlativo.DataPropertyName = "Correlativo";
-            this.Correlativo.HeaderText = "Correlativo";
-            this.Correlativo.Name = "Correlativo";
-            this.Correlativo.ReadOnly = true;
-            // 
-            // Gestion
-            // 
-            this.Gestion.DataPropertyName = "Gestion";
-            this.Gestion.HeaderText = "Gestion";
-            this.Gestion.Name = "Gestion";
-            this.Gestion.ReadOnly = true;
-            // 
-            // Mes
-            // 
-            this.Mes.DataPropertyName = "Mes";
-            this.Mes.HeaderText = "Mes";
-            this.Mes.Name = "Mes";
-            this.Mes.ReadOnly = true;
-            // 
-            // Concepto
-            // 
-            this.Concepto.DataPropertyName = "Concepto";
-            this.Concepto.HeaderText = "Concepto";
-            this.Concepto.Name = "Concepto";
-            this.Concepto.ReadOnly = true;
-            // 
-            // CuotaRegular
-            // 
-            this.CuotaRegular.DataPropertyName = "CuotaRegular";
-            this.CuotaRegular.HeaderText = "CuotaRegular";
-            this.CuotaRegular.Name = "CuotaRegular";
-            this.CuotaRegular.ReadOnly = true;
-            // 
-            // Descuento
-            // 
-            this.Descuento.DataPropertyName = "Descuento";
-            this.Descuento.HeaderText = "Descuento";
-            this.Descuento.Name = "Descuento";
-            this.Descuento.ReadOnly = true;
-            // 
-            // CuotaFinal
-            // 
-            this.CuotaFinal.DataPropertyName = "CuotaFinal";
-            this.CuotaFinal.HeaderText = "CuotaFinal";
-            this.CuotaFinal.Name = "CuotaFinal";
-            this.CuotaFinal.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::SGClubDeportivo.Properties.Resources.editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::SGClubDeportivo.Properties.Resources.eliminar;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // MensualidadesBindingSource
             // 
@@ -203,6 +128,100 @@
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // Guiaprecios_id
+            // 
+            this.Guiaprecios_id.DataPropertyName = "Guiaprecios_id";
+            this.Guiaprecios_id.HeaderText = "Guiaprecios_id";
+            this.Guiaprecios_id.Name = "Guiaprecios_id";
+            this.Guiaprecios_id.ReadOnly = true;
+            // 
+            // Guiaprecios_id1
+            // 
+            this.Guiaprecios_id1.DataPropertyName = "Guiaprecios_id";
+            this.Guiaprecios_id1.HeaderText = "GPrecioMonto";
+            this.Guiaprecios_id1.Name = "Guiaprecios_id1";
+            this.Guiaprecios_id1.ReadOnly = true;
+            // 
+            // Gestion
+            // 
+            this.Gestion.DataPropertyName = "Gestion";
+            this.Gestion.HeaderText = "Gestion";
+            this.Gestion.Name = "Gestion";
+            this.Gestion.ReadOnly = true;
+            // 
+            // Mes
+            // 
+            this.Mes.DataPropertyName = "Mes";
+            this.Mes.HeaderText = "Mes";
+            this.Mes.Name = "Mes";
+            this.Mes.ReadOnly = true;
+            // 
+            // Jugador_id
+            // 
+            this.Jugador_id.DataPropertyName = "Jugador_id";
+            this.Jugador_id.HeaderText = "Jugador_id";
+            this.Jugador_id.Name = "Jugador_id";
+            this.Jugador_id.ReadOnly = true;
+            // 
+            // CuotaFinal
+            // 
+            this.CuotaFinal.DataPropertyName = "CuotaFinal";
+            this.CuotaFinal.HeaderText = "CuotaFinal";
+            this.CuotaFinal.Name = "CuotaFinal";
+            this.CuotaFinal.ReadOnly = true;
+            // 
+            // FechPago
+            // 
+            this.FechPago.DataPropertyName = "FechPago";
+            this.FechPago.HeaderText = "FechPago";
+            this.FechPago.Name = "FechPago";
+            this.FechPago.ReadOnly = true;
+            // 
+            // Concepto
+            // 
+            this.Concepto.DataPropertyName = "Concepto";
+            this.Concepto.HeaderText = "Concepto";
+            this.Concepto.Name = "Concepto";
+            this.Concepto.ReadOnly = true;
+            // 
+            // PrintBoleta
+            // 
+            this.PrintBoleta.HeaderText = "PrintBoleta";
+            this.PrintBoleta.Image = global::SGClubDeportivo.Properties.Resources.calendario;
+            this.PrintBoleta.Name = "PrintBoleta";
+            this.PrintBoleta.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::SGClubDeportivo.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::SGClubDeportivo.Properties.Resources.eliminar;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Usuario_id
+            // 
+            this.Usuario_id.DataPropertyName = "Usuario_id";
+            this.Usuario_id.HeaderText = "Usuario_id";
+            this.Usuario_id.Name = "Usuario_id";
+            this.Usuario_id.ReadOnly = true;
             // 
             // frmGestionMensualidades
             // 
@@ -231,16 +250,22 @@
         private System.Windows.Forms.BindingSource MensualidadesBindingSource;
         private System.Windows.Forms.DataGridView MensualidadesDataGridView;
         public FontAwesome.Sharp.IconButton btnImprimir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Inscripcion_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correlativo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gestion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Concepto;
         private System.Windows.Forms.DataGridViewTextBoxColumn CuotaRegular;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Guiaprecios_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Guiaprecios_id1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gestion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jugador_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn CuotaFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Concepto;
+        private System.Windows.Forms.DataGridViewImageColumn PrintBoleta;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario_id;
     }
 }

@@ -36,39 +36,46 @@ namespace SGClubDeportivo.Vista.Ventanas
             {
                 // Configuración para un nuevo registro
                 GuiaPreciosBindingSource.AddNew();
-                lblTituloCrud.Text = "REGISTRAR NUEVO";
+                lblTituloCrud.Text = "REGISTRAR NUEVA GUIA PRECIO";
             }
             else
             {
-                lblTituloCrud.Text = "MODIFICAR ";
+                lblTituloCrud.Text = "MODIFICAR GUIA PRECIO";
                 // Cargar datos del categoria existente para edición
                 GuiaPreciosBindingSource.DataSource = _GuiaPrecioController.Seleccionar(ide);
             }
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            var reg = PonerDatosForm();
+            if (CamposValidos())
+            {
+                var reg = PonerDatosForm();
 
-            if (esNuevo)
-            {
-                // Agregar nuevo categoria
-                if (_GuiaPrecioController.Insertar(reg))
+                if (esNuevo)
                 {
-                    MessageBox.Show("REGISTRO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
-                    Close();
+                    // Agregar nuevo categoria
+                    if (_GuiaPrecioController.Insertar(reg))
+                    {
+                        MessageBox.Show("REGISTRO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                        Close();
+                    }
+                }
+                else
+                {
+                    // Actualizar categoria existente
+                    if (_GuiaPrecioController.Modificar(reg))
+                    {
+                        MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information); this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                        this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
+                        Close();
+                    }
                 }
             }
-            else
-            {
-                // Actualizar categoria existente
-                if (_GuiaPrecioController.Modificar(reg))
-                {
-                    MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information); this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
-                    this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
-                    Close();
-                }
+            else{
+                MessageBox.Show("INTRODUZCA LOS CAMPOS CORRECTAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error); this.DialogResult = DialogResult.OK; // Establecer resultado del formulario
             }
+                
         }
 
         private GuiaPrecios PonerDatosForm()
@@ -80,6 +87,18 @@ namespace SGClubDeportivo.Vista.Ventanas
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private bool CamposValidos() //PARA REALIZAR VALIDACIONES
+        {
+            // Aquí debes realizar las validaciones necesarias, por ejemplo:
+            if (string.IsNullOrWhiteSpace(conceptoTextBox.Text) || string.IsNullOrWhiteSpace(precioTextBox.Text))
+            {
+                return false;
+            }
+
+            // Puedes agregar más validaciones según los requisitos de tus campos
+
+            return true;
         }
     }
 }

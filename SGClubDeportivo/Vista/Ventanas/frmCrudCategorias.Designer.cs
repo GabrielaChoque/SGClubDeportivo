@@ -44,18 +44,19 @@
             // 
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // categoriasBindingSource
-            // 
-            this.categoriasBindingSource.DataSource = typeof(SGClubDeportivo.Data.Categorias);
-            // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
+            nombreLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             nombreLabel.Location = new System.Drawing.Point(143, 88);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
             nombreLabel.TabIndex = 41;
             nombreLabel.Text = "Nombre:";
+            // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataSource = typeof(SGClubDeportivo.Data.Categorias);
             // 
             // nombreTextBox
             // 

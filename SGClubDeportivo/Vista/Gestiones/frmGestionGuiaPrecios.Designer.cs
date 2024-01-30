@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.GuiaPreciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GuiaPreciosDataGridView = new System.Windows.Forms.DataGridView();
+            this.GuiaPreciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.conceptoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.GuiaPreciosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GuiaPreciosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GuiaPreciosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -54,10 +54,6 @@
             // 
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // GuiaPreciosBindingSource
-            // 
-            this.GuiaPreciosBindingSource.DataSource = typeof(SGClubDeportivo.Data.GuiaPrecios);
-            // 
             // GuiaPreciosDataGridView
             // 
             this.GuiaPreciosDataGridView.AllowUserToAddRows = false;
@@ -71,8 +67,8 @@
             this.GuiaPreciosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GuiaPreciosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
+            this.conceptoDataGridViewTextBoxColumn,
+            this.precioDataGridViewTextBoxColumn,
             this.Editar,
             this.Eliminar});
             this.GuiaPreciosDataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -81,9 +77,13 @@
             this.GuiaPreciosDataGridView.Name = "GuiaPreciosDataGridView";
             this.GuiaPreciosDataGridView.ReadOnly = true;
             this.GuiaPreciosDataGridView.RowHeadersVisible = false;
-            this.GuiaPreciosDataGridView.Size = new System.Drawing.Size(776, 342);
+            this.GuiaPreciosDataGridView.Size = new System.Drawing.Size(800, 591);
             this.GuiaPreciosDataGridView.TabIndex = 60;
             this.GuiaPreciosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guiaPreciossDataGridView_CellContentClick);
+            // 
+            // GuiaPreciosBindingSource
+            // 
+            this.GuiaPreciosBindingSource.DataSource = typeof(SGClubDeportivo.Data.GuiaPrecios);
             // 
             // id
             // 
@@ -93,19 +93,19 @@
             this.id.ReadOnly = true;
             this.id.Visible = false;
             // 
-            // dataGridViewTextBoxColumn3
+            // conceptoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Concepto";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Concepto";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.conceptoDataGridViewTextBoxColumn.DataPropertyName = "Concepto";
+            this.conceptoDataGridViewTextBoxColumn.HeaderText = "Concepto";
+            this.conceptoDataGridViewTextBoxColumn.Name = "conceptoDataGridViewTextBoxColumn";
+            this.conceptoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // precioDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Precio";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Precio";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Editar
             // 
@@ -127,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(824, 699);
             this.Controls.Add(this.GuiaPreciosDataGridView);
             this.Name = "frmGestionGuiaPrecios";
             this.Text = "frmGestionGuiaPrecios";
@@ -136,21 +136,20 @@
             this.Controls.SetChildIndex(this.txtBuscar, 0);
             this.Controls.SetChildIndex(this.btnAgregar, 0);
             this.Controls.SetChildIndex(this.GuiaPreciosDataGridView, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.GuiaPreciosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GuiaPreciosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GuiaPreciosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingSource GuiaPreciosBindingSource;
         private System.Windows.Forms.DataGridView GuiaPreciosDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn conceptoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.BindingSource GuiaPreciosBindingSource;
     }
 }

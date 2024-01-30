@@ -26,9 +26,8 @@ namespace SGClubDeportivo.Data
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public Nullable<System.DateTime> FechaNacimiento { get; set; }
-        public Nullable<int> Categoria_id { get; set; }
         public string Estado { get; set; }
-        public Nullable<int> Guiaprecios_id { get; set; }
+        public Nullable<int> Categoria_id { get; set; }
     
         public virtual Categorias Categorias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

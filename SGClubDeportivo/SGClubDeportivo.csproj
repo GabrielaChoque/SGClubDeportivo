@@ -76,7 +76,6 @@
     <Compile Include="Controlador\EntrenamientoController.cs" />
     <Compile Include="Controlador\GuiaPrecioController.cs" />
     <Compile Include="Controlador\HorarioController.cs" />
-    <Compile Include="Controlador\InscripcionController.cs" />
     <Compile Include="Controlador\JugadorController.cs" />
     <Compile Include="Controlador\MensualidadController.cs" />
     <Compile Include="Controlador\UsuarioController.cs" />
@@ -171,12 +170,6 @@
     <Compile Include="Vista\Gestiones\frmGestionHorario.Designer.cs">
       <DependentUpon>frmGestionHorario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Gestiones\frmGestionInscripciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Gestiones\frmGestionInscripciones.Designer.cs">
-      <DependentUpon>frmGestionInscripciones.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Gestiones\frmGestionJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,12 +217,6 @@
     </Compile>
     <Compile Include="Vista\Ventanas\frmCrudHorarios.Designer.cs">
       <DependentUpon>frmCrudHorarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Ventanas\frmCrudInscripciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Ventanas\frmCrudInscripciones.Designer.cs">
-      <DependentUpon>frmCrudInscripciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventanas\frmCrudJugadores.cs">
       <SubType>Form</SubType>
@@ -287,9 +274,6 @@
     <EmbeddedResource Include="Vista\Gestiones\frmGestionHorario.resx">
       <DependentUpon>frmGestionHorario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Gestiones\frmGestionInscripciones.resx">
-      <DependentUpon>frmGestionInscripciones.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionJugadores.resx">
       <DependentUpon>frmGestionJugadores.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,9 +297,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmCrudHorarios.resx">
       <DependentUpon>frmCrudHorarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Ventanas\frmCrudInscripciones.resx">
-      <DependentUpon>frmCrudInscripciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmCrudJugadores.resx">
       <DependentUpon>frmCrudJugadores.cs</DependentUpon>
@@ -355,11 +336,11 @@
     <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRow.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRowChangeEvent.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoDataSet+SecretariaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SGClubDeportivo.Data.BdClubDeportivoEntities.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Categoria.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Categorias.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.GuiaPrecios.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Horario.datasource" />
-    <None Include="Properties\DataSources\SGClubDeportivo.Data.Inscripciones.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Jugadores.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Mensualidades.datasource" />
     <None Include="Properties\DataSources\SGClubDeportivo.Data.Secretaria.datasource" />
@@ -389,6 +370,13 @@
     <None Include="Resources\Plantilla.html" />
     <None Include="bin\Debug\editar.ico" />
     <None Include="bin\Debug\eliminar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BoletaPago.html" />
+    <None Include="bin\Debug\calendario.ico" />
     <Content Include="Data\BdClubDeportivo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
@@ -399,9 +387,6 @@
       <DependentUpon>BdClubDeportivo.edmx</DependentUpon>
       <LastGenOutput>BdClubDeportivo.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

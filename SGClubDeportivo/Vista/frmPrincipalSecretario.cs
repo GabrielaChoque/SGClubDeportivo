@@ -21,7 +21,7 @@ namespace SGClubDeportivo.Vista
             InitializeComponent();
             //    _Cargo = cargo;
             //    _Carnet = carnet;
-            //    AbrirFormInPanel(new Vista.frmInicio(_Carnet, _Cargo));
+            AbrirFormInPanel(new Vista.frmInicio(_Carnet, _Cargo));
         }
     }
 }

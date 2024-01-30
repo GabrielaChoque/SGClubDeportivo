@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="867686f836c04f3fae5e6d14df4204aa" Name="Diagram1">
-        <EntityTypeShape EntityType="BdClubDeportivoModel.Categorias" Width="1.5" PointX="0.625" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdClubDeportivoModel.GuiaPrecios" Width="1.5" PointX="0.625" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdClubDeportivoModel.Jugadores" Width="1.5" PointX="3.625" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdClubDeportivoModel.Mensualidades" Width="1.5" PointX="3.625" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdClubDeportivoModel.Usuarios" Width="1.5" PointX="7.125" PointY="4.875" IsExpanded="true" />
+      <Diagram DiagramId="5f37641dbf5f4083b1c59dd4979071d5" Name="Diagram1">
+        <EntityTypeShape EntityType="BdClubDeportivoModel.Categorias" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdClubDeportivoModel.GuiaPrecios" Width="1.5" PointX="2.375" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdClubDeportivoModel.Jugadores" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdClubDeportivoModel.Mensualidades" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdClubDeportivoModel.sysdiagrams" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdClubDeportivoModel.Usuarios" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
         <AssociationConnector Association="BdClubDeportivoModel.FK__Jugadores__Categ__3D5E1FD2" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="BdClubDeportivoModel.sysdiagrams" Width="1.5" PointX="10.25" PointY="0.75" />
-        <AssociationConnector Association="BdClubDeportivoModel.FK__Mensualid__Jugad__412EB0B6" />
-        <AssociationConnector Association="BdClubDeportivoModel.FK__Mensualid__Usuar__4222D4EF" />
-        <AssociationConnector Association="BdClubDeportivoModel.FK__Mensualid__Guiap__412EB0B6" />
+        <AssociationConnector Association="BdClubDeportivoModel.FK__Mensualid__Guiap__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="BdClubDeportivoModel.FK__Mensualid__Jugad__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="BdClubDeportivoModel.FK__Mensualid__Usuar__4222D4EF" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

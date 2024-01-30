@@ -43,12 +43,17 @@ namespace SGClubDeportivo.Controlador
         //---//
         public List<Mensualidades> CargarJugadoresConMensualidades(string Ci_jug)
         {
+            //var result = _db.Mensualidades
+            //    .Join(_db.Inscripciones, mensualidad => mensualidad.Inscripcion_id, inscripcion => inscripcion.id, (mensualidad, inscripcion) => new { mensualidad, inscripcion })
+            //    .Join(_db.Jugadores, r => r.inscripcion.Jugador_id, jugador => jugador.id, (r, jugador) => new { r.mensualidad, r.inscripcion, jugador })
+            //    .Where(r => r.jugador.Ci_jugador.Contains(Ci_jug))
+            //    .Select(r => r.mensualidad)  // Seleccionar solo las mensualidades
+            //    .ToList();
             var result = _db.Mensualidades
-                .Join(_db.Inscripciones, mensualidad => mensualidad.Inscripcion_id, inscripcion => inscripcion.id, (mensualidad, inscripcion) => new { mensualidad, inscripcion })
-                .Join(_db.Jugadores, r => r.inscripcion.Jugador_id, jugador => jugador.id, (r, jugador) => new { r.mensualidad, r.inscripcion, jugador })
-                .Where(r => r.jugador.Ci_jugador.Contains(Ci_jug))
-                .Select(r => r.mensualidad)  // Seleccionar solo las mensualidades
-                .ToList();
+            .Join(_db.Jugadores, mensualidad => mensualidad.Jugador_id, jugador => jugador.id, (mensualidad, jugador) => new { mensualidad, jugador })
+            .Where(r => r.jugador.Ci_jugador.Contains(Ci_jug))
+            .Select(r => r.mensualidad)
+            .ToList();
 
             return result;
         }

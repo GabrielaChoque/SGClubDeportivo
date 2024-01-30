@@ -21,7 +21,6 @@ namespace SGClubDeportivo.Data
         }
     
         public int id { get; set; }
-        public Nullable<int> Correlativo { get; set; }
         public string Concepto { get; set; }
         public Nullable<int> Precio { get; set; }
     

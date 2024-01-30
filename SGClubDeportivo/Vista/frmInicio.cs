@@ -22,10 +22,9 @@ namespace SGClubDeportivo.Vista
         public frmInicio(string carnet, string cargo)
         {
             InitializeComponent();
-            _Cargo = cargo;
-            _Carnet = carnet;
-
-            NombreLabel();
+            //_Cargo = cargo;
+            //_Carnet = carnet;
+            //NombreLabel();
         }
         public void NombreLabel()
         {
@@ -34,6 +33,13 @@ namespace SGClubDeportivo.Vista
             //if (_Cargo == "ADMIN")
             //    lblNombre.Text = _objAdministrador.nombreAdmin(_Carnet);
 
+        }
+
+        private void frmInicio_Load(object sender, EventArgs e)
+        {
+
+            //lblRol.Text = GlobalVariables.Rol.ToString();
+            //lblNomC.Text = GlobalVariables.NomC.ToString();
         }
     }
 }
