@@ -38,8 +38,8 @@ namespace SGClubDeportivo.Vista
         private void frmInicio_Load(object sender, EventArgs e)
         {
 
-            //lblRol.Text = GlobalVariables.Rol.ToString();
-            //lblNomC.Text = GlobalVariables.NomC.ToString();
+            lblRol.Text = GlobalVariables.Rol.ToString();
+            lblNomC.Text = GlobalVariables.NomC.ToString();
         }
     }
 }

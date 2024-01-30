@@ -39,6 +39,7 @@
 
         .lugar-fecha {
             font-size: 16px;
+            text-align: right;
         }
 
         .monto-container {
@@ -53,7 +54,7 @@
 
         .concepto {
             text-decoration: underline;
-            text-align: center;
+            text-align: left;
         }
 
         .firmas {
@@ -70,6 +71,11 @@
 
         .nombre-firma {
             margin-top: 3px;
+            margin-top: 100px;
+        }
+
+        .TamanioMontoPagado {
+            font-size: 40px;
         }
     </style>
 </head>
@@ -82,26 +88,27 @@
         ____________________________________________________________________________
         <div class="recibo-details">
             <div class="lugar-fecha">
-                <p>Lugar y Fecha</p>
+                <p>Lugar y Fecha:</p>
                 <p>Oruro, @FECHATEXTO</p>
+                <p class="TamanioMontoPagado">BS. @MONTOPAGADO</p>
             </div>
 
-            <p style="border: 1px solid black">Recibí de @NOMBRE la cantidad de Bs @MONTOPAGADO</p>
-            <div class="monto-container">
-                <div class="monto-text">
-                    <p>@MONTOTXT 00/100</p>
-                </div>
-            </div>
-            ____________________________________________________________________________
-            <p class="concepto">Por concepto de Pago: @CONCEPTOPAGO</p>
-            
+            <p style="border: 1px solid black">RECIBÍ CONFORME DE <b>@NOMBRE</b> </p>
+            <p style="border: 1px solid black">LA CANTIDAD DE BS. <b>@MONTOTXT 00/100 BOLIVIANOS</b> </p>
+            <p class="concepto">POR CONCEPTO DE PAGO DE MENSUALIDAD DEL MES DE <b>@MES</b></p>
+
+
+
             <div class="firmas">
                 <div class="linea-firma"></div>
                 <div class="nombre-firma">
+                    <p> </p>
+                    <p> </p>
                     <p>_____________________</p>
                     <p>Nombre y Firma</p>
                 </div>
             </div>
+            ___________________________________________________________________________
         </div>
     </div>
 

@@ -80,6 +80,7 @@ namespace SGClubDeportivo
             this.btnCancelar.TabIndex = 34;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // panelBarraSuperior
             // 
@@ -113,11 +114,11 @@ namespace SGClubDeportivo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Regatto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(176, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 29);
+            this.label1.Size = new System.Drawing.Size(192, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "INICIO DE SESION";
             // 
@@ -200,6 +201,7 @@ namespace SGClubDeportivo
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(214, 33);
             this.txtContrasenia.TabIndex = 40;
+            this.txtContrasenia.Text = "12345";
             this.txtContrasenia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // Login

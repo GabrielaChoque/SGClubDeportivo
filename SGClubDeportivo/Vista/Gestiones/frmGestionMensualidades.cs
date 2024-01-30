@@ -43,7 +43,7 @@ namespace SGClubDeportivo.Vista.Gestiones
         {
             // Abrir un nuevo formulario para agregar Mensualidadess
             //frmCrudMensualidades frmAgregar = new frmCrudMensualidades();
-            frmCrudMensualidades frmAgregar = new frmCrudMensualidades((int)dataJugadoresSeleccionado.id,0);
+            frmCrudMensualidades frmAgregar = new frmCrudMensualidades((int)dataJugadoresSeleccionado.id,0); //agregar nuevo dato para mensualidades cuando es con 0
             DialogResult result = frmAgregar.ShowDialog();
 
             // Recargar los datos si se agregó un Mensualidades
@@ -156,7 +156,8 @@ namespace SGClubDeportivo.Vista.Gestiones
                         //Y LO DEMAS
                         var MontoPagado = Convert.ToInt32(MensualidadesDataGridView.Rows[e.RowIndex].Cells["CuotaFinal"].Value);
                         var ConceptoMensualidad = Convert.ToString(MensualidadesDataGridView.Rows[e.RowIndex].Cells["Concepto"].Value);
-                        ImprimirBoleta(idMensualidad, FechaPago, NombreCompleto, MontoPagado, ConceptoMensualidad);
+                        var MesFila = Convert.ToString(MensualidadesDataGridView.Rows[e.RowIndex].Cells["Mes"].Value);
+                        ImprimirBoleta(idMensualidad, FechaPago, NombreCompleto, MontoPagado, ConceptoMensualidad, MesFila);
 
                     }
                 }
@@ -221,7 +222,7 @@ namespace SGClubDeportivo.Vista.Gestiones
                 e.Value = NomC;
             }
         }
-        private string ConvertirNumeroATexto(int numero)
+        private string ConvertirNumeroATexto(decimal numero)
         {
             if (numero < 0 || numero > 5000)
             {
@@ -233,44 +234,57 @@ namespace SGClubDeportivo.Vista.Gestiones
                 return "CERO";
             }
 
-            string[] unidades = { "", "UNO", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE" };
-            string[] especiales = { "DIEZ", "ONCE", "DOCE", "TRECE", "CATORCE", "QUINCE", "DIECISEIS", "DIECISIETE", "DIECIOCHO", "DIECINUEVE" };
-            string[] decenas = { "", "", "VEINTE", "TREINTA", "CUARENTA", "CINCUENTA", "SESENTA", "SETENTA", "OCHENTA", "NOVENTA" };
+            // Dividir la parte entera y la parte decimal
+            int parteEntera = (int)Math.Floor(numero);
+            int parteDecimal = (int)((numero - parteEntera) * 100);
 
-            if (numero < 10)
+            string[] unidades = { "", "UNO", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE" };
+            string[] especiales = { "", "ONCE", "DOCE", "TRECE", "CATORCE", "QUINCE", "DIECISEIS", "DIECISIETE", "DIECIOCHO", "DIECINUEVE" };
+            string[] decenas = { "", "DIEZ", "VEINTE", "TREINTA", "CUARENTA", "CINCUENTA", "SESENTA", "SETENTA", "OCHENTA", "NOVENTA" };
+            string[] centenas = { "", "CIEN", "DOSCIENTOS", "TRESCIENTOS", "CUATROCIENTOS", "QUINIENTOS", "SEISCIENTOS", "SETECIENTOS", "OCHOCIENTOS", "NOVECIENTOS" };
+
+            // Función interna para convertir números menores a 1000
+            string ConvertirMenorATexto(int num)
             {
-                return unidades[numero];
+                if (num < 10)
+                {
+                    return unidades[num];
+                }
+                else if (num >= 10 && num < 20)
+                {
+                    return especiales[num - 10];
+                }
+                else if (num < 100)
+                {
+                    int unidad = num % 10;
+                    int decena = num / 10;
+                    return $"{decenas[decena]} {unidades[unidad]}".Trim();
+                }
+                else
+                {
+                    int centena = num / 100;
+                    int residuo = num % 100;
+                    return $"{centenas[centena]} {(residuo > 0 ? ConvertirMenorATexto(residuo) : "")}".Trim();
+                }
             }
-            else if (numero >= 10 && numero < 20)
+
+            // Convertir la parte entera y la parte decimal por separado
+            string parteEnteraTexto = ConvertirMenorATexto(parteEntera);
+            string parteDecimalTexto = ConvertirMenorATexto(parteDecimal);
+
+            // Construir el resultado final
+            if (parteDecimal == 0)
             {
-                return especiales[numero - 10];
-            }
-            else if (numero < 100)
-            {
-                int unidad = numero % 10;
-                int decena = numero / 10;
-                return $"{decenas[decena]} {unidades[unidad]}";
-            }
-            else if (numero < 1000)
-            {
-                int centena = numero / 100;
-                int residuo = numero % 100;
-                return $"{unidades[centena]} CIENTO {(residuo > 0 ? ConvertirNumeroATexto(residuo) : "")}";
-            }
-            else if (numero < 10000)
-            {
-                int millar = numero / 1000;
-                int residuo = numero % 1000;
-                return $"{ConvertirNumeroATexto(millar)} MIL {(residuo > 0 ? ConvertirNumeroATexto(residuo) : "")}";
+                return parteEnteraTexto;
             }
             else
             {
-                // Manejar otros casos según tus necesidades
-                return "Número fuera de rango admitido";
+                return $"{parteEnteraTexto} CON {parteDecimalTexto} CENTAVOS";
             }
         }
 
-        private void ImprimirBoleta(int idMensualidad, DateTime FechaPago, string NombreJugador, int MontoPagado,string ConceptoMensualidad)
+
+        private void ImprimirBoleta(int idMensualidad, DateTime FechaPago, string NombreJugador, int MontoPagado,string ConceptoMensualidad,string Mesfila)
         {
             SaveFileDialog guardar = new SaveFileDialog();
             guardar.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf"; //nombre del pdf
@@ -282,7 +296,8 @@ namespace SGClubDeportivo.Vista.Gestiones
             paginahtml_texto = paginahtml_texto.Replace("@NOMBRE", NombreJugador.ToString());
             paginahtml_texto = paginahtml_texto.Replace("@MONTOPAGADO", MontoPagado.ToString());
             paginahtml_texto = paginahtml_texto.Replace("@MONTOTXT", MontoenTexto);
-            paginahtml_texto = paginahtml_texto.Replace("@CONCEPTOPAGO", ConceptoMensualidad.ToString());
+            //paginahtml_texto = paginahtml_texto.Replace("@CONCEPTOPAGO", ConceptoMensualidad.ToString());
+            paginahtml_texto = paginahtml_texto.Replace("@MES", Mesfila.ToString());
 
             //GENERACION DE PDF O MANIOBRAS PDF
             string tempFilePath = Path.GetTempFileName() + ".pdf";

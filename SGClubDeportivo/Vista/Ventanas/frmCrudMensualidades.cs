@@ -113,7 +113,7 @@ namespace SGClubDeportivo.Vista.Ventanas
             {
                 if (esNuevo)
                 {
-                    var reg = PonerDatosForm(_idJugador, 1, _idGuiaPrecio);
+                    var reg = PonerDatosForm(_idJugador, GlobalVariables.idUsuario, _idGuiaPrecio);
                     // Agregar nuevo categoria
                     if (_MensualidadeController.Insertar(reg))
                     {
@@ -124,7 +124,7 @@ namespace SGClubDeportivo.Vista.Ventanas
                 }
                 else
                 {
-                    var reg = PonerDatosForm((int)dataMensualidadesSeleccionado.Jugador_id, 1, (int)dataMensualidadesSeleccionado.Guiaprecios_id);
+                    var reg = PonerDatosForm((int)dataMensualidadesSeleccionado.Jugador_id, GlobalVariables.idUsuario, (int)dataMensualidadesSeleccionado.Guiaprecios_id);
                     // Actualizar categoria existente
                     if (_MensualidadeController.Modificar(reg))
                     {

@@ -62,7 +62,6 @@ namespace SGClubDeportivo.Controlador
                     {
                         return "SECRETARIO";
                     }
-                    
                 }
                 else
                 {
