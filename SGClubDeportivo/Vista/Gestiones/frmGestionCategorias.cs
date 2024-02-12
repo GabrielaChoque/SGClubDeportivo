@@ -152,6 +152,9 @@ namespace SGClubDeportivo.Vista.Gestiones
 
         }
 
-
+        private void txtBuscar_OnTextChange(object sender, EventArgs e)
+        {
+            CargarDatos(txtBuscar.text);
+        }
     }
 }

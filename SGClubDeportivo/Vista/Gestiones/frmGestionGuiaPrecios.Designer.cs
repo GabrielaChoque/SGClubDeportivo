@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.GuiaPreciosDataGridView = new System.Windows.Forms.DataGridView();
-            this.GuiaPreciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.conceptoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.GuiaPreciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GuiaPreciosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GuiaPreciosBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -48,10 +48,22 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Location = new System.Drawing.Point(680, 75);
+            this.btnBuscar.Size = new System.Drawing.Size(114, 52);
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(160, 75);
+            this.txtBuscar.Size = new System.Drawing.Size(503, 52);
+            this.txtBuscar.OnTextChange += new System.EventHandler(this.txtBuscar_OnTextChange);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.btnAgregar.Location = new System.Drawing.Point(41, 75);
+            this.btnAgregar.Size = new System.Drawing.Size(113, 52);
+            this.btnAgregar.Text = "NUEVO PRECIO";
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // GuiaPreciosDataGridView
@@ -73,17 +85,13 @@
             this.Eliminar});
             this.GuiaPreciosDataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GuiaPreciosDataGridView.DataSource = this.GuiaPreciosBindingSource;
-            this.GuiaPreciosDataGridView.Location = new System.Drawing.Point(12, 96);
+            this.GuiaPreciosDataGridView.Location = new System.Drawing.Point(12, 148);
             this.GuiaPreciosDataGridView.Name = "GuiaPreciosDataGridView";
             this.GuiaPreciosDataGridView.ReadOnly = true;
             this.GuiaPreciosDataGridView.RowHeadersVisible = false;
-            this.GuiaPreciosDataGridView.Size = new System.Drawing.Size(800, 591);
+            this.GuiaPreciosDataGridView.Size = new System.Drawing.Size(800, 539);
             this.GuiaPreciosDataGridView.TabIndex = 60;
             this.GuiaPreciosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guiaPreciossDataGridView_CellContentClick);
-            // 
-            // GuiaPreciosBindingSource
-            // 
-            this.GuiaPreciosBindingSource.DataSource = typeof(SGClubDeportivo.Data.GuiaPrecios);
             // 
             // id
             // 
@@ -122,6 +130,10 @@
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // GuiaPreciosBindingSource
+            // 
+            this.GuiaPreciosBindingSource.DataSource = typeof(SGClubDeportivo.Data.GuiaPrecios);
             // 
             // frmGestionGuiaPrecios
             // 

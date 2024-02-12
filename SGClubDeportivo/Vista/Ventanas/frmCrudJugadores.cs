@@ -190,5 +190,10 @@ namespace SGClubDeportivo.Vista.Ventanas
 
             return true;
         }
+
+        private void categoria_idLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

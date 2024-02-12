@@ -24,5 +24,10 @@ namespace SGClubDeportivo.Vista
             //    _Carnet = carnet;
             AbrirFormInPanel(new Vista.frmInicio(_Carnet, _Cargo));
         }
+
+        private void btnMensualidades_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

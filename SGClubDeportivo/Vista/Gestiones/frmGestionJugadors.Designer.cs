@@ -54,10 +54,21 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Location = new System.Drawing.Point(478, 57);
+            this.btnBuscar.Size = new System.Drawing.Size(310, 44);
+            this.btnBuscar.Text = "IMPRIMIR LISTA DE JUGADORES";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(131, 57);
+            this.txtBuscar.Size = new System.Drawing.Size(341, 45);
+            this.txtBuscar.OnTextChange += new System.EventHandler(this.txtBuscar_OnTextChange);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Location = new System.Drawing.Point(12, 57);
+            this.btnAgregar.Size = new System.Drawing.Size(113, 44);
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // JugadoresBindingSource
@@ -108,48 +119,48 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Ci_jugador";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Ci_jugador";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CARNET JUGADOR";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Tipo";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn3.HeaderText = "TIPO JUGADOR";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Nombres";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nombres";
+            this.dataGridViewTextBoxColumn4.HeaderText = "NOMBRES";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Apellidos";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Apellidos";
+            this.dataGridViewTextBoxColumn5.HeaderText = "APELLIDOS";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "FechaNacimiento";
-            this.dataGridViewTextBoxColumn6.HeaderText = "FechaNacimiento";
+            this.dataGridViewTextBoxColumn6.HeaderText = "FECHA NACIMIENTO";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // Categoria_id
             // 
             this.Categoria_id.DataPropertyName = "Categoria_id";
-            this.Categoria_id.HeaderText = "Categoria";
+            this.Categoria_id.HeaderText = "CATEGORIA";
             this.Categoria_id.Name = "Categoria_id";
             this.Categoria_id.ReadOnly = true;
             // 
             // AddMensualidad
             // 
-            this.AddMensualidad.HeaderText = "AddMensualidad";
+            this.AddMensualidad.HeaderText = "ADD MENSUALIDAD";
             this.AddMensualidad.Image = ((System.Drawing.Image)(resources.GetObject("AddMensualidad.Image")));
             this.AddMensualidad.Name = "AddMensualidad";
             this.AddMensualidad.ReadOnly = true;
@@ -158,7 +169,7 @@
             // 
             // Editar
             // 
-            this.Editar.HeaderText = "Editar";
+            this.Editar.HeaderText = "EDITAR";
             this.Editar.Image = global::SGClubDeportivo.Properties.Resources.editar;
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
@@ -166,7 +177,7 @@
             // 
             // Eliminar
             // 
-            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.HeaderText = "ELIMINAR";
             this.Eliminar.Image = global::SGClubDeportivo.Properties.Resources.eliminar;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;

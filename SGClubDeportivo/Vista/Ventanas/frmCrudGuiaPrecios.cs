@@ -100,5 +100,10 @@ namespace SGClubDeportivo.Vista.Ventanas
 
             return true;
         }
+
+        private void conceptoLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

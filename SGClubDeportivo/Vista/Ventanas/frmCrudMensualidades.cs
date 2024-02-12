@@ -52,6 +52,7 @@ namespace SGClubDeportivo.Vista.Ventanas
 
         private void frmCrudMensualidades_Load(object sender, EventArgs e)
         {
+            conceptoTextBox.Text = "Pago de mensualidad de entrenamiento";
             //if (esNuevo)
             //{
             //    // Configuración para un nuevo registro
@@ -181,6 +182,7 @@ namespace SGClubDeportivo.Vista.Ventanas
             reg.Usuario_id = idUsuario;
             reg.FechPago = DateTime.Now;
             reg.CuotaFinal = (int)cuotaFinalNumericUpDown.Value;
+            
 
             object valorSeleccionado = conceptoComboBox.SelectedValue;
             if (valorSeleccionado != null)
@@ -372,7 +374,8 @@ namespace SGClubDeportivo.Vista.Ventanas
         private bool CamposValidos() //PARA REALIZAR VALIDACIONES
         {
             // Aquí debes realizar las validaciones necesarias, por ejemplo:
-            if (string.IsNullOrWhiteSpace(mesComboBox.Text) || string.IsNullOrWhiteSpace(cuotaFinalNumericUpDown.Text) || string.IsNullOrWhiteSpace(conceptoComboBox.Text) || string.IsNullOrWhiteSpace(conceptoTextBox.Text) || string.IsNullOrWhiteSpace(fechPagoDateTimePicker.Text))
+            
+            if (string.IsNullOrWhiteSpace(mesComboBox.Text) || string.IsNullOrWhiteSpace(cuotaFinalNumericUpDown.Text) || string.IsNullOrWhiteSpace(conceptoComboBox.Text) || string.IsNullOrWhiteSpace(fechPagoDateTimePicker.Text))
             {
                 return false;
             }

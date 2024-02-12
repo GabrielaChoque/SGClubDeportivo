@@ -12,7 +12,18 @@ namespace SGClubDeportivo.Controlador
 
         public List<Jugadores> Listar(string pBuscar)
         {
-            return _db.Jugadores.Where(x => x.Nombres.Contains(pBuscar)).ToList();
+            return _db.Jugadores.Where(x => x.Ci_jugador.Contains(pBuscar)).ToList();
+        }
+
+        public List<Jugadores> ListarCompleto(string pBuscar)
+        {
+            return _db.Jugadores.Where(x =>
+                x.Nombres.Contains(pBuscar) ||
+                x.Apellidos.Contains(pBuscar) ||
+                x.Ci_jugador.Contains(pBuscar) ||
+                x.Tipo.Contains(pBuscar) ||
+                x.Categorias.Nombre.Contains(pBuscar)
+            ).ToList();
         }
 
         public List<Jugadores> ListarJugadorci(string pBuscar)

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Cambria, serif;
+            margin-left: 2.5cm;
+            margin-right: 2.5cm;
+        }
+
+        .titulo {
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Cambria, serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .membrete {
+            font-size: 14px;
+            font-style: italic;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tabla {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            .tabla th, .tabla td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .tabla th {
+                background-color: #f2f2f2;
+            }
+    </style>
+</head>
+<body>
+    <div class='membrete'>
+        ASOCIACIÓN DE FUTBOL ORURO<br>
+        CLUB DEPORTIVO 'ORURO ROYAL'<br>
+        ORURO - BOLIVIA
+    </div>
+    <div class='titulo'>
+        LISTA DE JUGADORES REGISTRADOS
+    </div>
+    <div>
+        <div class="datos-personales">
+            <table>
+                <tr>
+                    <th>RESPONSABLE:</th>
+                    <td>@CLIENTE <br> </td>
+                </tr>
+                <tr>
+                    <th>FECHA DE IMPRESIÓN:</th>
+                    <td>@FECHA <br></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <table class='tabla'>
+        <tr>
+            <th>NÚMERO DE CARNET</th>
+            <th>TIPO JUGADOR</th>
+            <th>NOMBRES</th>
+            <th>APELLIDOS</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>CATEGORIA</th>
+        </tr>";
+        <tbody>
+            @FILAS
+        </tbody>
+    </table>
+</body>
+</html>

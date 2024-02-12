@@ -33,11 +33,11 @@
             this.MensualidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Guiaprecios_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Guiaprecios_id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Guiaprecios_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Jugador_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Guiaprecios_id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CuotaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,16 +56,20 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(603, 57);
+            this.btnBuscar.Location = new System.Drawing.Point(521, 57);
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Size = new System.Drawing.Size(449, 33);
+            this.txtBuscar.Location = new System.Drawing.Point(12, 57);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Enabled = false;
+            this.btnAgregar.Location = new System.Drawing.Point(12, 405);
+            this.btnAgregar.Size = new System.Drawing.Size(19, 33);
+            this.btnAgregar.Text = "";
+            this.btnAgregar.Visible = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // MensualidadesDataGridView
@@ -81,11 +85,11 @@
             this.MensualidadesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MensualidadesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.Guiaprecios_id,
-            this.Guiaprecios_id1,
             this.Gestion,
-            this.Mes,
+            this.Guiaprecios_id,
             this.Jugador_id,
+            this.Guiaprecios_id1,
+            this.Mes,
             this.CuotaFinal,
             this.FechPago,
             this.Concepto,
@@ -119,11 +123,11 @@
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImprimir.IconSize = 25;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(723, 57);
+            this.btnImprimir.Location = new System.Drawing.Point(641, 57);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(134, 32);
+            this.btnImprimir.Size = new System.Drawing.Size(207, 32);
             this.btnImprimir.TabIndex = 62;
-            this.btnImprimir.Text = "IMPRIMIR";
+            this.btnImprimir.Text = "IMPRIMIR REPORTE";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImprimir.UseVisualStyleBackColor = false;
@@ -137,12 +141,26 @@
             this.id.ReadOnly = true;
             this.id.Visible = false;
             // 
+            // Gestion
+            // 
+            this.Gestion.DataPropertyName = "Gestion";
+            this.Gestion.HeaderText = "AÑO";
+            this.Gestion.Name = "Gestion";
+            this.Gestion.ReadOnly = true;
+            // 
             // Guiaprecios_id
             // 
             this.Guiaprecios_id.DataPropertyName = "Guiaprecios_id";
-            this.Guiaprecios_id.HeaderText = "Guiaprecios_id";
+            this.Guiaprecios_id.HeaderText = "TIPO JUGADOR";
             this.Guiaprecios_id.Name = "Guiaprecios_id";
             this.Guiaprecios_id.ReadOnly = true;
+            // 
+            // Jugador_id
+            // 
+            this.Jugador_id.DataPropertyName = "Jugador_id";
+            this.Jugador_id.HeaderText = "CI JUGADOR";
+            this.Jugador_id.Name = "Jugador_id";
+            this.Jugador_id.ReadOnly = true;
             // 
             // Guiaprecios_id1
             // 
@@ -150,59 +168,46 @@
             this.Guiaprecios_id1.HeaderText = "GPrecioMonto";
             this.Guiaprecios_id1.Name = "Guiaprecios_id1";
             this.Guiaprecios_id1.ReadOnly = true;
-            // 
-            // Gestion
-            // 
-            this.Gestion.DataPropertyName = "Gestion";
-            this.Gestion.HeaderText = "Gestion";
-            this.Gestion.Name = "Gestion";
-            this.Gestion.ReadOnly = true;
+            this.Guiaprecios_id1.Visible = false;
             // 
             // Mes
             // 
             this.Mes.DataPropertyName = "Mes";
-            this.Mes.HeaderText = "Mes";
+            this.Mes.HeaderText = "MES";
             this.Mes.Name = "Mes";
             this.Mes.ReadOnly = true;
-            // 
-            // Jugador_id
-            // 
-            this.Jugador_id.DataPropertyName = "Jugador_id";
-            this.Jugador_id.HeaderText = "Jugador_id";
-            this.Jugador_id.Name = "Jugador_id";
-            this.Jugador_id.ReadOnly = true;
             // 
             // CuotaFinal
             // 
             this.CuotaFinal.DataPropertyName = "CuotaFinal";
-            this.CuotaFinal.HeaderText = "CuotaFinal";
+            this.CuotaFinal.HeaderText = "MONTO";
             this.CuotaFinal.Name = "CuotaFinal";
             this.CuotaFinal.ReadOnly = true;
             // 
             // FechPago
             // 
             this.FechPago.DataPropertyName = "FechPago";
-            this.FechPago.HeaderText = "FechPago";
+            this.FechPago.HeaderText = "FECHA PAGO";
             this.FechPago.Name = "FechPago";
             this.FechPago.ReadOnly = true;
             // 
             // Concepto
             // 
             this.Concepto.DataPropertyName = "Concepto";
-            this.Concepto.HeaderText = "Concepto";
+            this.Concepto.HeaderText = "CONCEPTO";
             this.Concepto.Name = "Concepto";
             this.Concepto.ReadOnly = true;
             // 
             // PrintBoleta
             // 
-            this.PrintBoleta.HeaderText = "PrintBoleta";
+            this.PrintBoleta.HeaderText = "IMPRIMIR BOLETA";
             this.PrintBoleta.Image = global::SGClubDeportivo.Properties.Resources.calendario;
             this.PrintBoleta.Name = "PrintBoleta";
             this.PrintBoleta.ReadOnly = true;
             // 
             // Editar
             // 
-            this.Editar.HeaderText = "Editar";
+            this.Editar.HeaderText = "EDITAR";
             this.Editar.Image = global::SGClubDeportivo.Properties.Resources.editar;
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
@@ -210,7 +215,7 @@
             // 
             // Eliminar
             // 
-            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.HeaderText = "ELIMINAR";
             this.Eliminar.Image = global::SGClubDeportivo.Properties.Resources.eliminar;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
@@ -219,7 +224,7 @@
             // Usuario_id
             // 
             this.Usuario_id.DataPropertyName = "Usuario_id";
-            this.Usuario_id.HeaderText = "Usuario_id";
+            this.Usuario_id.HeaderText = "USUARIO";
             this.Usuario_id.Name = "Usuario_id";
             this.Usuario_id.ReadOnly = true;
             // 
@@ -231,6 +236,7 @@
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.MensualidadesDataGridView);
             this.Name = "frmGestionMensualidades";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGestionMensualidades";
             this.Load += new System.EventHandler(this.frmGestionMensualidades_Load);
             this.Controls.SetChildIndex(this.btnBuscar, 0);
@@ -255,11 +261,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CuotaRegular;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Guiaprecios_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Guiaprecios_id1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gestion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Guiaprecios_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Jugador_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Guiaprecios_id1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
         private System.Windows.Forms.DataGridViewTextBoxColumn CuotaFinal;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Concepto;

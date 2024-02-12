@@ -18,7 +18,6 @@ namespace SGClubDeportivo.Vista.Gestiones
         JugadorController _objJugador = new JugadorController();
         CategoriaController _objCategoria = new CategoriaController();
 
-        
         public frmGestionJugadores()
         {
             InitializeComponent();

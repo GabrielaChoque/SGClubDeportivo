@@ -33,6 +33,7 @@
             // btnMensualidades
             // 
             this.btnMensualidades.Location = new System.Drawing.Point(7, 152);
+            this.btnMensualidades.Click += new System.EventHandler(this.btnMensualidades_Click);
             // 
             // btnPagos
             // 
@@ -42,7 +43,6 @@
             // btnInscripciones
             // 
             this.btnInscripciones.Location = new System.Drawing.Point(15, 322);
-            this.btnInscripciones.Visible = false;
             // 
             // btnCategorias
             // 

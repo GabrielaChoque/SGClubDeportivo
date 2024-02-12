@@ -341,44 +341,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             //ejemplo: //paginahtml_texto = paginahtml_texto.Replace("@NAME", txt.text);
             //para fechas seria: paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
 
-            //para tablas de Base de Datos 
-            //opcion 1 - SE REQUIERE PONER NOMBRES A LACA COLUMNA EN CADA TABLA (name)
-            //string filas = string.Empty;
-            //decimal total = 0;
-            //foreach (DataGridViewRow row in dgvproductos.Rows)
-            //{
-            //    filas += "<tr>";
-            //    filas += "<td>" + row.Cells["Fila1"].Value.ToString() + "</td>";
-            //    filas += "<td>" + row.Cells["Fila2"].Value.ToString() + "</td>";
-            //    filas += "<td>" + row.Cells["Fila3"].Value.ToString() + "</td>";
-            //    filas += "<td>" + row.Cells["Fila4"].Value.ToString() + "</td>";
-            //    filas += "</tr>";
-            //    total += decimal.Parse(row.Cells["Fila5"].Value.ToString());
-            //}
-            //paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
-            //opcion 2 - es automatico pero es desordenado las columnas
-            //string filas = string.Empty;
-            //foreach (DataGridViewRow row in MensualidadesDataGridView.Rows)
-            //{
-            //    filas += "<tr>";
-            //    foreach (DataGridViewColumn column in MensualidadesDataGridView.Columns)
-            //    {
-            //        string nombreColumna = column.DataPropertyName;
-            //        // Verificar si la columna tiene un nombre de propiedad asociado
-            //        if (!string.IsNullOrEmpty(nombreColumna))
-            //        {
-            //            // Obtener el valor de la celda usando el nombre de propiedad
-            //            object valorCelda = row.Cells[column.Index].Value;
-
-            //            // Añadir la celda a la fila
-            //            filas += "<td>" + (valorCelda != null ? valorCelda.ToString() : "") + "</td>";
-            //        }
-            //    }
-            //    filas += "</tr>";
-            //}
-            //paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
-
-
+            
             //REEMPLAZANDO LOS @NAME
             string Carnetpdf = dataJugadoresSeleccionado.Ci_jugador.ToUpper();
             string Nombrepdf = dataJugadoresSeleccionado.Nombres.ToUpper() + " " + dataJugadoresSeleccionado.Apellidos.ToUpper();
@@ -411,63 +374,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             } 
             paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
 
-            //ACCIONES NECESARIAS PARA EL PDF - ESTE DIRECTAMENTE GENERA PARA GUARDAR EL PDF
-            //if (guardar.ShowDialog() == DialogResult.OK)
-            //{
-            //    using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
-            //    {
-            //        Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
-            //        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
-            //        pdfDoc.Open();
-            //        pdfDoc.Add(new Phrase("")); // AÑADE TEXTO AL PDF
-
-
-            //        // Utilizar StreamReader para leer la cadena HTML //ES DELICADO EL ITESHAPR hay q usar sin el < meta charset = "UTF-8" >
-            //        using (StringReader sr = new StringReader(paginahtml_texto))
-            //        {
-            //            XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
-            //        }
-
-            //        pdfDoc.Close();
-            //        stream.Close();
-            //    }
-            //}
-            //ACCIONES NECESARIAS PARA EL PDF - ESTE GUARDA Y LUEGO PREVIZUALIZA
-            //if (guardar.ShowDialog() == DialogResult.OK)
-            //{
-            //    string filePath = guardar.FileName;
-
-            //    using (FileStream stream = new FileStream(filePath, FileMode.Create))
-            //    {
-            //        Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
-            //        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
-            //        pdfDoc.Open();
-            //        pdfDoc.Add(new Phrase("")); // AÑADE TEXTO AL PDF
-
-            //        // Utilizar StreamReader para leer la cadena HTML
-            //        using (StringReader sr = new StringReader(paginahtml_texto))
-            //        {
-            //            XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
-            //        }
-
-            //        pdfDoc.Close();
-            //        stream.Close();
-            //    }
-
-            //    // Mostrar un mensaje de éxito o hacer otras acciones si es necesario
-
-            //    // Abrir el PDF con un visor externo para previsualización
-            //    try
-            //    {
-            //        Process.Start(filePath);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        // Manejar cualquier excepción que pueda ocurrir al intentar abrir el visor de PDF
-            //        MessageBox.Show("No se pudo abrir el visor de PDF. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
-
+           
             //opcion 3 - PREVIZUALIZA   EN NUESTRO ABRIDOR DE PDF POR DEFECTO DE LA MAQUINA - PREVIZUALIZA EXTERNAMENTE EL PDF
             // Crear un archivo temporal para almacenar el PDF antes de decidir guardarlo físicamente
             string tempFilePath = Path.GetTempFileName() + ".pdf";

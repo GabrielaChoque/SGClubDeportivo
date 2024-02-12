@@ -46,10 +46,23 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Location = new System.Drawing.Point(657, 68);
+            this.btnBuscar.Size = new System.Drawing.Size(114, 48);
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(148, 68);
+            this.txtBuscar.Size = new System.Drawing.Size(503, 48);
+            this.txtBuscar.OnTextChange += new System.EventHandler(this.txtBuscar_OnTextChange);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.CausesValidation = false;
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.btnAgregar.Location = new System.Drawing.Point(29, 68);
+            this.btnAgregar.Size = new System.Drawing.Size(113, 48);
+            this.btnAgregar.Text = "NUEVA CATEGORIA";
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // categoriasBindingSource
@@ -74,11 +87,11 @@
             this.Eliminar});
             this.categoriasDataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.categoriasDataGridView.DataSource = this.categoriasBindingSource;
-            this.categoriasDataGridView.Location = new System.Drawing.Point(12, 95);
+            this.categoriasDataGridView.Location = new System.Drawing.Point(12, 132);
             this.categoriasDataGridView.Name = "categoriasDataGridView";
             this.categoriasDataGridView.ReadOnly = true;
             this.categoriasDataGridView.RowHeadersVisible = false;
-            this.categoriasDataGridView.Size = new System.Drawing.Size(776, 343);
+            this.categoriasDataGridView.Size = new System.Drawing.Size(776, 306);
             this.categoriasDataGridView.TabIndex = 61;
             this.categoriasDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CategoriasDataGridView_CellContentClick);
             // 
@@ -93,13 +106,13 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NOMBRE CATEGORIA";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // Editar
             // 
-            this.Editar.HeaderText = "Editar";
+            this.Editar.HeaderText = "EDITAR CATEGORIA";
             this.Editar.Image = global::SGClubDeportivo.Properties.Resources.editar;
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
@@ -107,7 +120,7 @@
             // 
             // Eliminar
             // 
-            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.HeaderText = "ELIMINAR CATEGORIA";
             this.Eliminar.Image = global::SGClubDeportivo.Properties.Resources.eliminar;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;

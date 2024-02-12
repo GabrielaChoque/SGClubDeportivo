@@ -8,8 +8,6 @@ namespace SGClubDeportivo
 {
     public partial class Login : Form
     {
-        private readonly AdministradorController _objAdministrador = new AdministradorController();
-        private readonly SecretariaController _objSecretaria = new SecretariaController();
         private readonly UsuarioController _user = new UsuarioController();
 
         public Login()
@@ -47,23 +45,38 @@ namespace SGClubDeportivo
                 Usuarios usuarioseleccionado = _user.SeleccionarPorCI(txtUsuario.Text, txtContrasenia.Text);
 
                 // ASIGNACION DE VARIABLES GLOBALES
-                GlobalVariables.UsuarioActual = usuarioseleccionado.Username;
-                GlobalVariables.NomC = usuarioseleccionado.Nombres + " " + usuarioseleccionado.Apellidos;
-                GlobalVariables.Rol = usuarioseleccionado.Rol;
-                GlobalVariables.idUsuario = usuarioseleccionado.id;
-
-                if (usuarioseleccionado.Rol == "ADMINISTRATIVO")
+                
+                if (usuarioseleccionado == null)
                 {
-                    this.Hide();
-                    frmPrincipal frmAdmin = new Vista.frmPrincipal();
-                    frmAdmin.ShowDialog();
+                    GlobalVariables.UsuarioActual = " ";
+                    GlobalVariables.NomC = " ";
+                    GlobalVariables.Rol = " ";
+                    GlobalVariables.idUsuario = 0;
+                    MessageBox.Show("LA CUENTA O CONTRASEÑA SON INCORRECTOS", "NO SE PUDO INICIAR SESION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 else
                 {
-                    this.Hide();
-                    frmPrincipalSecretario frm = new Vista.frmPrincipalSecretario();
-                    frm.ShowDialog();
-                }
+                    GlobalVariables.UsuarioActual = usuarioseleccionado.Username;
+                    GlobalVariables.NomC = usuarioseleccionado.Nombres + " " + usuarioseleccionado.Apellidos;
+                    GlobalVariables.Rol = usuarioseleccionado.Rol;
+                    GlobalVariables.idUsuario = usuarioseleccionado.id;
+
+                    if (usuarioseleccionado.Rol == "ADMINISTRATIVO")
+                    {
+                        this.Hide();
+                        frmPrincipal frmAdmin = new Vista.frmPrincipal();
+                        frmAdmin.ShowDialog();
+                    }
+                    else
+                    {
+                        this.Hide();
+                        frmPrincipalSecretario frm = new Vista.frmPrincipalSecretario();
+                        frm.ShowDialog();
+                    }
+                } 
+
+               
             }
             catch (Exception)
             {

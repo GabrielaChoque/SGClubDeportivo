@@ -1,15 +1,30 @@
-﻿using SGClubDeportivo.Controlador;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using iTextSharp.tool.xml;
+using SGClubDeportivo.Controlador;
 using SGClubDeportivo.Data;
 using SGClubDeportivo.Vista.Ventanas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+using iTextSharp.tool.xml.html.head;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace SGClubDeportivo.Vista.Gestiones
 {
@@ -21,7 +36,6 @@ namespace SGClubDeportivo.Vista.Gestiones
         {
             InitializeComponent();
         }
-
 
         private void frmGestionjugadores_Load(object sender, EventArgs e)
         {
@@ -41,11 +55,20 @@ namespace SGClubDeportivo.Vista.Gestiones
             }
         }
 
+        private void GenerarPDF()
+        {
+
+           
+
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            GenerarPDF();
             // Filtrar los resultados en el DataGridView según el texto de búsqueda
-            string filtro = txtBuscar.text;
-            CargarDatos(filtro);
+            // string filtro = txtBuscar.text;
+            //CargarDatos(filtro);
+
         }
 
 
@@ -57,7 +80,7 @@ namespace SGClubDeportivo.Vista.Gestiones
             {
                 //_Jugadores = new JugadoreController(); //no olvidar esta linea para actualizar tabla //NO USAMOS PORQUE TENEMOS EL CELLCONTENTCLICK
                 // Llamas al método Listar del controlador con el filtro
-                JugadoresBindingSource.DataSource = _Jugadores.Listar(textSearch);
+                JugadoresBindingSource.DataSource = _Jugadores.ListarCompleto(textSearch);
 
             }
             catch (Exception ex)
@@ -193,7 +216,10 @@ namespace SGClubDeportivo.Vista.Gestiones
             }
         }
 
-
-
+        private void txtBuscar_OnTextChange(object sender, EventArgs e)
+        {
+            string filtro = txtBuscar.text;
+            CargarDatos(filtro);
+        }
     }
 }

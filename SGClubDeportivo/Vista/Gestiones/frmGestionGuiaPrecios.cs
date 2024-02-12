@@ -122,5 +122,11 @@ namespace SGClubDeportivo.Vista.Gestiones
         {
 
         }
+
+        private void txtBuscar_OnTextChange(object sender, EventArgs e)
+        {
+            string filtro = txtBuscar.text;
+            CargarDatos(filtro);
+        }
     }
 }

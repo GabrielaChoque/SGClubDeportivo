@@ -54,71 +54,79 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Location = new System.Drawing.Point(276, 367);
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Location = new System.Drawing.Point(76, 367);
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // apellidosLabel
             // 
             apellidosLabel.AutoSize = true;
+            apellidosLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             apellidosLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            apellidosLabel.Location = new System.Drawing.Point(170, 111);
+            apellidosLabel.Location = new System.Drawing.Point(59, 104);
             apellidosLabel.Name = "apellidosLabel";
-            apellidosLabel.Size = new System.Drawing.Size(52, 13);
+            apellidosLabel.Size = new System.Drawing.Size(97, 28);
             apellidosLabel.TabIndex = 41;
-            apellidosLabel.Text = "Apellidos:";
+            apellidosLabel.Text = "APELLIDOS:";
             // 
             // nombresLabel
             // 
             nombresLabel.AutoSize = true;
+            nombresLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nombresLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            nombresLabel.Location = new System.Drawing.Point(170, 137);
+            nombresLabel.Location = new System.Drawing.Point(59, 64);
             nombresLabel.Name = "nombresLabel";
-            nombresLabel.Size = new System.Drawing.Size(52, 13);
+            nombresLabel.Size = new System.Drawing.Size(91, 28);
             nombresLabel.TabIndex = 43;
-            nombresLabel.Text = "Nombres:";
+            nombresLabel.Text = "NOMBRES:";
             // 
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
+            passwordLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             passwordLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            passwordLabel.Location = new System.Drawing.Point(170, 163);
+            passwordLabel.Location = new System.Drawing.Point(59, 304);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(56, 13);
+            passwordLabel.Size = new System.Drawing.Size(101, 28);
             passwordLabel.TabIndex = 45;
-            passwordLabel.Text = "Password:";
+            passwordLabel.Text = "PASSWORD:";
             // 
             // rolLabel
             // 
             rolLabel.AutoSize = true;
+            rolLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             rolLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            rolLabel.Location = new System.Drawing.Point(170, 189);
+            rolLabel.Location = new System.Drawing.Point(59, 152);
             rolLabel.Name = "rolLabel";
-            rolLabel.Size = new System.Drawing.Size(26, 13);
+            rolLabel.Size = new System.Drawing.Size(142, 28);
             rolLabel.TabIndex = 47;
-            rolLabel.Text = "Rol:";
+            rolLabel.Text = "ROL DE USUARIO:";
             // 
             // telefonoLabel
             // 
             telefonoLabel.AutoSize = true;
+            telefonoLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             telefonoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            telefonoLabel.Location = new System.Drawing.Point(170, 213);
+            telefonoLabel.Location = new System.Drawing.Point(59, 202);
             telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(52, 13);
+            telefonoLabel.Size = new System.Drawing.Size(89, 28);
             telefonoLabel.TabIndex = 49;
-            telefonoLabel.Text = "Telefono:";
+            telefonoLabel.Text = "TELÉFONO:";
             // 
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
+            usernameLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             usernameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            usernameLabel.Location = new System.Drawing.Point(170, 242);
+            usernameLabel.Location = new System.Drawing.Point(59, 257);
             usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new System.Drawing.Size(58, 13);
+            usernameLabel.Size = new System.Drawing.Size(99, 28);
             usernameLabel.TabIndex = 51;
-            usernameLabel.Text = "Username:";
+            usernameLabel.Text = "USERNAME:";
             // 
             // UsuariosBindingSource
             // 
@@ -127,60 +135,66 @@
             // apellidosTextBox
             // 
             this.apellidosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.UsuariosBindingSource, "Apellidos", true));
-            this.apellidosTextBox.Location = new System.Drawing.Point(234, 108);
+            this.apellidosTextBox.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apellidosTextBox.Location = new System.Drawing.Point(212, 101);
             this.apellidosTextBox.Name = "apellidosTextBox";
-            this.apellidosTextBox.Size = new System.Drawing.Size(121, 20);
+            this.apellidosTextBox.Size = new System.Drawing.Size(227, 31);
             this.apellidosTextBox.TabIndex = 42;
             // 
             // nombresTextBox
             // 
             this.nombresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.UsuariosBindingSource, "Nombres", true));
-            this.nombresTextBox.Location = new System.Drawing.Point(234, 134);
+            this.nombresTextBox.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombresTextBox.Location = new System.Drawing.Point(212, 61);
             this.nombresTextBox.Name = "nombresTextBox";
-            this.nombresTextBox.Size = new System.Drawing.Size(121, 20);
+            this.nombresTextBox.Size = new System.Drawing.Size(227, 31);
             this.nombresTextBox.TabIndex = 44;
             // 
             // passwordTextBox
             // 
             this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.UsuariosBindingSource, "Password", true));
-            this.passwordTextBox.Location = new System.Drawing.Point(234, 160);
+            this.passwordTextBox.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.Location = new System.Drawing.Point(212, 304);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(121, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(227, 31);
             this.passwordTextBox.TabIndex = 46;
             // 
             // rolComboBox
             // 
             this.rolComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.UsuariosBindingSource, "Rol", true));
+            this.rolComboBox.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rolComboBox.FormattingEnabled = true;
             this.rolComboBox.Items.AddRange(new object[] {
             "ADMINISTRATIVO",
             "SECRETARIO"});
-            this.rolComboBox.Location = new System.Drawing.Point(234, 186);
+            this.rolComboBox.Location = new System.Drawing.Point(212, 148);
             this.rolComboBox.Name = "rolComboBox";
-            this.rolComboBox.Size = new System.Drawing.Size(121, 21);
+            this.rolComboBox.Size = new System.Drawing.Size(227, 32);
             this.rolComboBox.TabIndex = 48;
             // 
             // telefonoNumericUpDown
             // 
             this.telefonoNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.UsuariosBindingSource, "Telefono", true));
-            this.telefonoNumericUpDown.Location = new System.Drawing.Point(234, 213);
+            this.telefonoNumericUpDown.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telefonoNumericUpDown.Location = new System.Drawing.Point(212, 199);
             this.telefonoNumericUpDown.Name = "telefonoNumericUpDown";
-            this.telefonoNumericUpDown.Size = new System.Drawing.Size(121, 20);
+            this.telefonoNumericUpDown.Size = new System.Drawing.Size(160, 31);
             this.telefonoNumericUpDown.TabIndex = 50;
             // 
             // usernameTextBox
             // 
             this.usernameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.UsuariosBindingSource, "Username", true));
-            this.usernameTextBox.Location = new System.Drawing.Point(234, 239);
+            this.usernameTextBox.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTextBox.Location = new System.Drawing.Point(212, 254);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(121, 20);
+            this.usernameTextBox.Size = new System.Drawing.Size(227, 31);
             this.usernameTextBox.TabIndex = 52;
             // 
             // frmCrudUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 506);
+            this.ClientSize = new System.Drawing.Size(508, 435);
             this.Controls.Add(apellidosLabel);
             this.Controls.Add(this.apellidosTextBox);
             this.Controls.Add(nombresLabel);
@@ -193,7 +207,9 @@
             this.Controls.Add(this.telefonoNumericUpDown);
             this.Controls.Add(usernameLabel);
             this.Controls.Add(this.usernameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCrudUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCrudUsuarios";
             this.Load += new System.EventHandler(this.frmCrudUsuarios_Load);
             this.Controls.SetChildIndex(this.btnAceptar, 0);
