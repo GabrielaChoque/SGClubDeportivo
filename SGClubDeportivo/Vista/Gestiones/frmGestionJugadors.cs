@@ -55,19 +55,81 @@ namespace SGClubDeportivo.Vista.Gestiones
             }
         }
 
-        private void GenerarPDF()
+        private void btnImprimir_Click(object sender, EventArgs e)
         {
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf"; //nombre del pdf
+            //string paginahtml_texto = "<table><tr>ctd>HOLA MUNDO</td></trx</table>";
+            string paginahtml_texto = Properties.Resources.PlantillaJugadores.ToString();//agregarmos Plantilla.html como recurso desde Proyecto -> Propiedades
 
-           
+            //remplazacion de los caracteres especiales que pusimos dentro de la plantilla html @NAME
+            //ejemplo: //paginahtml_texto = paginahtml_texto.Replace("@NAME", txt.text);
+            //para fechas seria: paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
 
-        }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            GenerarPDF();
-            // Filtrar los resultados en el DataGridView según el texto de búsqueda
-            // string filtro = txtBuscar.text;
-            //CargarDatos(filtro);
+            //REEMPLAZANDO LOS @NAME
+            string NombreSesion = GlobalVariables.NomC.ToUpper();
+            //string NameAdmin = "sss";
+
+
+            paginahtml_texto = paginahtml_texto.Replace("@ADMIN", NombreSesion);
+            paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
+            // PARA REEMPLAZAR EN TABLA @FILAS , seleccione la OPCION 1 para hacer al parecer hay q poner (name) a las columnas del datagridview
+            string filas = string.Empty;
+            foreach (DataGridViewRow row in JugadoresDataGridView.Rows)
+            {
+                // formato de fecha
+                DateTime fecha = (DateTime)row.Cells["FechaNacimiento"].Value;
+                string fechaFormateada = fecha.ToString("dd/MM/yyyy"); //NUEVO FORMATO DE FECHA DE NACIMIENTO
+                                                                       //
+                Categorias CategoriaFila = _cat.Seleccionar((int)row.Cells["Categoria_id"].Value);
+
+
+
+
+                filas += "<tr>";
+                filas += "<td>" + row.Cells["Ci_jugador"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["Tipo"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["Nombres"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["Apellidos"].Value.ToString() + "</td>";
+                filas += "<td>" + fechaFormateada + "</td>"; //FECHA DE NACIMIENTO
+                filas += "<td>" + CategoriaFila.Nombre.ToString() + "</td>"; //DICE Categoria_id; pero sabemos que en datagrid esta con SUB 11,12 ETC
+                filas += "</tr>";
+            }
+            paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
+
+
+            //opcion 3 - PREVIZUALIZA   EN NUESTRO ABRIDOR DE PDF POR DEFECTO DE LA MAQUINA - PREVIZUALIZA EXTERNAMENTE EL PDF
+            // Crear un archivo temporal para almacenar el PDF antes de decidir guardarlo físicamente
+            string tempFilePath = Path.GetTempFileName() + ".pdf";
+
+            using (FileStream stream = new FileStream(tempFilePath, FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
+                PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                pdfDoc.Add(new Phrase("")); // AÑADE TEXTO AL PDF
+
+                // Utilizar StreamReader para leer la cadena HTML
+                using (StringReader sr = new StringReader(paginahtml_texto))
+                {
+                    XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                }
+
+                pdfDoc.Close();
+                stream.Close();
+            }
+
+            // Abrir el PDF en el navegador predeterminado
+            try
+            {
+                Process.Start(tempFilePath);
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción que pueda ocurrir al intentar abrir el navegador predeterminado
+                MessageBox.Show("No se pudo abrir el navegador predeterminado. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 

@@ -95,5 +95,11 @@ namespace SGClubDeportivo.Vista
             Login frm = new Login();
             frm.ShowDialog();
         }
+
+        private void btnCambioPassword_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword();
+            frm.ShowDialog();
+        }
     }
 }

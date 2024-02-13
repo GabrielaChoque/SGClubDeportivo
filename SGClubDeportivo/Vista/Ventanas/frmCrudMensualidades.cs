@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -85,7 +86,7 @@ namespace SGClubDeportivo.Vista.Ventanas
             if (esNuevo)
             {
                 // Configuración para un nuevo registro
-                MensualidadesBindingSource.AddNew();
+                MensualidadesBindingSource.AddNew();                
                 lblTituloCrud.Text = "REGISTRAR NUEVA MENSUALIDAD";
                 AutoSeleccionAlgunosParametros(); //auto seleccionamos algunos campos
 
@@ -350,12 +351,14 @@ namespace SGClubDeportivo.Vista.Ventanas
                 mesComboBox.Text = nombreMesMayusculas;
                 gestionNumericUpDown.Value = anio;
                 fechPagoDateTimePicker.Value = fechaActual;
+                conceptoTextBox.Text = "Pago de mensualidad de entrenamiento";
 
                 //PONER VALORES INTERNAMENTE para que se ponga por el data binding
                 var reg = (Mensualidades)MensualidadesBindingSource.Current;
                 reg.Mes = nombreMesMayusculas;
                 reg.Gestion = anio;
                 reg.FechPago = fechaActual;
+                reg.Concepto = "Pago de mensualidad de entrenamiento";
             }
 
         }

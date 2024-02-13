@@ -61,7 +61,28 @@ namespace SGClubDeportivo.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a en CATEGOIRA.
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;es&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Recibo de Pago&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        body {
+        ///            font-family: Arial, sans-serif;
+        ///            margin: 0;
+        ///            padding: 0;
+        ///        }
+        ///
+        ///        .recibo-container {
+        ///            border: 2px solid black;
+        ///            margin: 20px;
+        ///            padding: 10px;
+        ///        }
+        ///
+        ///        .recibo-header {
+        ///            display: flex;
+        ///            justify-content: space-between;
+        ///            padding: 10px;
+        ///            border-bottom: 2px solid [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string BoletaPago {
             get {
@@ -129,6 +150,37 @@ namespace SGClubDeportivo.Properties {
         internal static string Plantilla {
             get {
                 return ResourceManager.GetString("Plantilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;style&gt;
+        ///        body {
+        ///            font-family: Cambria, serif;
+        ///            margin-left: 2.5cm;
+        ///            margin-right: 2.5cm;
+        ///        }
+        ///
+        ///        .titulo {
+        ///            font-size: 18px;
+        ///            font-weight: bold;
+        ///            font-family: Cambria, serif;
+        ///            text-align: center;
+        ///            margin-bottom: 20px;
+        ///        }
+        ///
+        ///        .membrete {
+        ///            font-size: 14px;
+        ///            font-style: italic;
+        ///            text-align: center;
+        ///         [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string PlantillaJugadores {
+            get {
+                return ResourceManager.GetString("PlantillaJugadores", resourceCulture);
             }
         }
     }

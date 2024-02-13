@@ -50,6 +50,7 @@ namespace SGClubDeportivo.Vista
             this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
             this.label2 = new System.Windows.Forms.Label();
             this.PanelContenido = new System.Windows.Forms.Panel();
+            this.btnCambioPassword = new FontAwesome.Sharp.IconButton();
             this.panelBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -143,6 +144,7 @@ namespace SGClubDeportivo.Vista
             this.Sidebar.BackColor = System.Drawing.Color.SteelBlue;
             this.Sidebar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Sidebar.BackgroundImage")));
             this.Sidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Sidebar.Controls.Add(this.btnCambioPassword);
             this.Sidebar.Controls.Add(this.btnUsuarios);
             this.Sidebar.Controls.Add(this.btnCategorias);
             this.Sidebar.Controls.Add(this.btnInscripciones);
@@ -365,6 +367,27 @@ namespace SGClubDeportivo.Vista
             this.PanelContenido.Size = new System.Drawing.Size(865, 652);
             this.PanelContenido.TabIndex = 38;
             // 
+            // btnCambioPassword
+            // 
+            this.btnCambioPassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnCambioPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambioPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambioPassword.ForeColor = System.Drawing.Color.Black;
+            this.btnCambioPassword.IconChar = FontAwesome.Sharp.IconChar.Running;
+            this.btnCambioPassword.IconColor = System.Drawing.Color.Black;
+            this.btnCambioPassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCambioPassword.IconSize = 30;
+            this.btnCambioPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCambioPassword.Location = new System.Drawing.Point(0, 542);
+            this.btnCambioPassword.Name = "btnCambioPassword";
+            this.btnCambioPassword.Size = new System.Drawing.Size(191, 49);
+            this.btnCambioPassword.TabIndex = 26;
+            this.btnCambioPassword.Text = "CAMBIAR CONTRASEÑA";
+            this.btnCambioPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCambioPassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCambioPassword.UseVisualStyleBackColor = false;
+            this.btnCambioPassword.Click += new System.EventHandler(this.btnCambioPassword_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,5 +433,6 @@ namespace SGClubDeportivo.Vista
         public FontAwesome.Sharp.IconButton btnInscripciones;
         public FontAwesome.Sharp.IconButton btnCategorias;
         public FontAwesome.Sharp.IconButton btnUsuarios;
+        public FontAwesome.Sharp.IconButton btnCambioPassword;
     }
 }

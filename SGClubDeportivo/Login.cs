@@ -2,6 +2,7 @@
 using SGClubDeportivo.Data;
 using SGClubDeportivo.Vista;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SGClubDeportivo
@@ -78,9 +79,29 @@ namespace SGClubDeportivo
 
                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("LA CUENTA O CONTRASEÑA SON INCORRECTOS", "NO SE PUDO INICIAR SESION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Mostrar un mensaje de error con información detallada sobre la excepción
+                // Crear un formulario personalizado para mostrar el mensaje de error
+                using (var errorForm = new Form())
+                {
+                    errorForm.Text = "Error";
+                    errorForm.Size = new Size(400, 300); // Establecer el tamaño del formulario
+
+                    // Crear un cuadro de texto para mostrar el mensaje de error
+                    TextBox textBox = new TextBox();
+                    textBox.Multiline = true;
+                    textBox.ReadOnly = true;
+                    textBox.ScrollBars = ScrollBars.Vertical;
+                    textBox.Dock = DockStyle.Fill;
+                    textBox.Text = $"Se produjo una excepción:\n{ex.Message}\n\nDetalles de la excepción:\n{ex.ToString()}";
+
+                    // Agregar el cuadro de texto al formulario
+                    errorForm.Controls.Add(textBox);
+
+                    // Mostrar el formulario como un cuadro de diálogo modal
+                    errorForm.ShowDialog();
+                }
             }
         }
 

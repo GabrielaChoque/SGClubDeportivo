@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <title>Planilla Jugadores</title>
     <style>
         body {
             font-family: Cambria, serif;
@@ -41,38 +42,40 @@
     </style>
 </head>
 <body>
-    <div class='membrete'>
-        ASOCIACIÓN DE FUTBOL ORURO<br>
-        CLUB DEPORTIVO 'ORURO ROYAL'<br>
+    <div class="membrete">
+        ASOCIACIÃ“N DE FUTBOL ORURO
+        CLUB DEPORTIVO 'ORURO ROYAL'
         ORURO - BOLIVIA
     </div>
-    <div class='titulo'>
+    <div class="titulo">
         LISTA DE JUGADORES REGISTRADOS
     </div>
     <div>
         <div class="datos-personales">
             <table>
                 <tr>
-                    <th>RESPONSABLE:</th>
-                    <td>@CLIENTE <br> </td>
+                    <th style="text-align:right">RESPONSABLE:</th>
+                    <td>@ADMIN</td>
                 </tr>
                 <tr>
-                    <th>FECHA DE IMPRESIÓN:</th>
-                    <td>@FECHA <br></td>
+                    <th>FECHA DE IMPRESIÃ“N:</th>
+                    <td>@FECHA</td>
                 </tr>
             </table>
         </div>
     </div>
-    <br>
-    <table class='tabla'>
-        <tr>
-            <th>NÚMERO DE CARNET</th>
-            <th>TIPO JUGADOR</th>
-            <th>NOMBRES</th>
-            <th>APELLIDOS</th>
-            <th>FECHA DE NACIMIENTO</th>
-            <th>CATEGORIA</th>
-        </tr>";
+    
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>NÃšMERO DE CARNET</th>
+                <th>TIPO JUGADOR</th>
+                <th>NOMBRES</th>
+                <th>APELLIDOS</th>
+                <th>FECHA DE NACIMIENTO</th>
+                <th>CATEGORIA</th>
+            </tr>
+        </thead>
         <tbody>
             @FILAS
         </tbody>

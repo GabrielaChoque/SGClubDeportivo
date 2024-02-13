@@ -33,11 +33,11 @@
             this.JugadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.JugadoresDataGridView = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ci_jugador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddMensualidad = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
@@ -57,7 +57,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(478, 57);
             this.btnBuscar.Size = new System.Drawing.Size(310, 44);
             this.btnBuscar.Text = "IMPRIMIR LISTA DE JUGADORES";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnBuscar.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // txtBuscar
             // 
@@ -88,11 +88,11 @@
             this.JugadoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.JugadoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
+            this.Ci_jugador,
+            this.Tipo,
+            this.Nombres,
+            this.Apellidos,
+            this.FechaNacimiento,
             this.Categoria_id,
             this.AddMensualidad,
             this.Editar,
@@ -116,40 +116,40 @@
             this.id.ReadOnly = true;
             this.id.Visible = false;
             // 
-            // dataGridViewTextBoxColumn2
+            // Ci_jugador
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Ci_jugador";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CARNET JUGADOR";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.Ci_jugador.DataPropertyName = "Ci_jugador";
+            this.Ci_jugador.HeaderText = "CARNET JUGADOR";
+            this.Ci_jugador.Name = "Ci_jugador";
+            this.Ci_jugador.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // Tipo
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Tipo";
-            this.dataGridViewTextBoxColumn3.HeaderText = "TIPO JUGADOR";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "TIPO JUGADOR";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // Nombres
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Nombres";
-            this.dataGridViewTextBoxColumn4.HeaderText = "NOMBRES";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "NOMBRES";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn5
+            // Apellidos
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Apellidos";
-            this.dataGridViewTextBoxColumn5.HeaderText = "APELLIDOS";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.Apellidos.DataPropertyName = "Apellidos";
+            this.Apellidos.HeaderText = "APELLIDOS";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // FechaNacimiento
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "FechaNacimiento";
-            this.dataGridViewTextBoxColumn6.HeaderText = "FECHA NACIMIENTO";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
+            this.FechaNacimiento.HeaderText = "FECHA NACIMIENTO";
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
             // 
             // Categoria_id
             // 
@@ -209,11 +209,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridView JugadoresDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ci_jugador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria_id;
         private System.Windows.Forms.DataGridViewImageColumn AddMensualidad;
         private System.Windows.Forms.DataGridViewImageColumn Editar;

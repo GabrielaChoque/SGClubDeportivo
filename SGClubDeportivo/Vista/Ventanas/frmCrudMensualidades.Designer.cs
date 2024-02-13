@@ -73,60 +73,60 @@
             // gestionLabel
             // 
             gestionLabel.AutoSize = true;
-            gestionLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            gestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             gestionLabel.Location = new System.Drawing.Point(48, 70);
             gestionLabel.Name = "gestionLabel";
-            gestionLabel.Size = new System.Drawing.Size(88, 28);
+            gestionLabel.Size = new System.Drawing.Size(107, 24);
             gestionLabel.TabIndex = 55;
             gestionLabel.Text = "GESTION:";
             // 
             // mesLabel
             // 
             mesLabel.AutoSize = true;
-            mesLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mesLabel.Location = new System.Drawing.Point(48, 129);
             mesLabel.Name = "mesLabel";
-            mesLabel.Size = new System.Drawing.Size(52, 28);
+            mesLabel.Size = new System.Drawing.Size(60, 24);
             mesLabel.TabIndex = 56;
             mesLabel.Text = "MES:";
             // 
             // cuotaFinalLabel
             // 
             cuotaFinalLabel.AutoSize = true;
-            cuotaFinalLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cuotaFinalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             cuotaFinalLabel.Location = new System.Drawing.Point(45, 250);
             cuotaFinalLabel.Name = "cuotaFinalLabel";
-            cuotaFinalLabel.Size = new System.Drawing.Size(183, 28);
+            cuotaFinalLabel.Size = new System.Drawing.Size(229, 24);
             cuotaFinalLabel.TabIndex = 58;
             cuotaFinalLabel.Text = "MONTO A CANCELAR:";
             // 
             // conceptoLabel1
             // 
             conceptoLabel1.AutoSize = true;
-            conceptoLabel1.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            conceptoLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             conceptoLabel1.Location = new System.Drawing.Point(48, 307);
             conceptoLabel1.Name = "conceptoLabel1";
-            conceptoLabel1.Size = new System.Drawing.Size(164, 28);
+            conceptoLabel1.Size = new System.Drawing.Size(200, 24);
             conceptoLabel1.TabIndex = 60;
             conceptoLabel1.Text = "TIPO DE JUGADOR:";
             // 
             // fechPagoLabel
             // 
             fechPagoLabel.AutoSize = true;
-            fechPagoLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fechPagoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fechPagoLabel.Location = new System.Drawing.Point(48, 191);
             fechPagoLabel.Name = "fechPagoLabel";
-            fechPagoLabel.Size = new System.Drawing.Size(145, 28);
+            fechPagoLabel.Size = new System.Drawing.Size(184, 24);
             fechPagoLabel.TabIndex = 59;
             fechPagoLabel.Text = "FECHA DE PAGO:";
             // 
             // conceptoLabel
             // 
             conceptoLabel.AutoSize = true;
-            conceptoLabel.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            conceptoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             conceptoLabel.Location = new System.Drawing.Point(45, 368);
             conceptoLabel.Name = "conceptoLabel";
-            conceptoLabel.Size = new System.Drawing.Size(180, 28);
+            conceptoLabel.Size = new System.Drawing.Size(229, 24);
             conceptoLabel.TabIndex = 57;
             conceptoLabel.Text = "CONCEPTO DE PAGO:";
             // 
@@ -141,7 +141,7 @@
             // gestionNumericUpDown
             // 
             this.gestionNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.MensualidadesBindingSource, "Gestion", true));
-            this.gestionNumericUpDown.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestionNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionNumericUpDown.Location = new System.Drawing.Point(273, 70);
             this.gestionNumericUpDown.Maximum = new decimal(new int[] {
             5000,
@@ -149,13 +149,13 @@
             0,
             0});
             this.gestionNumericUpDown.Name = "gestionNumericUpDown";
-            this.gestionNumericUpDown.Size = new System.Drawing.Size(120, 31);
+            this.gestionNumericUpDown.Size = new System.Drawing.Size(120, 26);
             this.gestionNumericUpDown.TabIndex = 56;
             // 
             // mesComboBox
             // 
             this.mesComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "Mes", true));
-            this.mesComboBox.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mesComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mesComboBox.FormattingEnabled = true;
             this.mesComboBox.Items.AddRange(new object[] {
             "ENERO",
@@ -172,13 +172,13 @@
             "DICIEMBRE"});
             this.mesComboBox.Location = new System.Drawing.Point(273, 125);
             this.mesComboBox.Name = "mesComboBox";
-            this.mesComboBox.Size = new System.Drawing.Size(199, 32);
+            this.mesComboBox.Size = new System.Drawing.Size(199, 28);
             this.mesComboBox.TabIndex = 57;
             // 
             // cuotaFinalNumericUpDown
             // 
             this.cuotaFinalNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.MensualidadesBindingSource, "CuotaFinal", true));
-            this.cuotaFinalNumericUpDown.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuotaFinalNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cuotaFinalNumericUpDown.Location = new System.Drawing.Point(274, 247);
             this.cuotaFinalNumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -186,7 +186,7 @@
             0,
             0});
             this.cuotaFinalNumericUpDown.Name = "cuotaFinalNumericUpDown";
-            this.cuotaFinalNumericUpDown.Size = new System.Drawing.Size(120, 31);
+            this.cuotaFinalNumericUpDown.Size = new System.Drawing.Size(120, 26);
             this.cuotaFinalNumericUpDown.TabIndex = 59;
             // 
             // guiaPreciosBindingSource
@@ -197,32 +197,31 @@
             // 
             this.fechPagoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.fechPagoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.MensualidadesBindingSource, "FechPago", true));
-            this.fechPagoDateTimePicker.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechPagoDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechPagoDateTimePicker.Location = new System.Drawing.Point(272, 188);
             this.fechPagoDateTimePicker.Name = "fechPagoDateTimePicker";
-            this.fechPagoDateTimePicker.Size = new System.Drawing.Size(200, 31);
+            this.fechPagoDateTimePicker.Size = new System.Drawing.Size(200, 26);
             this.fechPagoDateTimePicker.TabIndex = 60;
             // 
             // conceptoComboBox
             // 
-            this.conceptoComboBox.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conceptoComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conceptoComboBox.FormattingEnabled = true;
             this.conceptoComboBox.Location = new System.Drawing.Point(273, 303);
             this.conceptoComboBox.Name = "conceptoComboBox";
-            this.conceptoComboBox.Size = new System.Drawing.Size(199, 32);
+            this.conceptoComboBox.Size = new System.Drawing.Size(199, 28);
             this.conceptoComboBox.TabIndex = 61;
             this.conceptoComboBox.SelectedIndexChanged += new System.EventHandler(this.conceptoComboBox_SelectedIndexChanged);
             // 
             // conceptoTextBox
             // 
             this.conceptoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.MensualidadesBindingSource, "Concepto", true));
-            this.conceptoTextBox.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conceptoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conceptoTextBox.Location = new System.Drawing.Point(272, 359);
             this.conceptoTextBox.Multiline = true;
             this.conceptoTextBox.Name = "conceptoTextBox";
             this.conceptoTextBox.Size = new System.Drawing.Size(200, 51);
             this.conceptoTextBox.TabIndex = 58;
-            this.conceptoTextBox.Text = "Pago de mensualidad de entrenamiento";
             // 
             // frmCrudMensualidades
             // 
